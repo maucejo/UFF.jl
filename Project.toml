@@ -1,0 +1,17 @@
+name = "UFF"
+uuid = "20c5726e-8372-4c34-be2c-190a5a70d483"
+version = "0.1.0"
+authors = ["Mathieu Aucejo <79322171+maucejo@users.noreply.github.com> and contributors"]
+
+[deps]
+FileIO = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
+
+[compat]
+FileIO = "1.17.1"
+julia = "1.10"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
