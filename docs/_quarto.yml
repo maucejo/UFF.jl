@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "StructuralVibration.jl"
+  title: "UFF.jl"
   favicon: "assets/logo/doclogo.svg"
   page-navigation: true
   navbar:
@@ -10,19 +10,19 @@ website:
     left:
       - text: "Overview"
         file: index.qmd
-      - text: "Models"
-        file: models/index.qmd
-      - text: "Solvers"
-        file: solvers/index.qmd
-      - text: "Modal extraction"
-        file: modal_extraction/index.qmd
-      - text: "Signal processing"
-        file: signal_processing/index.qmd
-      - text: "Visualization"
-        file: visualization/index.qmd
+      # - text: "Models"
+      #   file: models/index.qmd
+      # - text: "Solvers"
+      #   file: solvers/index.qmd
+      # - text: "Modal extraction"
+      #   file: modal_extraction/index.qmd
+      # - text: "Signal processing"
+      #   file: signal_processing/index.qmd
+      # - text: "Visualization"
+      #   file: visualization/index.qmd
     right:
       - icon: github
-        href: https://github.com/maucejo/StructuralVibration.jl
+        href: https://github.com/maucejo/UFF.jl
         aria-label: GitHub
 
   sidebar:
@@ -32,37 +32,37 @@ website:
         - overview/installation.qmd
         - overview/release_notes.qmd
 
-    - title: "Models"
-      contents:
-        - models/index.qmd
-        - models/excitation.qmd
-        - models/noise.qmd
+    # - title: "Models"
+    #   contents:
+    #     - models/index.qmd
+    #     - models/excitation.qmd
+    #     - models/noise.qmd
 
-    - title: "Solvers"
-      contents:
-        - solvers/index.qmd
-        - solvers/modal_time_solvers.qmd
-        - solvers/direct_time_solvers.qmd
-        - solvers/state_space_solvers.qmd
-        - solvers/frequency_solvers.qmd
+    # - title: "Solvers"
+    #   contents:
+    #     - solvers/index.qmd
+    #     - solvers/modal_time_solvers.qmd
+    #     - solvers/direct_time_solvers.qmd
+    #     - solvers/state_space_solvers.qmd
+    #     - solvers/frequency_solvers.qmd
 
-    - title: "Modal extraction"
-      contents:
-        - modal_extraction/index.qmd
-        - modal_extraction/sdof_methods.qmd
-        - modal_extraction/mdof_methods.qmd
-        - modal_extraction/frf_reconstruction.qmd
-        - modal_extraction/indicators.qmd
+    # - title: "Modal extraction"
+    #   contents:
+    #     - modal_extraction/index.qmd
+    #     - modal_extraction/sdof_methods.qmd
+    #     - modal_extraction/mdof_methods.qmd
+    #     - modal_extraction/frf_reconstruction.qmd
+    #     - modal_extraction/indicators.qmd
 
-    - title: "Signal processing"
-      contents:
-      - signal_processing/index.qmd
-      - signal_processing/noise.qmd
-      - signal_processing/other.qmd
+    # - title: "Signal processing"
+    #   contents:
+    #   - signal_processing/index.qmd
+    #   - signal_processing/noise.qmd
+    #   - signal_processing/other.qmd
 
-    - title: "Visualization"
-      contents:
-        - visualization/index.qmd
+    # - title: "Visualization"
+    #   contents:
+    #     - visualization/index.qmd
 
   page-footer:
     center: "2025 Mathieu Aucejo &#8729; Powered by [![](/assets/logo/quarto.png){width=4mm}](https://quarto.org) and [![](/assets/logo/julia.svg){width=4mm}](https://julialang.org)"
