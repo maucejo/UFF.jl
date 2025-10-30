@@ -1,0 +1,7 @@
+---
+title: Basic Usage
+format:
+  html:
+    toc: true
+    number-sections: false
+---

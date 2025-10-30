@@ -39,6 +39,7 @@ data = readuff("path/to/your/file.uff")
 ## Supported formats
 Currently, `UFF.jl` supports reading UFF files with the following blocks:
 - Dataset 15
+- Dataset 18
 - Dataset 55
 - Dataset 58
 - Dataset 82
