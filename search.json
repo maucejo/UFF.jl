@@ -1,35 +1,24 @@
 [
   {
-    "objectID": "overview/installation.html",
-    "href": "overview/installation.html",
-    "title": "Installation",
+    "objectID": "overview/release_notes.html",
+    "href": "overview/release_notes.html",
+    "title": "Release Notes",
     "section": "",
-    "text": "Note\n\n\n\nIf you are already a Julia user, you can skip this section.\nThis section explains how to install Julia and UFF.jl.",
+    "text": "Initial release of the package",
     "crumbs": [
       "Overview",
-      "Installation"
+      "Release Notes"
     ]
   },
   {
-    "objectID": "overview/installation.html#install-julia",
-    "href": "overview/installation.html#install-julia",
-    "title": "Installation",
-    "section": "Install Julia ",
-    "text": "Install Julia \nThere exists several ways of installing Julia and managing versions. The recommended way consists in installing juliaup, which is a Julia version manager.\n\nWindows\nOn Windows, juliaup can be installed directly from the Windows store or from a terminal by typing the following command:\nwinget install julia -s msstore\nMacOS and Linux\nOn MacOS and Linux, juliaup can be installed from a terminal by typing:\ncurl -fsSL https://install.julialang.org | sh\nor by using software repositories:\n# MacOS\nbrew install juliaup\n\n# Arch-based distributions\nyay -S juliaup\n\nOnce juliaup is installed, the latest version of Julia can be installed from a terminal as follows:\njuliaup add release",
+    "objectID": "overview/release_notes.html#v0.1.0",
+    "href": "overview/release_notes.html#v0.1.0",
+    "title": "Release Notes",
+    "section": "",
+    "text": "Initial release of the package",
     "crumbs": [
       "Overview",
-      "Installation"
-    ]
-  },
-  {
-    "objectID": "overview/installation.html#install-uff.jl",
-    "href": "overview/installation.html#install-uff.jl",
-    "title": "Installation",
-    "section": "Install UFF.jl ",
-    "text": "Install UFF.jl \nThe package is registered in the Julia General Registry. So, to install the package, you can use the following command:\n(Yourenv) pkg&gt; add UFF",
-    "crumbs": [
-      "Overview",
-      "Installation"
+      "Release Notes"
     ]
   },
   {
@@ -77,25 +66,36 @@
     ]
   },
   {
-    "objectID": "overview/release_notes.html",
-    "href": "overview/release_notes.html",
-    "title": "Release Notes",
+    "objectID": "overview/installation.html",
+    "href": "overview/installation.html",
+    "title": "Installation",
     "section": "",
-    "text": "Initial release of the package",
+    "text": "Note\n\n\n\nIf you are already a Julia user, you can skip this section.\nThis section explains how to install Julia and UFF.jl.",
     "crumbs": [
       "Overview",
-      "Release Notes"
+      "Installation"
     ]
   },
   {
-    "objectID": "overview/release_notes.html#v0.1.0",
-    "href": "overview/release_notes.html#v0.1.0",
-    "title": "Release Notes",
-    "section": "",
-    "text": "Initial release of the package",
+    "objectID": "overview/installation.html#install-julia",
+    "href": "overview/installation.html#install-julia",
+    "title": "Installation",
+    "section": "Install Julia ",
+    "text": "Install Julia \nThere exists several ways of installing Julia and managing versions. The recommended way consists in installing juliaup, which is a Julia version manager.\n\nWindows\nOn Windows, juliaup can be installed directly from the Windows store or from a terminal by typing the following command:\nwinget install julia -s msstore\nMacOS and Linux\nOn MacOS and Linux, juliaup can be installed from a terminal by typing:\ncurl -fsSL https://install.julialang.org | sh\nor by using software repositories:\n# MacOS\nbrew install juliaup\n\n# Arch-based distributions\nyay -S juliaup\n\nOnce juliaup is installed, the latest version of Julia can be installed from a terminal as follows:\njuliaup add release",
     "crumbs": [
       "Overview",
-      "Release Notes"
+      "Installation"
+    ]
+  },
+  {
+    "objectID": "overview/installation.html#install-uff.jl",
+    "href": "overview/installation.html#install-uff.jl",
+    "title": "Installation",
+    "section": "Install UFF.jl ",
+    "text": "Install UFF.jl \nThe package is registered in the Julia General Registry. So, to install the package, you can use the following command:\n(Yourenv) pkg&gt; add UFF",
+    "crumbs": [
+      "Overview",
+      "Installation"
     ]
   }
 ]
