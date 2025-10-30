@@ -42,45 +42,45 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "StructuralVibration.jl",
+    "title": "UFF.jl",
     "section": "",
     "text": "UFF.jl is a Julia package for reading (and writing in the future) Universal File Format (UFF) files, commonly used in engineering applications.",
     "crumbs": [
       "Overview",
-      "StructuralVibration.jl"
+      "UFF.jl"
     ]
   },
   {
     "objectID": "index.html#supported-formats",
     "href": "index.html#supported-formats",
-    "title": "StructuralVibration.jl",
+    "title": "UFF.jl",
     "section": "Supported formats",
     "text": "Supported formats\nCurrently, UFF.jl supports reading UFF files with the following blocks: - Dataset 15 - Dataset 55 - Dataset 58 - Dataset 82 - Dataset 151 - Dataset 164 - Dataset 2411 - Dataset 2412 - Dataset 2414",
     "crumbs": [
       "Overview",
-      "StructuralVibration.jl"
+      "UFF.jl"
     ]
   },
   {
     "objectID": "index.html#reproducibility",
     "href": "index.html#reproducibility",
-    "title": "StructuralVibration.jl",
+    "title": "UFF.jl",
     "section": "Reproducibility",
     "text": "Reproducibility\n\n\n\n\n\n\nProject direct dependencies\n\n\n\n\n\nUFF.jl has no direct dependencies.\n\n\n\n\n\n\n\n\n\nJulia version and machine information\n\n\n\n\n\nJulia Version 1.12.1\nCommit ba1e628ee49 (2025-10-17 13:02 UTC)\nBuild Info:\n  Official https://julialang.org release\nPlatform Info:\n  OS: macOS (arm64-apple-darwin24.0.0)\n  CPU: 16 × Apple M4 Max\n  WORD_SIZE: 64\n  LLVM: libLLVM-18.1.7 (ORCJIT, apple-m4)\n  GC: Built with stock GC\nThreads: 1 default, 1 interactive, 1 GC (on 12 virtual cores)\nEnvironment:\n  JULIA_EDITOR = code\n  JULIA_VSCODE_REPL = 1\n  JULIA_PKG_SERVER = https://juliahub.com",
     "crumbs": [
       "Overview",
-      "StructuralVibration.jl"
+      "UFF.jl"
     ]
   },
   {
     "objectID": "index.html#license",
     "href": "index.html#license",
-    "title": "StructuralVibration.jl",
+    "title": "UFF.jl",
     "section": "License",
     "text": "License\nThis package is under MIT License.",
     "crumbs": [
       "Overview",
-      "StructuralVibration.jl"
+      "UFF.jl"
     ]
   },
   {
