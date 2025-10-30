@@ -1,0 +1,75 @@
+---
+title: Release Notes
+format:
+  html:
+    toc: true
+    number-sections: false
+---
+
+## v1.0.0
+
+**Breaking changes**
+
+- Sdof solvers
+  - Refactor `SdofHarmonicTimeProblem`, `SdofForcedTimeProblem` and `SdofFrequencyProblem` to comply with `DifferentialEquations.jl` conventions
+
+- Signal processing
+  - Add `csd` function to compute the Cross Spectral Density (CSD) between two signals or between multiple input and output signals
+  - Add support for matrix inputs in `tfestimate` function to compute the Frequency Response Function (FRF) between multiple input and output signals
+  - Refactor `tfestimate`, `welch`, `csd` and `spectrum` functions to accept window functions instead of pre-computed window vectors
+  - Add `nfft` parameter to `tfestimate`, `welch`, `csd` and `spectrum` functions to specify the number of FFT points to be used
+
+- Modal extraction
+  - Add `LSFit()` method for modal parameter extraction using least squares fitting of the frequency response function around the resonance peak
+  - Add `AutoEMASdofProblem` and `AutoEMAMdofProblem` structures and `solve` functions to perform automatic modal extraction based on Sdof or Mdof approximations
+  - Solutions of AutoEMA problems are stored in `EMASdofSolution` or `EMAMdofSolution` structures containing the poles and the modal parameters
+  - Add `poles_extraction` function to extract system poles using different Mdof methods:
+      - Least-Squares Complex Exponential (LSCE) method
+      - Least-Squares Complex Frequency-domain (LSCF) method
+      - Polyreference Least-Squares Complex Frequency-domain (pLSCF) method
+  - Add `modeshape_extraction` function to extract mode shapes from residues and poles using Mdof methods
+  - Add `stabilization` function to perform stabilization diagram analysis using Mdof methods
+  - Add `stabilization_plot` function to visualize stabilization diagrams
+  - Stabilization results are now stored in the `EMAMdofStabilization` structure for plotting and further analysis
+  - Add `frf_reconstruction` function to reconstruct FRFs from extracted modal parameters
+  - Add `compute_residuals` function to compute the lower and upper residuals of the FRF
+  - Add `mode2residues` function to compute residues from real modes information
+  - Add modal extraction indicators:
+    - Modal Overlap Factor (MOF)
+    - Mode Overcomplexity Value (MOV)
+    - Mode Phase Collinearity (MPC)
+    - Mode Complexity Factor (MCF)
+    - Mode Phase Deviation (MPD)
+    - Modal Scale Factor (MSF)
+    - Modal Assurance Criterion (MAC)
+    - Coordinate Modal Assurance Criterion (COMAC)
+    - Enhanced Coordinate Modal Assurance Criterion (ECOMAC)
+    - Frequency Response Assurance Criterion (FRAC)
+    - Complex Mode Indicator Function (CMIF)
+    - Power Spectrum Indicator Function (PSIF)
+  - Utils
+    - Add `modal2poles` and `poles2modal` functions to convert between modal parameters and system poles
+
+## v0.3.0
+
+**Breaking change**
+
+- Modify the implementation of the `force` window following [PR #5](https://github.com/maucejo/StructuralVibration.jl/pull/5). Thanks to [@JakeZw](https://github.com/JakeZw) for proposing this PR.
+
+## v0.2.0
+
+**Breaking change**
+
+- Refactor of the visualization extension following [issue #3](https://github.com/maucejo/StructuralVibration.jl/issues/3). Theming has been removed from the plotting functions (function `theme_choice` is now exported).
+
+## v0.1.2
+
+- Bug fix in `OneDMesh` (solved [issue #2](https://github.com/maucejo/StructuralVibration.jl/issues/2))
+
+## v0.1.1
+
+- Bug fixes in State space solvers
+
+## v0.1.0
+
+- Initial release of the package

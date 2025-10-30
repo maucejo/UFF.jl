@@ -42,14 +42,11 @@ Currently, `UFF.jl` supports reading UFF files with the following blocks:
 - Dataset 15
 - Dataset 55
 - Dataset 58
-- Dataset 58b
 - Dataset 82
 - Dataset 151
 - Dataset 164
-- Dataset 259
-- Dataset 781
-- Dataset 1858
 - Dataset 2411
+- Dataset 2412
 - Dataset 2414
 
 ## Contributing
