@@ -37,7 +37,7 @@
     "href": "index.html#supported-formats",
     "title": "UFF.jl",
     "section": "Supported formats",
-    "text": "Supported formats\nCurrently, UFF.jl supports reading UFF files with the following blocks:\n\nDataset 15\nDataset 55\nDataset 58\nDataset 82\nDataset 151\nDataset 164\nDataset 2411\nDataset 2412\nDataset 2414",
+    "text": "Supported formats\nCurrently, UFF.jl supports reading UFF files with the following blocks:\n\nDataset 15\nDataset 18\nDataset 55\nDataset 58\nDataset 82\nDataset 151\nDataset 164\nDataset 2411\nDataset 2412\nDataset 2414",
     "crumbs": [
       "Overview",
       "UFF.jl"
