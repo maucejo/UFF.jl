@@ -26,7 +26,7 @@
     "href": "overview/installation.html#install-uffreader.jl",
     "title": "Installation",
     "section": "Install UFFReader.jl ",
-    "text": "Install UFFReader.jl \nThe package is registered in the Julia General Registry. So, to install the package, you can use the following command:\n(Yourenv) pkg&gt; add UFF",
+    "text": "Install UFFReader.jl \nThe package is registered in the Julia General Registry. So, to install the package, you can use the following command:\n(Yourenv) pkg&gt; add UFFReader",
     "crumbs": [
       "Overview",
       "Installation"
