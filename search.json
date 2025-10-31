@@ -114,7 +114,7 @@
     "href": "usage/index.html#reading-uff-files",
     "title": "Basic Usage",
     "section": "Reading UFF Files",
-    "text": "Reading UFF Files\nusing UFF\n\ndata = readuff(\"path/to/your/file.uff\")\n\n\n\nreaduff(filename::String) -&gt; Vector{UFFDataset}\nReads a UFF (Universal File Format) file and parses its contents into a vector of UFFDataset objects.\nInput\n\nfilename::String: The path to the UFF file to be read.\n\n\nOutput\n\ndata::Vector{UFFDataset}: A vector containing the parsed UFF datasets.",
+    "text": "Reading UFF Files\nusing UFF\n\ndata = readuff(\"path/to/your/file.uff\")\n\n\n\nreaduff(filename::String) -&gt; Vector{UFFDataset}\nReads a UFF (Universal File Format) file and parses its contents into a vector of UFFDataset objects.\nInput\n\nfilename::String: The path to the UFF file to be read.\n\n\nOutput\n\ndata::Vector{UFFDataset}: A vector containing the parsed UFF datasets.\n\n\n\n\n\n\n\n\nBecause readuff returns a vector of datasets, you can interact with a given dataset as usually done in Julia. For example:\n# Access to the first dataset extracted\n# Suppose that the first dataset is of type Dataset15\nd15 = data[1]\n\n# Access to the list of node coordinates\nnode_coords = d15.coords",
     "crumbs": [
       "Usage",
       "Basic Usage"
