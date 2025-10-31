@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Dataset 55 – UFF.jl</title>
+<title>Dataset 55 - Data at Nodes – UFF.jl</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -71,6 +71,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -129,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../datasets/dataset55.html">Dataset 55</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../datasets/dataset55.html">Dataset 55 - Data at Nodes</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -150,61 +153,61 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset15.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 15</span></a>
+ <span class="menu-text">Dataset 15 - Nodes</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 18</span></a>
+ <span class="menu-text">Dataset 18 - Coordinate systems</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset55.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Dataset 55</span></a>
+ <span class="menu-text">Dataset 55 - Data at Nodes</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset58.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 58</span></a>
+ <span class="menu-text">Dataset 58 - Function at nodal DOF</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset82.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 82</span></a>
+ <span class="menu-text">Dataset 82 - Tracelines</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset151.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 151</span></a>
+ <span class="menu-text">Dataset 151 - Header</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset164.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 164</span></a>
+ <span class="menu-text">Dataset 164 - Units</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset2411.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 2411</span></a>
+ <span class="menu-text">Dataset 2411 - Nodes - Double Precision</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset2412.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 2412</span></a>
+ <span class="menu-text">Dataset 2412 - Elements</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset2414.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 2414</span></a>
+ <span class="menu-text">Dataset 2414 - Analysis data</span></a>
   </div>
 </li>
     </ul>
@@ -212,15 +215,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link active" data-scroll-target="#dataset-description"><span class="header-section-number">1</span> Dataset description</a></li>
+  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api"><span class="header-section-number">2</span> API</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Dataset 55</h1>
+<h1 class="title">Dataset 55 - Data at Nodes</h1>
 </div>
 
 
@@ -237,8 +247,381 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="dataset-description" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="dataset-description"><span class="header-section-number">1</span> Dataset description</h2>
+<div id="4" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Universal Dataset Number: 55</p>
+<p><strong>Name:   Data at Nodes</strong></p>
+<pre><code class="language-julia">      RECORD 1:      Format (40A2)
+           FIELD 1:          ID Line 1
+
+      RECORD 2:      Format (40A2)
+           FIELD 1:          ID Line 2
+
+      RECORD 3:      Format (40A2)
+
+           FIELD 1:          ID Line 3
+
+      RECORD 4:      Format (40A2)
+           FIELD 1:          ID Line 4
+
+      RECORD 5:      Format (40A2)
+           FIELD 1:          ID Line 5
+
+      RECORD 6:      Format (6I10)
+
+      Data Definition Parameters
+
+           FIELD 1: Model Type
+                       0:   Unknown
+                       1:   Structural
+                       2:   Heat Transfer
+                       3:   Fluid Flow
+
+           FIELD 2:  Analysis Type
+                       0:   Unknown
+                       1:   Static
+                       2:   Normal Mode
+                       3:   Complex eigenvalue first order
+                       4:   Transient
+                       5:   Frequency Response
+                       6:   Buckling
+                       7:   Complex eigenvalue second order
+
+           FIELD 3:  Data Characteristic
+                       0:   Unknown
+                       1:   Scalar
+                       2:   3 DOF Global Translation
+                            Vector
+                       3:   6 DOF Global Translation
+                            &amp; Rotation Vector
+                       4:   Symmetric Global Tensor
+                       5:   General Global Tensor
+
+           FIELD 4: Specific Data Type
+                       0:   Unknown
+                       1:   General
+                       2:   Stress
+                       3:   Strain
+                       4:   Element Force
+                       5:   Temperature
+                       6:   Heat Flux
+                       7:   Strain Energy
+                       8:   Displacement
+                       9:   Reaction Force
+                       10:   Kinetic Energy
+                       11:   Velocity
+                       12:   Acceleration
+                       13:   Strain Energy Density
+                       14:   Kinetic Energy Density
+                       15:   Hydro-Static Pressure
+                       16:   Heat Gradient
+                       17:   Code Checking Value
+                       18:   Coefficient Of Pressure
+
+           FIELD 5:  Data Type
+                       2:   Real
+                       5:   Complex
+
+           FIELD 6:  Number Of Data Values Per Node (NDV)
+
+      Records 7 And 8 Are Analysis Type Specific
+
+      General Form
+
+      RECORD 7:      Format (8I10)
+           FIELD 1:          Number Of Integer Data Values
+                       1 &lt; Or = Nint &lt; Or = 10
+           FIELD 2:          Number Of Real Data Values
+                       1 &lt; Or = Nrval &lt; Or = 12
+           FIELDS 3-N:       Type Specific Integer Parameters
+
+      RECORD 8:      Format (6E13.5)
+           FIELDS 1-N:       Type Specific Real Parameters
+
+      For Analysis Type = 0, Unknown
+
+      RECORD 7:
+           FIELD 1:   1
+           FIELD 2:   1
+           FIELD 3:   ID Number
+
+      RECORD 8:
+
+           FIELD 1:   0.0
+
+      For Analysis Type = 1, Static
+
+      RECORD 7:
+           FIELD 1:    1
+           FIELD 2:    1
+           FIELD 3:    Load Case Number
+
+      RECORD 8:
+           FIELD 11:    0.0
+
+      For Analysis Type = 2, Normal Mode
+
+      RECORD 7:
+           FIELD 1:    2
+           FIELD 2:    4
+           FIELD 3:    Load Case Number
+           FIELD 4:    Mode Number
+
+      RECORD 8:
+           FIELD 1:    Frequency (Hertz)
+           FIELD 2:    Modal Mass
+           FIELD 3:    Modal Viscous Damping Ratio
+           FIELD 4:    Modal Hysteretic Damping Ratio
+
+      For Analysis Type = 3, Complex Eigenvalue
+
+      RECORD 7:
+           FIELD 1:    2
+           FIELD 2:    6
+           FIELD 3:    Load Case Number
+           FIELD 4:    Mode Number
+
+      RECORD 8:
+           FIELD 1:    Real Part Eigenvalue
+           FIELD 2:    Imaginary Part Eigenvalue
+           FIELD 3:    Real Part Of Modal A
+           FIELD 4:    Imaginary Part Of Modal A
+           FIELD 5:    Real Part Of Modal B
+           FIELD 6:    Imaginary Part Of Modal B
+
+      For Analysis Type = 4, Transient
+
+      RECORD 7:
+           FIELD 1:    2
+           FIELD 2:    1
+           FIELD 3:    Load Case Number
+           FIELD 4:    Time Step Number
+
+      RECORD 8:
+           FIELD 1: Time (Seconds)
+
+      For Analysis Type = 5, Frequency Response
+
+      RECORD 7:
+           FIELD 1:    2
+           FIELD 2:    1
+           FIELD 3:    Load Case Number
+           FIELD 4:    Frequency Step Number
+
+      RECORD 8:
+           FIELD 1:    Frequency (Hertz)
+
+      For Analysis Type = 6, Buckling
+
+      RECORD 7:
+           FIELD 1:    1
+           FIELD 2:    1
+           FIELD 3:    Load Case Number
+
+      RECORD 8:
+           FIELD 1: Eigenvalue
+
+      RECORD 9:      Format (I10)
+           FIELD 1:          Node Number
+
+      RECORD 10:     Format (6E13.5)
+           FIELDS 1-N:       Data At This Node (NDV Real Or
+                     Complex Values)
+
+      Records 9 And 10 Are Repeated For Each Node.
+
+      Notes:
+      1        Id Lines May Not Be Blank.  If No Information Is
+                  Required, The Word "None" Must Appear  Columns 1-4.
+
+      2        For Complex Data There Will Be 2*Ndv Data Items At Each
+                  Node. The Order Is Real Part For Value 1,  Imaginary
+                  Part For Value 1, Etc.
+      3        The Order Of Values For Various Data  Characteristics
+                  Is:
+                      3 DOF Global Vector:
+                              X, Y, Z
+
+                      6 DOF Global Vector:
+                              X, Y, Z,
+                              Rx, Ry, Rz
+
+                      Symmetric Global Tensor:
+                              Sxx, Sxy, Syy,
+                              Sxz, Syz, Szz
+
+                      General Global Tensor:
+                              Sxx, Syx, Szx,
+                              Sxy, Syy, Szy,
+                              Sxz, Syz, Szz
+
+                      Shell And Plate Element Load:
+                              Fx, Fy, Fxy,
+                              Mx, My, Mxy,
+                              Vx, Vy
+
+      4        Id Line 1 Always Appears On Plots In Output Display.
+      5        If Specific Data Type Is "Unknown," ID Line 2 Is
+                  Displayed As Data Type In Output Display.
+      6        Typical Fortran I/O Statements For The Data Sections
+                  Are:
+
+                               Read(Lun,1000)Num
+                               Write
+                      1000 Format (I10)
+                               Read(Lun,1010) (VAL(I),I=1,NDV)
+                               Write
+                      1010 format (6e13.5)
+
+                      Where:     Num Is Node Number
+                                 Val Is Real Or Complex Data  Array
+                                 Ndv Is Number Of Data Values  Per Node
+
+      7         Data Characteristic Values Imply The Following Values
+                  Of Ndv:
+                    Scalar: 1
+                    3 DOF Global Vector: 3
+                    6 DOF Global Vector: 6
+                    Symmetric Global Tensor: 6
+                    General Global Tensor: 9
+
+      8        Data Associated With I-DEAS Test Has The Following
+                  Special Forms of Specific Data Type and ID Line 5.
+
+               For Record 6 Field 4-Specific Data Type, values 0
+               through 12 are as defined above.  13 and 15 through 19 are:
+
+                           13: excitation force
+                           15: pressure
+                           16: mass
+                           17: time
+                           18: frequency
+                           19: rpm
+
+               The form of ID Line 5 is:
+
+               Format (4I10)
+               FIELD 1:  Reference Coordinate Label
+
+               FIELD 2:  Reference Coordinate Direction
+                            1: X Direction
+                           -1: -X Direction
+                            2: Y Direction
+                           -2: -Y Direction
+                            3: Z Direction
+                           -3: -Z Direction
+
+               FIELD 3:  Numerator Signal Code
+                            see Specific Data Type above
+
+               FIELD 4:  Denominator Signal Code
+                            see Specific Data Type above
 
 
+               Also note that the modal mass in record 8 is calculated
+               from the parameter table by I-DEAS Test.
+
+      9        Any Record With All 0.0's Data Entries Need Not (But
+                  May) Appear.
+
+      10       A Direct Result Of 9 Is That If No Records 9 And 10
+                  Appear, All Data For The Data Set Is 0.0.
+
+      11       When New Analysis Types Are Added, Record 7 Fields 1
+                  And 2 Are Always &gt; Or = 1 With Dummy Integer And
+                  Real Zero Data If Data Is Not Required. If Complex
+                  Data Is Needed, It Is Treated As Two Real Numbers,
+                  Real Part Followed By Imaginary Point.
+
+      12       Dataloaders Use The Following ID Line Convention:
+                          1.   (80A1) Model
+                              Identification
+                          2.   (80A1) Run
+                              Identification
+                          3.   (80A1) Run
+                              Date/Time
+                          4.   (80A1) Load Case
+                              Name
+
+                      For Static:
+                          5.   (17h Load Case
+                              Number;, I10) For
+                              Normal Mode:
+                          5.   (10h Mode Same,
+                              I10, 10H Frequency,
+                              E13.5)
+      13       No Maximum Value For Ndv .
+
+      14       Typical Fortran I/O Statements For Processing Records 7
+                  And 8.
+
+                        Read (LUN,1000)NINT,NRVAL,(IPAR(I),I=1,NINT
+                   1000 Format (8I10)
+                        Read (Lun,1010) (RPAV(I),I=1,NRVAL)
+                   1010 Format (6E13.5)
+
+      15       For Situations With Reduced # Dof's, Use 3 DOF
+                  Translations Or 6 DOF Translation And Rotation With
+                  Unused Values = 0.</code></pre>
+
+
+</div>
+</div>
+</div>
+</section>
+<section id="api" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="api"><span class="header-section-number">2</span> API</h2>
+<div class="api">
+<div id="6" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><pre><code class="language-julia">Dataset55</code></pre>
+<p>A struct containing UFF Dataset 55 metadata.</p>
+<p><strong>Fields</strong></p>
+<ul>
+<li><p><code>type::Symbol</code>: Data set type</p>
+</li>
+<li><p><code>id1::String</code>: ID line 1</p>
+</li>
+<li><p><code>id2::String</code>: ID line 2</p>
+</li>
+<li><p><code>id3::String</code>: ID line 3</p>
+</li>
+<li><p><code>id4::String</code>: ID line 4</p>
+</li>
+<li><p><code>id5::String</code>: ID line 5</p>
+</li>
+<li><p><code>model_type::Int</code>: Model type</p>
+</li>
+<li><p><code>analysis_type::Int</code>: Analysis type</p>
+</li>
+<li><p><code>data_charac::Int</code>: Data characterization</p>
+</li>
+<li><p><code>spec_dtype::Int</code>: Specific data type</p>
+</li>
+<li><p><code>dtype::Int</code>: Data type</p>
+</li>
+<li><p><code>ndv_per_node::Int</code>: Number of data values per node</p>
+</li>
+<li><p><code>r7::NamedTuple</code>: Analysis type specific</p>
+</li>
+<li><p><code>r8::NamedTuple</code>: Analysis type specific</p>
+</li>
+<li><p><code>node_number::Vector{Int}</code>: Node numbers</p>
+</li>
+<li><p><code>data::Matrix{Union{Float64, ComplexF64}}</code>: Data values</p>
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -642,13 +1025,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../datasets/dataset18.html" class="pagination-link" aria-label="Dataset 18">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Dataset 18</span>
+      <a href="../datasets/dataset18.html" class="pagination-link" aria-label="Dataset 18 - Coordinate systems">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Dataset 18 - Coordinate systems</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../datasets/dataset58.html" class="pagination-link" aria-label="Dataset 58">
-        <span class="nav-page-text">Dataset 58</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../datasets/dataset58.html" class="pagination-link" aria-label="Dataset 58 - Function at nodal DOF">
+        <span class="nav-page-text">Dataset 58 - Function at nodal DOF</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

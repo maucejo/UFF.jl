@@ -204,6 +204,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#supported-formats" id="toc-supported-formats" class="nav-link active" data-scroll-target="#supported-formats">Supported formats</a></li>
+  <li><a href="#contributing" id="toc-contributing" class="nav-link" data-scroll-target="#contributing">Contributing</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
   <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a></li>
   <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
   </ul>
@@ -265,6 +267,16 @@ Warning
 <li>Dataset 2412</li>
 <li>Dataset 2414</li>
 </ul>
+</section>
+<section id="contributing" class="level2">
+<h2 class="anchored" data-anchor-id="contributing">Contributing</h2>
+<p>Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request on the <a href="https://github.com/maucejo/UFF.jl">GitHub repository</a>.</p>
+<p>To make contributions easier, please provide <code>*.unv</code> or <code>*.uff</code> files that can be used as test cases for the new features or bug fixes.</p>
+</section>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
+<p>The creation of <code>UFF.jl</code> was driven by the need to handle UFF files in Julia for processing the experimental data that I collect during my research activities. This package take some inspiration from two wonderful packages : <a href="https://github.com/pyNastran/puyff">pyuff</a> written in Python and <a href="https://github.com/murmlgrmpf/uff">uff</a> written in Matlab. However, UFF.jl is a completely new development, with its own design choices, which leverages of Julia’s strengths and provides a native solution for handling UFF files in the Julia ecosystem.</p>
+<p>For testing and validate the package, I used several UFF files that are publicly available online, including some provided by <a href="https://github.com/pyNastran/puyff">pyuff</a> and some coming from my own experimental campaigns. For this reason, I would like to thank all the people who made these files available. This also explains why bugs may still be present in the package, as I do not have access to all possible UFF file variations.</p>
 </section>
 <section id="reproducibility" class="level2">
 <h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>

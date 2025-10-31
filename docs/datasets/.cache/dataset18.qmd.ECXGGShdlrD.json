@@ -1,0 +1,121 @@
+{
+    "cells": [
+        {
+            "id": "1",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "---\n",
+                "title: Dataset 18 - Coordinate systems\n",
+                "format:\n",
+                "  html:\n",
+                "    toc: true\n",
+                "    number-sections: true\n",
+                "engine: julia\n",
+                "execute:\n",
+                "  freeze: auto\n",
+                "  cache: true\n",
+                "---"
+            ]
+        },
+        {
+            "id": "2",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "#| output: false\n",
+                "using UFF"
+            ],
+            "outputs": [
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "3",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "\n",
+                "## Dataset description"
+            ]
+        },
+        {
+            "id": "4",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "@doc UFF.parse_dataset18"
+            ],
+            "outputs": [
+                {
+                    "output_type": "execute_result",
+                    "execution_count": 1,
+                    "data": {
+                        "text/plain": "  Universal Dataset Number: 18\n\n  \u001b[1mName: Coordinate Systems\u001b[22m\n\n  \u001b[36m        Record 1: FORMAT(5I10)\u001b[39m\n  \u001b[36m             Field 1       -- coordinate system number\u001b[39m\n  \u001b[36m             Field 2       -- coordinate system type\u001b[39m\n  \u001b[36m             Field 3       -- reference coordinate system number\u001b[39m\n  \u001b[36m             Field 4       -- color\u001b[39m\n  \u001b[36m             Field 5       -- method of definition\u001b[39m\n  \u001b[36m                           = 1 - origin, +x axis, +xz plane\u001b[39m\n  \n  \u001b[36m        Record 2: FORMAT(20A2)\u001b[39m\n  \u001b[36m             Field 1       -- coordinate system name\u001b[39m\n  \n  \u001b[36m        Record 3: FORMAT(1P6E13.5)\u001b[39m\n  \u001b[36m             Total of 9 coordinate system definition parameters.\u001b[39m\n  \u001b[36m             Fields 1-3    -- origin of new system specified in\u001b[39m\n  \u001b[36m                              reference system\u001b[39m\n  \u001b[36m             Fields 4-6    -- point on +x axis of the new system\u001b[39m\n  \u001b[36m                              specified in reference system\u001b[39m\n  \u001b[36m             Fields 7-9    -- point on +xz plane of the new system\u001b[39m\n  \u001b[36m                              specified in reference system\u001b[39m\n\n  Records 1 thru 3 are repeated for each coordinate system in the model.",
+                        "text/markdown": "Universal Dataset Number: 18\n\n**Name:   Coordinate Systems**\n\n```julia\n        Record 1: FORMAT(5I10)\n             Field 1       -- coordinate system number\n             Field 2       -- coordinate system type\n             Field 3       -- reference coordinate system number\n             Field 4       -- color\n             Field 5       -- method of definition\n                           = 1 - origin, +x axis, +xz plane\n\n        Record 2: FORMAT(20A2)\n             Field 1       -- coordinate system name\n\n        Record 3: FORMAT(1P6E13.5)\n             Total of 9 coordinate system definition parameters.\n             Fields 1-3    -- origin of new system specified in\n                              reference system\n             Fields 4-6    -- point on +x axis of the new system\n                              specified in reference system\n             Fields 7-9    -- point on +xz plane of the new system\n                              specified in reference system\n```\n\nRecords 1 thru 3 are repeated for each coordinate system in the model.\n",
+                        "text/html": "<div class=\"markdown\"><p>Universal Dataset Number: 18</p>\n<p><strong>Name:   Coordinate Systems</strong></p>\n<pre><code class=\"language-julia\">        Record 1: FORMAT&#40;5I10&#41;\n             Field 1       -- coordinate system number\n             Field 2       -- coordinate system type\n             Field 3       -- reference coordinate system number\n             Field 4       -- color\n             Field 5       -- method of definition\n                           &#61; 1 - origin, &#43;x axis, &#43;xz plane\n\n        Record 2: FORMAT&#40;20A2&#41;\n             Field 1       -- coordinate system name\n\n        Record 3: FORMAT&#40;1P6E13.5&#41;\n             Total of 9 coordinate system definition parameters.\n             Fields 1-3    -- origin of new system specified in\n                              reference system\n             Fields 4-6    -- point on &#43;x axis of the new system\n                              specified in reference system\n             Fields 7-9    -- point on &#43;xz plane of the new system\n                              specified in reference system</code></pre>\n<p>Records 1 thru 3 are repeated for each coordinate system in the model.</p>\n\n\n</div>",
+                        "text/latex": "Universal Dataset Number: 18\n\n\\textbf{Name:   Coordinate Systems}\n\n\\begin{verbatim}\n        Record 1: FORMAT(5I10)\n             Field 1       -- coordinate system number\n             Field 2       -- coordinate system type\n             Field 3       -- reference coordinate system number\n             Field 4       -- color\n             Field 5       -- method of definition\n                           = 1 - origin, +x axis, +xz plane\n\n        Record 2: FORMAT(20A2)\n             Field 1       -- coordinate system name\n\n        Record 3: FORMAT(1P6E13.5)\n             Total of 9 coordinate system definition parameters.\n             Fields 1-3    -- origin of new system specified in\n                              reference system\n             Fields 4-6    -- point on +x axis of the new system\n                              specified in reference system\n             Fields 7-9    -- point on +xz plane of the new system\n                              specified in reference system\n\\end{verbatim}\nRecords 1 thru 3 are repeated for each coordinate system in the model.\n\n"
+                    },
+                    "metadata": {
+                    }
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "5",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "\n",
+                "## API\n",
+                "\n",
+                "::: {.api}"
+            ]
+        },
+        {
+            "id": "6",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "@doc Dataset18"
+            ],
+            "outputs": [
+                {
+                    "output_type": "execute_result",
+                    "execution_count": 1,
+                    "data": {
+                        "text/plain": "  \u001b[36mDataset18\u001b[39m\n\n  A struct containing UFF Dataset 18 metadata.\n\n  \u001b[1mFields\u001b[22m\n\n    \u001b[34m• \u001b[39m \u001b[36mtype::Symbol\u001b[39m: Data set type\n    \u001b[34m• \u001b[39m \u001b[36mcs_num::Int\u001b[39m: Coordinate system number\n    \u001b[34m• \u001b[39m \u001b[36mcs_type::Int\u001b[39m: Coordinate system type\n    \u001b[34m• \u001b[39m \u001b[36mref_cs_num::Int\u001b[39m: Reference coordinate system number\n    \u001b[34m• \u001b[39m \u001b[36mcolor::Int\u001b[39m: Color\n    \u001b[34m• \u001b[39m \u001b[36mmethod_def::Int\u001b[39m: Method of definition\n    \u001b[34m• \u001b[39m \u001b[36mcs_name::String\u001b[39m: Coordinate system name\n    \u001b[34m• \u001b[39m \u001b[36mcs_origin::Vector{Float64}\u001b[39m: Origin of new system specified in\n       reference system\n    \u001b[34m• \u001b[39m \u001b[36mcs_x::Vector{Float64}\u001b[39m: Point on +x axis of the new system\n       specified in reference system\n    \u001b[34m• \u001b[39m \u001b[36mcs_xz::Vector{Float64}\u001b[39m: Point on +xz plane of the new system\n       specified in reference system",
+                        "text/markdown": "```julia\nDataset18\n```\n\nA struct containing UFF Dataset 18 metadata.\n\n**Fields**\n\n  * `type::Symbol`: Data set type\n  * `cs_num::Int`: Coordinate system number\n  * `cs_type::Int`: Coordinate system type\n  * `ref_cs_num::Int`: Reference coordinate system number\n  * `color::Int`: Color\n  * `method_def::Int`: Method of definition\n  * `cs_name::String`: Coordinate system name\n  * `cs_origin::Vector{Float64}`: Origin of new system specified in reference system\n  * `cs_x::Vector{Float64}`: Point on +x axis of the new system specified in reference system\n  * `cs_xz::Vector{Float64}`: Point on +xz plane of the new system specified in reference system\n",
+                        "text/html": "<div class=\"markdown\"><pre><code class=\"language-julia\">Dataset18</code></pre>\n<p>A struct containing UFF Dataset 18 metadata.</p>\n<p><strong>Fields</strong></p>\n<ul>\n<li><p><code>type::Symbol</code>: Data set type</p>\n</li>\n<li><p><code>cs_num::Int</code>: Coordinate system number</p>\n</li>\n<li><p><code>cs_type::Int</code>: Coordinate system type</p>\n</li>\n<li><p><code>ref_cs_num::Int</code>: Reference coordinate system number</p>\n</li>\n<li><p><code>color::Int</code>: Color</p>\n</li>\n<li><p><code>method_def::Int</code>: Method of definition</p>\n</li>\n<li><p><code>cs_name::String</code>: Coordinate system name</p>\n</li>\n<li><p><code>cs_origin::Vector&#123;Float64&#125;</code>: Origin of new system specified in reference system</p>\n</li>\n<li><p><code>cs_x::Vector&#123;Float64&#125;</code>: Point on &#43;x axis of the new system specified in reference system</p>\n</li>\n<li><p><code>cs_xz::Vector&#123;Float64&#125;</code>: Point on &#43;xz plane of the new system specified in reference system</p>\n</li>\n</ul>\n\n\n</div>",
+                        "text/latex": "\\begin{verbatim}\nDataset18\n\\end{verbatim}\nA struct containing UFF Dataset 18 metadata.\n\n\\textbf{Fields}\n\n\\begin{itemize}\n\\item \\texttt{type::Symbol}: Data set type\n\n\n\\item \\texttt{cs\\_num::Int}: Coordinate system number\n\n\n\\item \\texttt{cs\\_type::Int}: Coordinate system type\n\n\n\\item \\texttt{ref\\_cs\\_num::Int}: Reference coordinate system number\n\n\n\\item \\texttt{color::Int}: Color\n\n\n\\item \\texttt{method\\_def::Int}: Method of definition\n\n\n\\item \\texttt{cs\\_name::String}: Coordinate system name\n\n\n\\item \\texttt{cs\\_origin::Vector\\{Float64\\}}: Origin of new system specified in reference system\n\n\n\\item \\texttt{cs\\_x::Vector\\{Float64\\}}: Point on +x axis of the new system specified in reference system\n\n\n\\item \\texttt{cs\\_xz::Vector\\{Float64\\}}: Point on +xz plane of the new system specified in reference system\n\n\\end{itemize}\n"
+                    },
+                    "metadata": {
+                    }
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "7",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                ":::"
+            ]
+        }
+    ],
+    "timestamp": "2025-10-31T10:39:05.143",
+    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFF/docs/datasets/dataset18.qmd",
+    "qnr_schema_version": "1.0.0"
+}

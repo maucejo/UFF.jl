@@ -1,8 +1,7 @@
 """
 Universal Dataset Number: 58
 
-Name:   Function at Nodal DOF
------------------------------------------------------------------------
+**Name:   Function at Nodal DOF**
 
          Record 1:     Format(80A1)
                        Field 1    - ID Line 1
@@ -339,9 +338,9 @@ Name:   Function at Nodal DOF
                        .
                        .   continued processing
                        .
- 
+
            Output
- 
+
                      REAL Y(6)
                        .
                        .
@@ -706,8 +705,6 @@ Name:   Function at Nodal DOF
                        .
                        .   continued processing
                        .
-
------------------------------------------------------------------------
 """
 function parse_dataset58(block)
     id1 = strip(block[2])

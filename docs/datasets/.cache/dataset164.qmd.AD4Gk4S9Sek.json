@@ -1,0 +1,121 @@
+{
+    "cells": [
+        {
+            "id": "1",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "---\n",
+                "title: Dataset 164 - Units\n",
+                "format:\n",
+                "  html:\n",
+                "    toc: true\n",
+                "    number-sections: true\n",
+                "engine: julia\n",
+                "execute:\n",
+                "  freeze: auto\n",
+                "  cache: true\n",
+                "---"
+            ]
+        },
+        {
+            "id": "2",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "#| output: false\n",
+                "using UFF"
+            ],
+            "outputs": [
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "3",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "\n",
+                "## Dataset description"
+            ]
+        },
+        {
+            "id": "4",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "@doc UFF.parse_dataset164"
+            ],
+            "outputs": [
+                {
+                    "output_type": "execute_result",
+                    "execution_count": 1,
+                    "data": {
+                        "text/plain": "  Universal Dataset Number: 164\n\n  \u001b[1mName: Units\u001b[22m\n\n  \u001b[36mRecord 1: FORMAT(I10,20A1,I10)\u001b[39m\n  \u001b[36m            Field 1      -- units code\u001b[39m\n  \u001b[36m                            = 1 - SI: Meter (newton)\u001b[39m\n  \u001b[36m                            = 2 - BG: Foot (pound f)\u001b[39m\n  \u001b[36m                            = 3 - MG: Meter (kilogram f)\u001b[39m\n  \u001b[36m                            = 4 - BA: Foot (poundal)\u001b[39m\n  \u001b[36m                            = 5 - MM: mm (milli newton)\u001b[39m\n  \u001b[36m                            = 6 - CM: cm (centi newton)\u001b[39m\n  \u001b[36m                            = 7 - IN: Inch (pound f)\u001b[39m\n  \u001b[36m                            = 8 - GM: mm (kilogram f)\u001b[39m\n  \u001b[36m                            = 9 - US: USER_DEFINED\u001b[39m\n  \u001b[36m            Field 2      -- units description (used for\u001b[39m\n  \u001b[36m                            documentation only)\u001b[39m\n  \u001b[36m            Field 3      -- temperature mode\u001b[39m\n  \u001b[36m                            = 1 - absolute\u001b[39m\n  \u001b[36m                            = 2 - relative\u001b[39m\n  \n  \u001b[36mRecord 2: FORMAT(3D25.17)\u001b[39m\n  \u001b[36m            Unit factors for converting universal file units to SI.\u001b[39m\n  \u001b[36m            To convert from universal file units to SI divide by\u001b[39m\n  \u001b[36m            the appropriate factor listed below.\u001b[39m\n  \u001b[36m            Field 1      -- length\u001b[39m\n  \u001b[36m            Field 2      -- force\u001b[39m\n  \u001b[36m            Field 3      -- temperature\u001b[39m\n  \u001b[36m            Field 4      -- temperature offset\u001b[39m",
+                        "text/markdown": "Universal Dataset Number: 164\n\n**Name:   Units**\n\n```julia\nRecord 1: FORMAT(I10,20A1,I10)\n            Field 1      -- units code\n                            = 1 - SI: Meter (newton)\n                            = 2 - BG: Foot (pound f)\n                            = 3 - MG: Meter (kilogram f)\n                            = 4 - BA: Foot (poundal)\n                            = 5 - MM: mm (milli newton)\n                            = 6 - CM: cm (centi newton)\n                            = 7 - IN: Inch (pound f)\n                            = 8 - GM: mm (kilogram f)\n                            = 9 - US: USER_DEFINED\n            Field 2      -- units description (used for\n                            documentation only)\n            Field 3      -- temperature mode\n                            = 1 - absolute\n                            = 2 - relative\n\nRecord 2: FORMAT(3D25.17)\n            Unit factors for converting universal file units to SI.\n            To convert from universal file units to SI divide by\n            the appropriate factor listed below.\n            Field 1      -- length\n            Field 2      -- force\n            Field 3      -- temperature\n            Field 4      -- temperature offset\n```\n",
+                        "text/html": "<div class=\"markdown\"><p>Universal Dataset Number: 164</p>\n<p><strong>Name:   Units</strong></p>\n<pre><code class=\"language-julia\">Record 1: FORMAT&#40;I10,20A1,I10&#41;\n            Field 1      -- units code\n                            &#61; 1 - SI: Meter &#40;newton&#41;\n                            &#61; 2 - BG: Foot &#40;pound f&#41;\n                            &#61; 3 - MG: Meter &#40;kilogram f&#41;\n                            &#61; 4 - BA: Foot &#40;poundal&#41;\n                            &#61; 5 - MM: mm &#40;milli newton&#41;\n                            &#61; 6 - CM: cm &#40;centi newton&#41;\n                            &#61; 7 - IN: Inch &#40;pound f&#41;\n                            &#61; 8 - GM: mm &#40;kilogram f&#41;\n                            &#61; 9 - US: USER_DEFINED\n            Field 2      -- units description &#40;used for\n                            documentation only&#41;\n            Field 3      -- temperature mode\n                            &#61; 1 - absolute\n                            &#61; 2 - relative\n\nRecord 2: FORMAT&#40;3D25.17&#41;\n            Unit factors for converting universal file units to SI.\n            To convert from universal file units to SI divide by\n            the appropriate factor listed below.\n            Field 1      -- length\n            Field 2      -- force\n            Field 3      -- temperature\n            Field 4      -- temperature offset</code></pre>\n\n\n</div>",
+                        "text/latex": "Universal Dataset Number: 164\n\n\\textbf{Name:   Units}\n\n\\begin{verbatim}\nRecord 1: FORMAT(I10,20A1,I10)\n            Field 1      -- units code\n                            = 1 - SI: Meter (newton)\n                            = 2 - BG: Foot (pound f)\n                            = 3 - MG: Meter (kilogram f)\n                            = 4 - BA: Foot (poundal)\n                            = 5 - MM: mm (milli newton)\n                            = 6 - CM: cm (centi newton)\n                            = 7 - IN: Inch (pound f)\n                            = 8 - GM: mm (kilogram f)\n                            = 9 - US: USER_DEFINED\n            Field 2      -- units description (used for\n                            documentation only)\n            Field 3      -- temperature mode\n                            = 1 - absolute\n                            = 2 - relative\n\nRecord 2: FORMAT(3D25.17)\n            Unit factors for converting universal file units to SI.\n            To convert from universal file units to SI divide by\n            the appropriate factor listed below.\n            Field 1      -- length\n            Field 2      -- force\n            Field 3      -- temperature\n            Field 4      -- temperature offset\n\\end{verbatim}\n"
+                    },
+                    "metadata": {
+                    }
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "5",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "\n",
+                "## API\n",
+                "\n",
+                "::: {.api}"
+            ]
+        },
+        {
+            "id": "6",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "@doc Dataset164"
+            ],
+            "outputs": [
+                {
+                    "output_type": "execute_result",
+                    "execution_count": 1,
+                    "data": {
+                        "text/plain": "  \u001b[36mDataset164\u001b[39m\n\n  A struct containing UFF Dataset 164 metadata.\n\n  \u001b[1mFields\u001b[22m\n\n    \u001b[34m• \u001b[39m \u001b[36mtype::Symbol\u001b[39m: Data set type\n    \u001b[34m• \u001b[39m \u001b[36munits::Int\u001b[39m: Units code\n    \u001b[34m• \u001b[39m \u001b[36mdescription::String\u001b[39m: Units description\n    \u001b[34m• \u001b[39m \u001b[36mtemperature_mode::Int\u001b[39m: Temperature mode\n    \u001b[34m• \u001b[39m \u001b[36mconversion_factor::Vector{Float64}\u001b[39m: Units factors for converting\n       to SI units",
+                        "text/markdown": "```julia\nDataset164\n```\n\nA struct containing UFF Dataset 164 metadata.\n\n**Fields**\n\n  * `type::Symbol`: Data set type\n  * `units::Int`: Units code\n  * `description::String`: Units description\n  * `temperature_mode::Int`: Temperature mode\n  * `conversion_factor::Vector{Float64}`: Units factors for converting to SI units\n",
+                        "text/html": "<div class=\"markdown\"><pre><code class=\"language-julia\">Dataset164</code></pre>\n<p>A struct containing UFF Dataset 164 metadata.</p>\n<p><strong>Fields</strong></p>\n<ul>\n<li><p><code>type::Symbol</code>: Data set type</p>\n</li>\n<li><p><code>units::Int</code>: Units code</p>\n</li>\n<li><p><code>description::String</code>: Units description</p>\n</li>\n<li><p><code>temperature_mode::Int</code>: Temperature mode</p>\n</li>\n<li><p><code>conversion_factor::Vector&#123;Float64&#125;</code>: Units factors for converting to SI units</p>\n</li>\n</ul>\n\n\n</div>",
+                        "text/latex": "\\begin{verbatim}\nDataset164\n\\end{verbatim}\nA struct containing UFF Dataset 164 metadata.\n\n\\textbf{Fields}\n\n\\begin{itemize}\n\\item \\texttt{type::Symbol}: Data set type\n\n\n\\item \\texttt{units::Int}: Units code\n\n\n\\item \\texttt{description::String}: Units description\n\n\n\\item \\texttt{temperature\\_mode::Int}: Temperature mode\n\n\n\\item \\texttt{conversion\\_factor::Vector\\{Float64\\}}: Units factors for converting to SI units\n\n\\end{itemize}\n"
+                    },
+                    "metadata": {
+                    }
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "7",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                ":::"
+            ]
+        }
+    ],
+    "timestamp": "2025-10-31T10:39:36.351",
+    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFF/docs/datasets/dataset164.qmd",
+    "qnr_schema_version": "1.0.0"
+}

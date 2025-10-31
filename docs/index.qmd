@@ -37,6 +37,19 @@ Currently, `UFF.jl` supports reading UFF files with the following blocks:
 * Dataset 2412
 * Dataset 2414
 
+## Contributing
+
+Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/maucejo/UFF.jl).
+
+To make contributions easier, please provide `*.unv` or `*.uff` files that can be used as test cases for the new features or bug fixes.
+
+## Acknowledgements
+
+The creation of `UFF.jl` was driven by the need to handle UFF files in Julia for processing the experimental data that I collect during my research activities.
+This package take some inspiration from two wonderful packages : [pyuff](https://github.com/pyNastran/puyff) written in Python and [uff](https://github.com/murmlgrmpf/uff) written in Matlab. However, UFF.jl is a completely new development, with its own design choices, which leverages of Julia's strengths and provides a native solution for handling UFF files in the Julia ecosystem.
+
+For testing and validate the package, I used several UFF files that are publicly available online, including some provided by [pyuff](https://github.com/pyNastran/puyff) and some coming from my own experimental campaigns. For this reason, I would like to thank all the people who made these files available. This also explains why bugs may still be present in the package, as I do not have access to all possible UFF file variations.
+
 ## Reproducibility
 
 ::: {.callout-note collapse=true appearance="simple" icon=false}

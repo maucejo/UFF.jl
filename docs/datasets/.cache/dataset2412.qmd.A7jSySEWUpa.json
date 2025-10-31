@@ -1,0 +1,126 @@
+{
+    "cells": [
+        {
+            "id": "1",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "---\n",
+                "title: Dataset 2412 - Elements\n",
+                "format:\n",
+                "  html:\n",
+                "    toc: true\n",
+                "    number-sections: true\n",
+                "engine: julia\n",
+                "execute:\n",
+                "  freeze: auto\n",
+                "  cache: true\n",
+                "---"
+            ]
+        },
+        {
+            "id": "2",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "#| output: false\n",
+                "using UFF"
+            ],
+            "outputs": [
+                {
+                    "output_type": "stream",
+                    "name": "stdout",
+                    "text": "\u001b[32m\u001b[1mPrecompiling\u001b[22m\u001b[39m packages...\n    297.7 ms\u001b[32m  ✓ \u001b[39mUFF\n  1 dependency successfully precompiled in 0 seconds. 27 already precompiled.\n"
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "3",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "\n",
+                "## Dataset description"
+            ]
+        },
+        {
+            "id": "4",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "@doc UFF.parse_dataset2412"
+            ],
+            "outputs": [
+                {
+                    "output_type": "execute_result",
+                    "execution_count": 1,
+                    "data": {
+                        "text/plain": "  Universal Dataset Number: 2412\n\n  \u001b[1mName: Elements\u001b[22m\n\n  \u001b[36mRecord 1: FORMAT(6I10)\u001b[39m\n  \u001b[36m             Field 1       -- element label\u001b[39m\n  \u001b[36m             Field 2       -- fe descriptor id\u001b[39m\n  \u001b[36m             Field 3       -- physical property table number\u001b[39m\n  \u001b[36m             Field 4       -- material property table number\u001b[39m\n  \u001b[36m             Field 5       -- color\u001b[39m\n  \u001b[36m             Field 6       -- number of nodes on element\u001b[39m\n  \n  \u001b[36mRecord 2:  *** FOR NON-BEAM ELEMENTS ***\u001b[39m\n  \u001b[36m             FORMAT(8I10)\u001b[39m\n  \u001b[36m             Fields 1-n    -- node labels defining element\u001b[39m\n  \n  \u001b[36mRecord 2:  *** FOR BEAM ELEMENTS ONLY ***\u001b[39m\n  \u001b[36m             FORMAT(3I10)\u001b[39m\n  \u001b[36m             Field 1       -- beam orientation node number\u001b[39m\n  \u001b[36m             Field 2       -- beam fore-end cross section number\u001b[39m\n  \u001b[36m             Field 3       -- beam  aft-end cross section number\u001b[39m\n  \n  \u001b[36mRecord 3:  *** FOR BEAM ELEMENTS ONLY ***\u001b[39m\n  \u001b[36m             FORMAT(8I10)\u001b[39m\n  \u001b[36m             Fields 1-n    -- node labels defining element\u001b[39m\n  \n  \u001b[36mRecords 1 and 2 are repeated for each non-beam element in the model.\u001b[39m\n  \u001b[36mRecords 1 - 3 are repeated for each beam element in the model.\u001b[39m\n  \n  \u001b[36mFE Descriptor Id\u001b[39m\n\n  \u001b[90m────────────────────────────────────────────────────────────────────────────\u001b[39m\n\n  \u001b[36m11 Rod\u001b[39m\n  \n  \u001b[36m21 Linear beam\u001b[39m\n  \n  \u001b[36m22 Tapered beam\u001b[39m\n  \n  \u001b[36m23 Curved beam\u001b[39m\n  \n  \u001b[36m24 Parabolic beam\u001b[39m\n  \n  \u001b[36m31 Straight pipe\u001b[39m\n  \n  \u001b[36m32 Curved pipe\u001b[39m\n  \n  \u001b[36m41 Plane Stress Linear Triangle\u001b[39m\n  \n  \u001b[36m42 Plane Stress Parabolic Triangle\u001b[39m\n  \n  \u001b[36m43 Plane Stress Cubic Triangle\u001b[39m\n  \n  \u001b[36m44 Plane Stress Linear Quadrilateral\u001b[39m\n  \n  \u001b[36m45 Plane Stress Parabolic Quadrilateral\u001b[39m\n  \n  \u001b[36m46 Plane Strain Cubic Quadrilateral\u001b[39m\n  \n  \u001b[36m51 Plane Strain Linear Triangle\u001b[39m\n  \n  \u001b[36m52 Plane Strain Parabolic Triangle\u001b[39m\n  \n  \u001b[36m53 Plane Strain Cubic Triangle\u001b[39m\n  \n  \u001b[36m54 Plane Strain Linear Quadrilateral\u001b[39m\n  \n  \u001b[36m55 Plane Strain Parabolic Quadrilateral\u001b[39m\n  \n  \u001b[36m56 Plane Strain Cubic Quadrilateral\u001b[39m\n  \n  \u001b[36m61 Plate Linear Triangle\u001b[39m\n  \n  \u001b[36m62 Plate Parabolic Triangle\u001b[39m\n  \n  \u001b[36m63 Plate Cubic Triangle\u001b[39m\n  \n  \u001b[36m64 Plate Linear Quadrilateral\u001b[39m\n  \n  \u001b[36m65 Plate Parabolic Quadrilateral\u001b[39m\n  \n  \u001b[36m66 Plate Cubic Quadrilateral\u001b[39m\n  \n  \u001b[36m71 Membrane Linear Quadrilateral\u001b[39m\n  \n  \u001b[36m72 Membrane Parabolic Triangle\u001b[39m\n  \n  \u001b[36m73 Membrane Cubic Triangle\u001b[39m\n  \n  \u001b[36m74 Membrane Linear Triangle\u001b[39m\n  \n  \u001b[36m75 Membrane Parabolic Quadrilateral\u001b[39m\n  \n  \u001b[36m76 Membrane Cubic Quadrilateral\u001b[39m\n  \n  \u001b[36m81 Axisymetric Solid Linear Triangle\u001b[39m\n  \n  \u001b[36m82 Axisymetric Solid Parabolic Triangle\u001b[39m\n  \n  \u001b[36m84 Axisymetric Solid Linear Quadrilateral\u001b[39m\n  \n  \u001b[36m85 Axisymetric Solid Parabolic Quadrilateral\u001b[39m\n  \n  \u001b[36m91 Thin Shell Linear Triangle\u001b[39m\n  \n  \u001b[36m92 Thin Shell Parabolic Triangle\u001b[39m\n  \n  \u001b[36m93 Thin Shell Cubic Triangle\u001b[39m\n  \n  \u001b[36m94 Thin Shell Linear Quadrilateral\u001b[39m\n  \n  \u001b[36m95 Thin Shell Parabolic Quadrilateral\u001b[39m\n  \n  \u001b[36m96 Thin Shell Cubic Quadrilateral\u001b[39m\n  \n  \u001b[36m101 Thick Shell Linear Wedge\u001b[39m\n  \n  \u001b[36m102 Thick Shell Parabolic Wedge\u001b[39m\n  \n  \u001b[36m103 Thick Shell Cubic Wedge\u001b[39m\n  \n  \u001b[36m104 Thick Shell Linear Brick\u001b[39m\n  \n  \u001b[36m105 Thick Shell Parabolic Brick\u001b[39m\n  \n  \u001b[36m106 Thick Shell Cubic Brick\u001b[39m\n  \n  \u001b[36m111 Solid Linear Tetrahedron\u001b[39m\n  \n  \u001b[36m112 Solid Linear Wedge\u001b[39m\n  \n  \u001b[36m113 Solid Parabolic Wedge\u001b[39m\n  \n  \u001b[36m114 Solid Cubic Wedge\u001b[39m\n  \n  \u001b[36m115 Solid Linear Brick\u001b[39m\n  \n  \u001b[36m116 Solid Parabolic Brick\u001b[39m\n  \n  \u001b[36m117 Solid Cubic Brick\u001b[39m\n  \n  \u001b[36m118 Solid Parabolic Tetrahedron\u001b[39m\n  \n  \u001b[36m121 Rigid Bar\u001b[39m\n  \n  \u001b[36m122 Rigid Element\u001b[39m\n  \n  \u001b[36m136 Node To Node Translational Spring\u001b[39m\n  \n  \u001b[36m137 Node To Node Rotational Spring\u001b[39m\n  \n  \u001b[36m138 Node To Ground Translational Spring\u001b[39m\n  \n  \u001b[36m139 Node To Ground Rotational Spring\u001b[39m\n  \n  \u001b[36m141 Node To Node Damper\u001b[39m\n  \n  \u001b[36m142 Node To Ground Damper\u001b[39m\n  \n  \u001b[36m151 Node To Node Gap\u001b[39m\n  \n  \u001b[36m152 Node To Ground Gap\u001b[39m\n  \n  \u001b[36m161 Lumped Mass\u001b[39m\n  \n  \u001b[36m171 Axisymetric Linear Shell\u001b[39m\n  \n  \u001b[36m172 Axisymetric Parabolic Shell\u001b[39m\n  \n  \u001b[36m181 Constraint\u001b[39m\n  \n  \u001b[36m191 Plastic Cold Runner\u001b[39m\n  \n  \u001b[36m192 Plastic Hot Runner\u001b[39m\n  \n  \u001b[36m193 Plastic Water Line\u001b[39m\n  \n  \u001b[36m194 Plastic Fountain\u001b[39m\n  \n  \u001b[36m195 Plastic Baffle\u001b[39m\n  \n  \u001b[36m196 Plastic Rod Heater\u001b[39m\n  \n  \u001b[36m201 Linear node-to-node interface\u001b[39m\n  \n  \u001b[36m202 Linear edge-to-edge interface\u001b[39m\n  \n  \u001b[36m203 Parabolic edge-to-edge interface\u001b[39m\n  \n  \u001b[36m204 Linear face-to-face interface\u001b[39m\n  \n  \u001b[36m208 Parabolic face-to-face interface\u001b[39m\n  \n  \u001b[36m212 Linear axisymmetric interface\u001b[39m\n  \n  \u001b[36m213 Parabolic axisymmetric interface\u001b[39m\n  \n  \u001b[36m221 Linear rigid surface\u001b[39m\n  \n  \u001b[36m222 Parabolic rigin surface\u001b[39m\n  \n  \u001b[36m231 Axisymmetric linear rigid surface\u001b[39m\n  \n  \u001b[36m232 Axisymmetric parabolic rigid surface\u001b[39m",
+                        "text/markdown": "Universal Dataset Number: 2412\n\n**Name:   Elements**\n\n```julia\nRecord 1: FORMAT(6I10)\n             Field 1       -- element label\n             Field 2       -- fe descriptor id\n             Field 3       -- physical property table number\n             Field 4       -- material property table number\n             Field 5       -- color\n             Field 6       -- number of nodes on element\n\nRecord 2:  *** FOR NON-BEAM ELEMENTS ***\n             FORMAT(8I10)\n             Fields 1-n    -- node labels defining element\n\nRecord 2:  *** FOR BEAM ELEMENTS ONLY ***\n             FORMAT(3I10)\n             Field 1       -- beam orientation node number\n             Field 2       -- beam fore-end cross section number\n             Field 3       -- beam  aft-end cross section number\n\nRecord 3:  *** FOR BEAM ELEMENTS ONLY ***\n             FORMAT(8I10)\n             Fields 1-n    -- node labels defining element\n\nRecords 1 and 2 are repeated for each non-beam element in the model.\nRecords 1 - 3 are repeated for each beam element in the model.\n\nFE Descriptor Id\n```\n\n---\n\n```julia\n11 Rod\n\n21 Linear beam\n\n22 Tapered beam\n\n23 Curved beam\n\n24 Parabolic beam\n\n31 Straight pipe\n\n32 Curved pipe\n\n41 Plane Stress Linear Triangle\n\n42 Plane Stress Parabolic Triangle\n\n43 Plane Stress Cubic Triangle\n\n44 Plane Stress Linear Quadrilateral\n\n45 Plane Stress Parabolic Quadrilateral\n\n46 Plane Strain Cubic Quadrilateral\n\n51 Plane Strain Linear Triangle\n\n52 Plane Strain Parabolic Triangle\n\n53 Plane Strain Cubic Triangle\n\n54 Plane Strain Linear Quadrilateral\n\n55 Plane Strain Parabolic Quadrilateral\n\n56 Plane Strain Cubic Quadrilateral\n\n61 Plate Linear Triangle\n\n62 Plate Parabolic Triangle\n\n63 Plate Cubic Triangle\n\n64 Plate Linear Quadrilateral\n\n65 Plate Parabolic Quadrilateral\n\n66 Plate Cubic Quadrilateral\n\n71 Membrane Linear Quadrilateral\n\n72 Membrane Parabolic Triangle\n\n73 Membrane Cubic Triangle\n\n74 Membrane Linear Triangle\n\n75 Membrane Parabolic Quadrilateral\n\n76 Membrane Cubic Quadrilateral\n\n81 Axisymetric Solid Linear Triangle\n\n82 Axisymetric Solid Parabolic Triangle\n\n84 Axisymetric Solid Linear Quadrilateral\n\n85 Axisymetric Solid Parabolic Quadrilateral\n\n91 Thin Shell Linear Triangle\n\n92 Thin Shell Parabolic Triangle\n\n93 Thin Shell Cubic Triangle\n\n94 Thin Shell Linear Quadrilateral\n\n95 Thin Shell Parabolic Quadrilateral\n\n96 Thin Shell Cubic Quadrilateral\n\n101 Thick Shell Linear Wedge\n\n102 Thick Shell Parabolic Wedge\n\n103 Thick Shell Cubic Wedge\n\n104 Thick Shell Linear Brick\n\n105 Thick Shell Parabolic Brick\n\n106 Thick Shell Cubic Brick\n\n111 Solid Linear Tetrahedron\n\n112 Solid Linear Wedge\n\n113 Solid Parabolic Wedge\n\n114 Solid Cubic Wedge\n\n115 Solid Linear Brick\n\n116 Solid Parabolic Brick\n\n117 Solid Cubic Brick\n\n118 Solid Parabolic Tetrahedron\n\n121 Rigid Bar\n\n122 Rigid Element\n\n136 Node To Node Translational Spring\n\n137 Node To Node Rotational Spring\n\n138 Node To Ground Translational Spring\n\n139 Node To Ground Rotational Spring\n\n141 Node To Node Damper\n\n142 Node To Ground Damper\n\n151 Node To Node Gap\n\n152 Node To Ground Gap\n\n161 Lumped Mass\n\n171 Axisymetric Linear Shell\n\n172 Axisymetric Parabolic Shell\n\n181 Constraint\n\n191 Plastic Cold Runner\n\n192 Plastic Hot Runner\n\n193 Plastic Water Line\n\n194 Plastic Fountain\n\n195 Plastic Baffle\n\n196 Plastic Rod Heater\n\n201 Linear node-to-node interface\n\n202 Linear edge-to-edge interface\n\n203 Parabolic edge-to-edge interface\n\n204 Linear face-to-face interface\n\n208 Parabolic face-to-face interface\n\n212 Linear axisymmetric interface\n\n213 Parabolic axisymmetric interface\n\n221 Linear rigid surface\n\n222 Parabolic rigin surface\n\n231 Axisymmetric linear rigid surface\n\n232 Axisymmetric parabolic rigid surface\n```\n",
+                        "text/html": "<div class=\"markdown\"><p>Universal Dataset Number: 2412</p>\n<p><strong>Name:   Elements</strong></p>\n<pre><code class=\"language-julia\">Record 1: FORMAT&#40;6I10&#41;\n             Field 1       -- element label\n             Field 2       -- fe descriptor id\n             Field 3       -- physical property table number\n             Field 4       -- material property table number\n             Field 5       -- color\n             Field 6       -- number of nodes on element\n\nRecord 2:  *** FOR NON-BEAM ELEMENTS ***\n             FORMAT&#40;8I10&#41;\n             Fields 1-n    -- node labels defining element\n\nRecord 2:  *** FOR BEAM ELEMENTS ONLY ***\n             FORMAT&#40;3I10&#41;\n             Field 1       -- beam orientation node number\n             Field 2       -- beam fore-end cross section number\n             Field 3       -- beam  aft-end cross section number\n\nRecord 3:  *** FOR BEAM ELEMENTS ONLY ***\n             FORMAT&#40;8I10&#41;\n             Fields 1-n    -- node labels defining element\n\nRecords 1 and 2 are repeated for each non-beam element in the model.\nRecords 1 - 3 are repeated for each beam element in the model.\n\nFE Descriptor Id</code></pre>\n<hr />\n<pre><code class=\"language-julia\">11 Rod\n\n21 Linear beam\n\n22 Tapered beam\n\n23 Curved beam\n\n24 Parabolic beam\n\n31 Straight pipe\n\n32 Curved pipe\n\n41 Plane Stress Linear Triangle\n\n42 Plane Stress Parabolic Triangle\n\n43 Plane Stress Cubic Triangle\n\n44 Plane Stress Linear Quadrilateral\n\n45 Plane Stress Parabolic Quadrilateral\n\n46 Plane Strain Cubic Quadrilateral\n\n51 Plane Strain Linear Triangle\n\n52 Plane Strain Parabolic Triangle\n\n53 Plane Strain Cubic Triangle\n\n54 Plane Strain Linear Quadrilateral\n\n55 Plane Strain Parabolic Quadrilateral\n\n56 Plane Strain Cubic Quadrilateral\n\n61 Plate Linear Triangle\n\n62 Plate Parabolic Triangle\n\n63 Plate Cubic Triangle\n\n64 Plate Linear Quadrilateral\n\n65 Plate Parabolic Quadrilateral\n\n66 Plate Cubic Quadrilateral\n\n71 Membrane Linear Quadrilateral\n\n72 Membrane Parabolic Triangle\n\n73 Membrane Cubic Triangle\n\n74 Membrane Linear Triangle\n\n75 Membrane Parabolic Quadrilateral\n\n76 Membrane Cubic Quadrilateral\n\n81 Axisymetric Solid Linear Triangle\n\n82 Axisymetric Solid Parabolic Triangle\n\n84 Axisymetric Solid Linear Quadrilateral\n\n85 Axisymetric Solid Parabolic Quadrilateral\n\n91 Thin Shell Linear Triangle\n\n92 Thin Shell Parabolic Triangle\n\n93 Thin Shell Cubic Triangle\n\n94 Thin Shell Linear Quadrilateral\n\n95 Thin Shell Parabolic Quadrilateral\n\n96 Thin Shell Cubic Quadrilateral\n\n101 Thick Shell Linear Wedge\n\n102 Thick Shell Parabolic Wedge\n\n103 Thick Shell Cubic Wedge\n\n104 Thick Shell Linear Brick\n\n105 Thick Shell Parabolic Brick\n\n106 Thick Shell Cubic Brick\n\n111 Solid Linear Tetrahedron\n\n112 Solid Linear Wedge\n\n113 Solid Parabolic Wedge\n\n114 Solid Cubic Wedge\n\n115 Solid Linear Brick\n\n116 Solid Parabolic Brick\n\n117 Solid Cubic Brick\n\n118 Solid Parabolic Tetrahedron\n\n121 Rigid Bar\n\n122 Rigid Element\n\n136 Node To Node Translational Spring\n\n137 Node To Node Rotational Spring\n\n138 Node To Ground Translational Spring\n\n139 Node To Ground Rotational Spring\n\n141 Node To Node Damper\n\n142 Node To Ground Damper\n\n151 Node To Node Gap\n\n152 Node To Ground Gap\n\n161 Lumped Mass\n\n171 Axisymetric Linear Shell\n\n172 Axisymetric Parabolic Shell\n\n181 Constraint\n\n191 Plastic Cold Runner\n\n192 Plastic Hot Runner\n\n193 Plastic Water Line\n\n194 Plastic Fountain\n\n195 Plastic Baffle\n\n196 Plastic Rod Heater\n\n201 Linear node-to-node interface\n\n202 Linear edge-to-edge interface\n\n203 Parabolic edge-to-edge interface\n\n204 Linear face-to-face interface\n\n208 Parabolic face-to-face interface\n\n212 Linear axisymmetric interface\n\n213 Parabolic axisymmetric interface\n\n221 Linear rigid surface\n\n222 Parabolic rigin surface\n\n231 Axisymmetric linear rigid surface\n\n232 Axisymmetric parabolic rigid surface</code></pre>\n\n\n</div>",
+                        "text/latex": "Universal Dataset Number: 2412\n\n\\textbf{Name:   Elements}\n\n\\begin{verbatim}\nRecord 1: FORMAT(6I10)\n             Field 1       -- element label\n             Field 2       -- fe descriptor id\n             Field 3       -- physical property table number\n             Field 4       -- material property table number\n             Field 5       -- color\n             Field 6       -- number of nodes on element\n\nRecord 2:  *** FOR NON-BEAM ELEMENTS ***\n             FORMAT(8I10)\n             Fields 1-n    -- node labels defining element\n\nRecord 2:  *** FOR BEAM ELEMENTS ONLY ***\n             FORMAT(3I10)\n             Field 1       -- beam orientation node number\n             Field 2       -- beam fore-end cross section number\n             Field 3       -- beam  aft-end cross section number\n\nRecord 3:  *** FOR BEAM ELEMENTS ONLY ***\n             FORMAT(8I10)\n             Fields 1-n    -- node labels defining element\n\nRecords 1 and 2 are repeated for each non-beam element in the model.\nRecords 1 - 3 are repeated for each beam element in the model.\n\nFE Descriptor Id\n\\end{verbatim}\n\\rule{\\textwidth}{1pt}\n\\begin{verbatim}\n11 Rod\n\n21 Linear beam\n\n22 Tapered beam\n\n23 Curved beam\n\n24 Parabolic beam\n\n31 Straight pipe\n\n32 Curved pipe\n\n41 Plane Stress Linear Triangle\n\n42 Plane Stress Parabolic Triangle\n\n43 Plane Stress Cubic Triangle\n\n44 Plane Stress Linear Quadrilateral\n\n45 Plane Stress Parabolic Quadrilateral\n\n46 Plane Strain Cubic Quadrilateral\n\n51 Plane Strain Linear Triangle\n\n52 Plane Strain Parabolic Triangle\n\n53 Plane Strain Cubic Triangle\n\n54 Plane Strain Linear Quadrilateral\n\n55 Plane Strain Parabolic Quadrilateral\n\n56 Plane Strain Cubic Quadrilateral\n\n61 Plate Linear Triangle\n\n62 Plate Parabolic Triangle\n\n63 Plate Cubic Triangle\n\n64 Plate Linear Quadrilateral\n\n65 Plate Parabolic Quadrilateral\n\n66 Plate Cubic Quadrilateral\n\n71 Membrane Linear Quadrilateral\n\n72 Membrane Parabolic Triangle\n\n73 Membrane Cubic Triangle\n\n74 Membrane Linear Triangle\n\n75 Membrane Parabolic Quadrilateral\n\n76 Membrane Cubic Quadrilateral\n\n81 Axisymetric Solid Linear Triangle\n\n82 Axisymetric Solid Parabolic Triangle\n\n84 Axisymetric Solid Linear Quadrilateral\n\n85 Axisymetric Solid Parabolic Quadrilateral\n\n91 Thin Shell Linear Triangle\n\n92 Thin Shell Parabolic Triangle\n\n93 Thin Shell Cubic Triangle\n\n94 Thin Shell Linear Quadrilateral\n\n95 Thin Shell Parabolic Quadrilateral\n\n96 Thin Shell Cubic Quadrilateral\n\n101 Thick Shell Linear Wedge\n\n102 Thick Shell Parabolic Wedge\n\n103 Thick Shell Cubic Wedge\n\n104 Thick Shell Linear Brick\n\n105 Thick Shell Parabolic Brick\n\n106 Thick Shell Cubic Brick\n\n111 Solid Linear Tetrahedron\n\n112 Solid Linear Wedge\n\n113 Solid Parabolic Wedge\n\n114 Solid Cubic Wedge\n\n115 Solid Linear Brick\n\n116 Solid Parabolic Brick\n\n117 Solid Cubic Brick\n\n118 Solid Parabolic Tetrahedron\n\n121 Rigid Bar\n\n122 Rigid Element\n\n136 Node To Node Translational Spring\n\n137 Node To Node Rotational Spring\n\n138 Node To Ground Translational Spring\n\n139 Node To Ground Rotational Spring\n\n141 Node To Node Damper\n\n142 Node To Ground Damper\n\n151 Node To Node Gap\n\n152 Node To Ground Gap\n\n161 Lumped Mass\n\n171 Axisymetric Linear Shell\n\n172 Axisymetric Parabolic Shell\n\n181 Constraint\n\n191 Plastic Cold Runner\n\n192 Plastic Hot Runner\n\n193 Plastic Water Line\n\n194 Plastic Fountain\n\n195 Plastic Baffle\n\n196 Plastic Rod Heater\n\n201 Linear node-to-node interface\n\n202 Linear edge-to-edge interface\n\n203 Parabolic edge-to-edge interface\n\n204 Linear face-to-face interface\n\n208 Parabolic face-to-face interface\n\n212 Linear axisymmetric interface\n\n213 Parabolic axisymmetric interface\n\n221 Linear rigid surface\n\n222 Parabolic rigin surface\n\n231 Axisymmetric linear rigid surface\n\n232 Axisymmetric parabolic rigid surface\n\\end{verbatim}\n"
+                    },
+                    "metadata": {
+                    }
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "5",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "\n",
+                "## API\n",
+                "\n",
+                "::: {.api}"
+            ]
+        },
+        {
+            "id": "6",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "@doc Dataset2412"
+            ],
+            "outputs": [
+                {
+                    "output_type": "execute_result",
+                    "execution_count": 1,
+                    "data": {
+                        "text/plain": "  No documentation found.\n\n  Binding \u001b[36mMain.Notebook.Dataset2412\u001b[39m does not exist.",
+                        "text/markdown": "No documentation found.\n\nBinding `Main.Notebook.Dataset2412` does not exist.\n",
+                        "text/html": "<div class=\"markdown\"><p>No documentation found.</p>\n<p>Binding <code>Main.Notebook.Dataset2412</code> does not exist.</p>\n</div>",
+                        "text/latex": "No documentation found.\n\nBinding \\texttt{Main.Notebook.Dataset2412} does not exist.\n\n"
+                    },
+                    "metadata": {
+                    }
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "7",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                ":::"
+            ]
+        }
+    ],
+    "timestamp": "2025-10-31T10:38:54.741",
+    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFF/docs/datasets/dataset2412.qmd",
+    "qnr_schema_version": "1.0.0"
+}

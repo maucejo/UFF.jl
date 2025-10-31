@@ -1,16 +1,18 @@
 """
 Universal Dataset Number: 151
 
-Name:   Header
------------------------------------------------------------------------
+**Name:   Header**
 
-Record 1:       FORMAT(80A1)
+    Record 1: FORMAT(80A1)
                 Field 1      -- model file name
-Record 2:       FORMAT(80A1)
+
+    Record 2: FORMAT(80A1)
                 Field 1      -- model file description
-Record 3:       FORMAT(80A1)
+
+    Record 3: FORMAT(80A1)
                 Field 1      -- program which created DB
-Record 4:       FORMAT(10A1,10A1,3I10)
+
+    Record 4: FORMAT(10A1,10A1,3I10)
                 Field 1      -- date database created (DD-MMM-YY)
                 Field 2      -- time database created (HH:MM:SS)
                 Field 3      -- Version from database
@@ -19,16 +21,17 @@ Record 4:       FORMAT(10A1,10A1,3I10)
                                 =0  Universal
                                 =1  Archive
                                 =2  Other
-Record 5:       FORMAT(10A1,10A1)
+
+    Record 5: FORMAT(10A1,10A1)
                 Field 1      -- date database last saved (DD-MMM-YY)
                 Field 2      -- time database last saved (HH:MM:SS)
-Record 6:       FORMAT(80A1)
+
+    Record 6: FORMAT(80A1)
                 Field 1      -- program which created universal file
-Record 7:       FORMAT(10A1,10A1)
+
+    Record 7: FORMAT(10A1,10A1)
                 Field 1      -- date universal file written (DD-MMM-YY)
                 Field 2      -- time universal file written (HH:MM:SS)
-
-----------------------------------------------------------------------------
 """
 function parse_dataset151(block)
     model_name = strip(block[2])

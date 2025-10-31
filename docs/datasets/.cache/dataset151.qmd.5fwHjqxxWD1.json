@@ -1,0 +1,121 @@
+{
+    "cells": [
+        {
+            "id": "1",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "---\n",
+                "title: Dataset 151 - Header\n",
+                "format:\n",
+                "  html:\n",
+                "    toc: true\n",
+                "    number-sections: true\n",
+                "engine: julia\n",
+                "execute:\n",
+                "  freeze: auto\n",
+                "  cache: true\n",
+                "---"
+            ]
+        },
+        {
+            "id": "2",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "#| output: false\n",
+                "using UFF"
+            ],
+            "outputs": [
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "3",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "\n",
+                "## Dataset description"
+            ]
+        },
+        {
+            "id": "4",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "@doc UFF.parse_dataset151"
+            ],
+            "outputs": [
+                {
+                    "output_type": "execute_result",
+                    "execution_count": 1,
+                    "data": {
+                        "text/plain": "  Universal Dataset Number: 151\n\n  \u001b[1mName: Header\u001b[22m\n\n  \u001b[36mRecord 1: FORMAT(80A1)\u001b[39m\n  \u001b[36m            Field 1      -- model file name\u001b[39m\n  \n  \u001b[36mRecord 2: FORMAT(80A1)\u001b[39m\n  \u001b[36m            Field 1      -- model file description\u001b[39m\n  \n  \u001b[36mRecord 3: FORMAT(80A1)\u001b[39m\n  \u001b[36m            Field 1      -- program which created DB\u001b[39m\n  \n  \u001b[36mRecord 4: FORMAT(10A1,10A1,3I10)\u001b[39m\n  \u001b[36m            Field 1      -- date database created (DD-MMM-YY)\u001b[39m\n  \u001b[36m            Field 2      -- time database created (HH:MM:SS)\u001b[39m\n  \u001b[36m            Field 3      -- Version from database\u001b[39m\n  \u001b[36m            Field 4      -- Version from database\u001b[39m\n  \u001b[36m            Field 5      -- File type\u001b[39m\n  \u001b[36m                            =0  Universal\u001b[39m\n  \u001b[36m                            =1  Archive\u001b[39m\n  \u001b[36m                            =2  Other\u001b[39m\n  \n  \u001b[36mRecord 5: FORMAT(10A1,10A1)\u001b[39m\n  \u001b[36m            Field 1      -- date database last saved (DD-MMM-YY)\u001b[39m\n  \u001b[36m            Field 2      -- time database last saved (HH:MM:SS)\u001b[39m\n  \n  \u001b[36mRecord 6: FORMAT(80A1)\u001b[39m\n  \u001b[36m            Field 1      -- program which created universal file\u001b[39m\n  \n  \u001b[36mRecord 7: FORMAT(10A1,10A1)\u001b[39m\n  \u001b[36m            Field 1      -- date universal file written (DD-MMM-YY)\u001b[39m\n  \u001b[36m            Field 2      -- time universal file written (HH:MM:SS)\u001b[39m",
+                        "text/markdown": "Universal Dataset Number: 151\n\n**Name:   Header**\n\n```julia\nRecord 1: FORMAT(80A1)\n            Field 1      -- model file name\n\nRecord 2: FORMAT(80A1)\n            Field 1      -- model file description\n\nRecord 3: FORMAT(80A1)\n            Field 1      -- program which created DB\n\nRecord 4: FORMAT(10A1,10A1,3I10)\n            Field 1      -- date database created (DD-MMM-YY)\n            Field 2      -- time database created (HH:MM:SS)\n            Field 3      -- Version from database\n            Field 4      -- Version from database\n            Field 5      -- File type\n                            =0  Universal\n                            =1  Archive\n                            =2  Other\n\nRecord 5: FORMAT(10A1,10A1)\n            Field 1      -- date database last saved (DD-MMM-YY)\n            Field 2      -- time database last saved (HH:MM:SS)\n\nRecord 6: FORMAT(80A1)\n            Field 1      -- program which created universal file\n\nRecord 7: FORMAT(10A1,10A1)\n            Field 1      -- date universal file written (DD-MMM-YY)\n            Field 2      -- time universal file written (HH:MM:SS)\n```\n",
+                        "text/html": "<div class=\"markdown\"><p>Universal Dataset Number: 151</p>\n<p><strong>Name:   Header</strong></p>\n<pre><code class=\"language-julia\">Record 1: FORMAT&#40;80A1&#41;\n            Field 1      -- model file name\n\nRecord 2: FORMAT&#40;80A1&#41;\n            Field 1      -- model file description\n\nRecord 3: FORMAT&#40;80A1&#41;\n            Field 1      -- program which created DB\n\nRecord 4: FORMAT&#40;10A1,10A1,3I10&#41;\n            Field 1      -- date database created &#40;DD-MMM-YY&#41;\n            Field 2      -- time database created &#40;HH:MM:SS&#41;\n            Field 3      -- Version from database\n            Field 4      -- Version from database\n            Field 5      -- File type\n                            &#61;0  Universal\n                            &#61;1  Archive\n                            &#61;2  Other\n\nRecord 5: FORMAT&#40;10A1,10A1&#41;\n            Field 1      -- date database last saved &#40;DD-MMM-YY&#41;\n            Field 2      -- time database last saved &#40;HH:MM:SS&#41;\n\nRecord 6: FORMAT&#40;80A1&#41;\n            Field 1      -- program which created universal file\n\nRecord 7: FORMAT&#40;10A1,10A1&#41;\n            Field 1      -- date universal file written &#40;DD-MMM-YY&#41;\n            Field 2      -- time universal file written &#40;HH:MM:SS&#41;</code></pre>\n\n\n</div>",
+                        "text/latex": "Universal Dataset Number: 151\n\n\\textbf{Name:   Header}\n\n\\begin{verbatim}\nRecord 1: FORMAT(80A1)\n            Field 1      -- model file name\n\nRecord 2: FORMAT(80A1)\n            Field 1      -- model file description\n\nRecord 3: FORMAT(80A1)\n            Field 1      -- program which created DB\n\nRecord 4: FORMAT(10A1,10A1,3I10)\n            Field 1      -- date database created (DD-MMM-YY)\n            Field 2      -- time database created (HH:MM:SS)\n            Field 3      -- Version from database\n            Field 4      -- Version from database\n            Field 5      -- File type\n                            =0  Universal\n                            =1  Archive\n                            =2  Other\n\nRecord 5: FORMAT(10A1,10A1)\n            Field 1      -- date database last saved (DD-MMM-YY)\n            Field 2      -- time database last saved (HH:MM:SS)\n\nRecord 6: FORMAT(80A1)\n            Field 1      -- program which created universal file\n\nRecord 7: FORMAT(10A1,10A1)\n            Field 1      -- date universal file written (DD-MMM-YY)\n            Field 2      -- time universal file written (HH:MM:SS)\n\\end{verbatim}\n"
+                    },
+                    "metadata": {
+                    }
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "5",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "\n",
+                "## API\n",
+                "\n",
+                "::: {.api}"
+            ]
+        },
+        {
+            "id": "6",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "@doc Dataset151"
+            ],
+            "outputs": [
+                {
+                    "output_type": "execute_result",
+                    "execution_count": 1,
+                    "data": {
+                        "text/plain": "  \u001b[36mDataset151\u001b[39m\n\n  A struct containing UFF Dataset 151 metadata.\n\n  \u001b[1mFields\u001b[22m\n\n    \u001b[34m• \u001b[39m \u001b[36mtype::Symbol\u001b[39m: Data set type\n    \u001b[34m• \u001b[39m \u001b[36mmodel_name::String\u001b[39m: model file name\n    \u001b[34m• \u001b[39m \u001b[36mdescription::String\u001b[39m: model file description\n    \u001b[34m• \u001b[39m \u001b[36mapplication::String\u001b[39m: Program which created the dataset\n    \u001b[34m• \u001b[39m \u001b[36mdatetime_created::DateTime\u001b[39m: dataset creation date and time\n    \u001b[34m• \u001b[39m \u001b[36mversion::String\u001b[39m: version from dataset\n    \u001b[34m• \u001b[39m \u001b[36mfile_type::Int\u001b[39m: file type\n    \u001b[34m• \u001b[39m \u001b[36mdatetime_last_saved::DateTime\u001b[39m: dataset last saved date and time\n    \u001b[34m• \u001b[39m \u001b[36mprogram::String\u001b[39m: program which created uff file\n    \u001b[34m• \u001b[39m \u001b[36mdatetime_written::DateTime\u001b[39m: uff file written date and time",
+                        "text/markdown": "```julia\nDataset151\n```\n\nA struct containing UFF Dataset 151 metadata.\n\n**Fields**\n\n  * `type::Symbol`: Data set type\n  * `model_name::String`: model file name\n  * `description::String`: model file description\n  * `application::String`: Program which created the dataset\n  * `datetime_created::DateTime`: dataset creation date and time\n  * `version::String`: version from dataset\n  * `file_type::Int`: file type\n  * `datetime_last_saved::DateTime`: dataset last saved date and time\n  * `program::String`: program which created uff file\n  * `datetime_written::DateTime`: uff file written date and time\n",
+                        "text/html": "<div class=\"markdown\"><pre><code class=\"language-julia\">Dataset151</code></pre>\n<p>A struct containing UFF Dataset 151 metadata.</p>\n<p><strong>Fields</strong></p>\n<ul>\n<li><p><code>type::Symbol</code>: Data set type</p>\n</li>\n<li><p><code>model_name::String</code>: model file name</p>\n</li>\n<li><p><code>description::String</code>: model file description</p>\n</li>\n<li><p><code>application::String</code>: Program which created the dataset</p>\n</li>\n<li><p><code>datetime_created::DateTime</code>: dataset creation date and time</p>\n</li>\n<li><p><code>version::String</code>: version from dataset</p>\n</li>\n<li><p><code>file_type::Int</code>: file type</p>\n</li>\n<li><p><code>datetime_last_saved::DateTime</code>: dataset last saved date and time</p>\n</li>\n<li><p><code>program::String</code>: program which created uff file</p>\n</li>\n<li><p><code>datetime_written::DateTime</code>: uff file written date and time</p>\n</li>\n</ul>\n\n\n</div>",
+                        "text/latex": "\\begin{verbatim}\nDataset151\n\\end{verbatim}\nA struct containing UFF Dataset 151 metadata.\n\n\\textbf{Fields}\n\n\\begin{itemize}\n\\item \\texttt{type::Symbol}: Data set type\n\n\n\\item \\texttt{model\\_name::String}: model file name\n\n\n\\item \\texttt{description::String}: model file description\n\n\n\\item \\texttt{application::String}: Program which created the dataset\n\n\n\\item \\texttt{datetime\\_created::DateTime}: dataset creation date and time\n\n\n\\item \\texttt{version::String}: version from dataset\n\n\n\\item \\texttt{file\\_type::Int}: file type\n\n\n\\item \\texttt{datetime\\_last\\_saved::DateTime}: dataset last saved date and time\n\n\n\\item \\texttt{program::String}: program which created uff file\n\n\n\\item \\texttt{datetime\\_written::DateTime}: uff file written date and time\n\n\\end{itemize}\n"
+                    },
+                    "metadata": {
+                    }
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "7",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                ":::"
+            ]
+        }
+    ],
+    "timestamp": "2025-10-31T10:39:00.07",
+    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFF/docs/datasets/dataset151.qmd",
+    "qnr_schema_version": "1.0.0"
+}

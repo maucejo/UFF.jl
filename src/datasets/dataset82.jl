@@ -1,8 +1,7 @@
 """
 Universal Dataset Number: 82
 
-Name:   Tracelines
------------------------------------------------------------------------
+**Name:   Tracelines**
 
              Record 1: FORMAT(3I10)
                        Field 1 -    trace line number
@@ -27,8 +26,6 @@ Name:   Tracelines
                     5) Supertab only uses the first 40 characters of the
                        identification line for a name.
                     6) Repeat Datasets for each Trace_Line
-
-------------------------------------------------------------------------------
 """
 function parse_dataset82(block)
     line_number, num_nodes, color = parse.(Int, split(block[2]))

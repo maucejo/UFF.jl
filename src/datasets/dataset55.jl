@@ -1,8 +1,7 @@
 """
 Universal Dataset Number: 55
 
-Name:   Data at Nodes
------------------------------------------------------------------------
+**Name:   Data at Nodes**
 
           RECORD 1:      Format (40A2)
                FIELD 1:          ID Line 1
@@ -316,82 +315,76 @@ Name:   Data at Nodes
           15       For Situations With Reduced # Dof's, Use 3 DOF
                       Translations Or 6 DOF Translation And Rotation With
                       Unused Values = 0.
-
-----------------------------------------------------------------------
 """
 function parse_dataset55(block)
-    # Parse Record 1 to 5
-    id1 = strip(block[2])
-    id2 = strip(block[3])
-    id3 = strip(block[4])
-    id4 = strip(block[5])
-    id5 = strip(block[6])
+     # Parse Record 1 to 5
+     id1 = strip(block[2])
+     id2 = strip(block[3])
+     id3 = strip(block[4])
+     id4 = strip(block[5])
+     id5 = strip(block[6])
 
-    # Parse Record 6
-    model_type, analysis_type, data_charac, spec_dtype, dtype, ndv_per_node = parse.(Int, split(strip(block[7])))
+     # Parse Record 6
+     model_type, analysis_type, data_charac, spec_dtype, dtype, ndv_per_node = parse.(Int, split(strip(block[7])))
 
-    # Parse Record 7
-    r7_raw = parse.(Int, split(strip(block[8])))
+     # Parse Record 7
+     r7_raw = parse.(Int, split(strip(block[8])))
 
-    # Parse Record 8
-    r8_raw = parse.(Float64, split(strip(block[9])))
+     # Parse Record 8
+     r8_raw = parse.(Float64, split(strip(block[9])))
 
-    # Parse Record 9 and 10
-    node_number = Int[]
-    data, ndv = if dtype == 2
-        Vector{Float64}[], ndv_per_node
-    elseif dtype == 5
-        Vector{ComplexF64}[], 2ndv_per_node
-    end
+     # Parse Record 9 and 10
+     node_number = Int[]
+     data, ndv = if dtype == 2
+          Vector{Float64}[], ndv_per_node
+     elseif dtype == 5
+          Vector{ComplexF64}[], 2ndv_per_node
+     end
 
-    i = 10
-    nlines = length(block)
-    local _data
-    while i ≤ nlines
-        # Record 9
-        push!(node_number, parse(Int, strip(block[i])))
+     # Start parsing from Record 9 and 10
+     i = 10
+     nlines = length(block)
+     _data =  similar(eltype(data), 0)
+     while i ≤ nlines
+          # Record 9
+          push!(node_number, parse(Int, strip(block[i])))
 
-        # Record 10
-        _data = if dtype == 2
-            similar(eltype(data), 0)
-        elseif dtype == 5
-            similar(eltype(data), 0)
-        end
+          # Record 10
+          nv = 0
+          while nv < ndv
+               i += 1
+               r10 = parse.(Float64, split(strip(block[i])))
+               nv += length(r10)
 
-        nv = 0
-        while nv < ndv
-            i += 1
-            r10 = parse.(Float64, split(strip(block[i])))
-            nv += length(r10)
+               if dtype == 2
+                    append!(_data, r10)
+               elseif dtype == 5
+                    append!(_data, complex.(r10[1:2:end], r10[2:2:end]))
+               end
+          end
 
-            if dtype == 2
-                append!(_data, r10)
-            elseif dtype == 5
-                append!(_data, complex.(r10[1:2:end], r10[2:2:end]))
-            end
-        end
+          push!(data, copy(_data))
+          empty!(_data)
+          i += 1
+     end
 
-        push!(data, _data)
-        i += 1
-    end
-
-    return Dataset55(
-        id1,
-        id2,
-        id3,
-        id4,
-        id5,
-        model_type,
-        analysis_type,
-        data_charac,
-        spec_dtype,
-        dtype,
-        ndv_per_node,
-        r7_raw,
-        r8_raw,
-        node_number,
-        copy(transpose(reduce(hcat, data)))
-    )
+     return Dataset55(
+          id1,
+          id2,
+          id3,
+          id4,
+          id5,
+          model_type,
+          analysis_type,
+          data_charac,
+          spec_dtype,
+          dtype,
+          ndv_per_node,
+          r7_raw,
+          r8_raw,
+          node_number,
+          copy(transpose(reduce(hcat, data)))
+     )
 end
 
 function write_dataset55(dataset::Dataset55)

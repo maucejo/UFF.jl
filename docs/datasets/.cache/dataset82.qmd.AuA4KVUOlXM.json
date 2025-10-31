@@ -1,0 +1,121 @@
+{
+    "cells": [
+        {
+            "id": "1",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "---\n",
+                "title: Dataset 82 - Tracelines\n",
+                "format:\n",
+                "  html:\n",
+                "    toc: true\n",
+                "    number-sections: true\n",
+                "engine: julia\n",
+                "execute:\n",
+                "  freeze: auto\n",
+                "  cache: true\n",
+                "---"
+            ]
+        },
+        {
+            "id": "2",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "#| output: false\n",
+                "using UFF"
+            ],
+            "outputs": [
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "3",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "\n",
+                "## Dataset description"
+            ]
+        },
+        {
+            "id": "4",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "@doc UFF.parse_dataset82"
+            ],
+            "outputs": [
+                {
+                    "output_type": "execute_result",
+                    "execution_count": 1,
+                    "data": {
+                        "text/plain": "  Universal Dataset Number: 82\n\n  \u001b[1mName: Tracelines\u001b[22m\n\n  \u001b[36m         Record 1: FORMAT(3I10)\u001b[39m\n  \u001b[36m                   Field 1 -    trace line number\u001b[39m\n  \u001b[36m                   Field 2 -    number of nodes defining trace line\u001b[39m\n  \u001b[36m                                (maximum of 250)\u001b[39m\n  \u001b[36m                   Field 3 -    color\u001b[39m\n  \n  \u001b[36m         Record 2: FORMAT(80A1)\u001b[39m\n  \u001b[36m                   Field 1 -    Identification line\u001b[39m\n  \n  \u001b[36m         Record 3: FORMAT(8I10)\u001b[39m\n  \u001b[36m                   Field 1 -    nodes defining trace line\u001b[39m\n  \u001b[36m                           =    > 0 draw line to node\u001b[39m\n  \u001b[36m                           =    0 move to node (a move to the first\u001b[39m\n  \u001b[36m                                node is implied)\u001b[39m\n  \u001b[36m         Notes: 1\u001b[41m)\u001b[49m MODAL-PLUS node numbers must not exceed 8000.\u001b[39m\n  \u001b[36m                2) Identification line may not be blank.\u001b[39m\n  \u001b[36m                3) Systan only uses the first 60 characters of the\u001b[39m\n  \u001b[36m                   identification text.\u001b[39m\n  \u001b[36m                4) MODAL-PLUS does not support trace lines longer than\u001b[39m\n  \u001b[36m                   125 nodes.\u001b[39m\n  \u001b[36m                5) Supertab only uses the first 40 characters of the\u001b[39m\n  \u001b[36m                   identification line for a name.\u001b[39m\n  \u001b[36m                6) Repeat Datasets for each Trace_Line\u001b[39m",
+                        "text/markdown": "Universal Dataset Number: 82\n\n**Name:   Tracelines**\n\n```julia\n         Record 1: FORMAT(3I10)\n                   Field 1 -    trace line number\n                   Field 2 -    number of nodes defining trace line\n                                (maximum of 250)\n                   Field 3 -    color\n\n         Record 2: FORMAT(80A1)\n                   Field 1 -    Identification line\n\n         Record 3: FORMAT(8I10)\n                   Field 1 -    nodes defining trace line\n                           =    > 0 draw line to node\n                           =    0 move to node (a move to the first\n                                node is implied)\n         Notes: 1) MODAL-PLUS node numbers must not exceed 8000.\n                2) Identification line may not be blank.\n                3) Systan only uses the first 60 characters of the\n                   identification text.\n                4) MODAL-PLUS does not support trace lines longer than\n                   125 nodes.\n                5) Supertab only uses the first 40 characters of the\n                   identification line for a name.\n                6) Repeat Datasets for each Trace_Line\n```\n",
+                        "text/html": "<div class=\"markdown\"><p>Universal Dataset Number: 82</p>\n<p><strong>Name:   Tracelines</strong></p>\n<pre><code class=\"language-julia\">         Record 1: FORMAT&#40;3I10&#41;\n                   Field 1 -    trace line number\n                   Field 2 -    number of nodes defining trace line\n                                &#40;maximum of 250&#41;\n                   Field 3 -    color\n\n         Record 2: FORMAT&#40;80A1&#41;\n                   Field 1 -    Identification line\n\n         Record 3: FORMAT&#40;8I10&#41;\n                   Field 1 -    nodes defining trace line\n                           &#61;    &gt; 0 draw line to node\n                           &#61;    0 move to node &#40;a move to the first\n                                node is implied&#41;\n         Notes: 1&#41; MODAL-PLUS node numbers must not exceed 8000.\n                2&#41; Identification line may not be blank.\n                3&#41; Systan only uses the first 60 characters of the\n                   identification text.\n                4&#41; MODAL-PLUS does not support trace lines longer than\n                   125 nodes.\n                5&#41; Supertab only uses the first 40 characters of the\n                   identification line for a name.\n                6&#41; Repeat Datasets for each Trace_Line</code></pre>\n\n\n</div>",
+                        "text/latex": "Universal Dataset Number: 82\n\n\\textbf{Name:   Tracelines}\n\n\\begin{verbatim}\n         Record 1: FORMAT(3I10)\n                   Field 1 -    trace line number\n                   Field 2 -    number of nodes defining trace line\n                                (maximum of 250)\n                   Field 3 -    color\n\n         Record 2: FORMAT(80A1)\n                   Field 1 -    Identification line\n\n         Record 3: FORMAT(8I10)\n                   Field 1 -    nodes defining trace line\n                           =    > 0 draw line to node\n                           =    0 move to node (a move to the first\n                                node is implied)\n         Notes: 1) MODAL-PLUS node numbers must not exceed 8000.\n                2) Identification line may not be blank.\n                3) Systan only uses the first 60 characters of the\n                   identification text.\n                4) MODAL-PLUS does not support trace lines longer than\n                   125 nodes.\n                5) Supertab only uses the first 40 characters of the\n                   identification line for a name.\n                6) Repeat Datasets for each Trace_Line\n\\end{verbatim}\n"
+                    },
+                    "metadata": {
+                    }
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "5",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "\n",
+                "## API\n",
+                "\n",
+                "::: {.api}"
+            ]
+        },
+        {
+            "id": "6",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "@doc Dataset82"
+            ],
+            "outputs": [
+                {
+                    "output_type": "execute_result",
+                    "execution_count": 1,
+                    "data": {
+                        "text/plain": "  \u001b[36mDataset82\u001b[39m\n\n  A struct containing UFF Dataset 82 metadata.\n\n  \u001b[1mFields\u001b[22m\n\n    \u001b[34m• \u001b[39m \u001b[36mtype::Symbol\u001b[39m: Data set type\n    \u001b[34m• \u001b[39m \u001b[36mline_number::Int\u001b[39m: Trace line number\n    \u001b[34m• \u001b[39m \u001b[36mnum_nodes::Int\u001b[39m: Number of nodes defining trace line\n    \u001b[34m• \u001b[39m \u001b[36mcolor::Int\u001b[39m: Color\n    \u001b[34m• \u001b[39m \u001b[36mid_line::String\u001b[39m: Identification line\n    \u001b[34m• \u001b[39m \u001b[36mline_nodes::Vector{Int}\u001b[39m: Nodes defining trace line",
+                        "text/markdown": "```julia\nDataset82\n```\n\nA struct containing UFF Dataset 82 metadata.\n\n**Fields**\n\n  * `type::Symbol`: Data set type\n  * `line_number::Int`: Trace line number\n  * `num_nodes::Int`: Number of nodes defining trace line\n  * `color::Int`: Color\n  * `id_line::String`: Identification line\n  * `line_nodes::Vector{Int}`: Nodes defining trace line\n",
+                        "text/html": "<div class=\"markdown\"><pre><code class=\"language-julia\">Dataset82</code></pre>\n<p>A struct containing UFF Dataset 82 metadata.</p>\n<p><strong>Fields</strong></p>\n<ul>\n<li><p><code>type::Symbol</code>: Data set type</p>\n</li>\n<li><p><code>line_number::Int</code>: Trace line number</p>\n</li>\n<li><p><code>num_nodes::Int</code>: Number of nodes defining trace line</p>\n</li>\n<li><p><code>color::Int</code>: Color</p>\n</li>\n<li><p><code>id_line::String</code>: Identification line</p>\n</li>\n<li><p><code>line_nodes::Vector&#123;Int&#125;</code>: Nodes defining trace line</p>\n</li>\n</ul>\n\n\n</div>",
+                        "text/latex": "\\begin{verbatim}\nDataset82\n\\end{verbatim}\nA struct containing UFF Dataset 82 metadata.\n\n\\textbf{Fields}\n\n\\begin{itemize}\n\\item \\texttt{type::Symbol}: Data set type\n\n\n\\item \\texttt{line\\_number::Int}: Trace line number\n\n\n\\item \\texttt{num\\_nodes::Int}: Number of nodes defining trace line\n\n\n\\item \\texttt{color::Int}: Color\n\n\n\\item \\texttt{id\\_line::String}: Identification line\n\n\n\\item \\texttt{line\\_nodes::Vector\\{Int\\}}: Nodes defining trace line\n\n\\end{itemize}\n"
+                    },
+                    "metadata": {
+                    }
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "7",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                ":::"
+            ]
+        }
+    ],
+    "timestamp": "2025-10-31T10:39:20.624",
+    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFF/docs/datasets/dataset82.qmd",
+    "qnr_schema_version": "1.0.0"
+}

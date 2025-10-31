@@ -1,10 +1,9 @@
 """
 Universal Dataset Number: 164
 
-Name:   Units
------------------------------------------------------------------------
+**Name:   Units**
 
-Record 1:       FORMAT(I10,20A1,I10)
+    Record 1: FORMAT(I10,20A1,I10)
                 Field 1      -- units code
                                 = 1 - SI: Meter (newton)
                                 = 2 - BG: Foot (pound f)
@@ -20,7 +19,8 @@ Record 1:       FORMAT(I10,20A1,I10)
                 Field 3      -- temperature mode
                                 = 1 - absolute
                                 = 2 - relative
-Record 2:       FORMAT(3D25.17)
+
+    Record 2: FORMAT(3D25.17)
                 Unit factors for converting universal file units to SI.
                 To convert from universal file units to SI divide by
                 the appropriate factor listed below.
@@ -28,8 +28,6 @@ Record 2:       FORMAT(3D25.17)
                 Field 2      -- force
                 Field 3      -- temperature
                 Field 4      -- temperature offset
-
------------------------------------------------------------------------
 """
 function parse_dataset164(block)
     record1 = extend_line(strip(block[2]))

@@ -1,119 +1,118 @@
 """
 Universal Dataset Number: 2414
 
-Name:   Analysis Data
------------------------------------------------------------------------
+**Name:   Analysis Data**
 
-Record 1:        FORMAT(1I10)
-                 Field 1       -- Analysis dataset label
+    Record 1: FORMAT(1I10)
+            Field 1            -- Analysis dataset label
 
-Record 2:        FORMAT(40A2)
+    Record 2: FORMAT(40A2)
                  Field 1       -- Analysis dataset name
 
-Record 3:        FORMAT (1I10)
+    Record 3: FORMAT (1I10)
                  Field 1:      -- Dataset location
-                                   1:    Data at nodes
-                                   2:    Data on elements
-                                   3:    Data at nodes on elements
-                                   5:    Data at points
+                        1:    Data at nodes
+                        2:    Data on elements
+                        3:    Data at nodes on elements
+                        5:    Data at points
 
-Record 4:        FORMAT (40A2)
+    Record 4: FORMAT (40A2)
                  Field 1:      -- ID line 1
 
-Record 5:        FORMAT (40A2)
+    Record 5: FORMAT (40A2)
                  Field 1:      -- ID line 2
 
-Record 6:        FORMAT (40A2)
+    Record 6: FORMAT (40A2)
                  Field 1:      -- ID line 3
 
-Record 7:        FORMAT (40A2)
+    Record 7: FORMAT (40A2)
                  Field 1:      -- ID line 4
 
-Record 8:        FORMAT (40A2)
+    Record 8: FORMAT (40A2)
                  Field 1:      -- ID line 5
 
-Record 9:        FORMAT (6I10)
+    Record 9: FORMAT (6I10)
                  Field 1:      -- Model type
-                                   0:   Unknown
-                                   1:   Structural
-                                   2:   Heat transfer
-                                   3:   Fluid flow
+                                   0: Unknown
+                                   1: Structural
+                                   2: Heat transfer
+                                   3: Fluid flow
                  Field 2:      -- Analysis type
-                                   0:   Unknown
-                                   1:   Static
-                                   2:   Normal mode
-                                   3:   Complex eigenvalue first order
-                                   4:   Transient
-                                   5:   Frequency response
-                                   6:   Buckling
-                                   7:   Complex eigenvalue second order
-                                   9:   Static non-linear
+                                   0: Unknown
+                                   1: Static
+                                   2: Normal mode
+                                   3: Complex eigenvalue first order
+                                   4: Transient
+                                   5: Frequency response
+                                   6: Buckling
+                                   7: Complex eigenvalue second order
+                                   9: Static non-linear
                  Field 3:      -- Data characteristic
-                                   0:   Unknown
-                                   1:   Scalar
-                                   2:   3 DOF global translation vector
-                                   3:   6 DOF global translation & rotation
-                                         vector
-                                   4:   Symmetric global tensor
-                                   6:   Stress resultants
+                                   0: Unknown
+                                   1: Scalar
+                                   2: 3 DOF global translation vector
+                                   3: 6 DOF global translation & rotation
+                                      vector
+                                   4: Symmetric global tensor
+                                   6: Stress resultants
                  Field 4:      -- Result type
-                                   2:   Stress
-                                   3:   Strain
-                                   4:   Element force
-                                   5:   Temperature
-                                   6:   Heat flux
-                                   7:   Strain energy
-                                   8:   Displacement
-                                   9:   Reaction force
-                                   10:  Kinetic energy
-                                   11:  Velocity
-                                   12:  Acceleration
-                                   13:  Strain energy density
-                                   14:  Kinetic energy density
-                                   15:  Hydro-static pressure
-                                   16:  Heat gradient
-                                   17:  Code checking value
-                                   18:  Coefficient of pressure
-                                   19:  Ply stress
-                                   20:  Ply strain
-                                   21:  Failure index for ply
-                                   22:  Failure index for bonding
-                                   23:  Reaction heat flow
-                                   24:  Stress error density
-                                   25:  Stress variation
-                                   27:  Shell and plate elem stress resultant
-                                   28:  Length
-                                   29:  Area
-                                   30:  Volume
-                                   31:  Mass
-                                   32:  Constraint forces
-                                   34:  Plastic strain
-                                   35:  Creep strain
-                                   36:  Strain energy error
-                                   37:  Dynamic stress at nodes
-                                   38:  Heat Transfer coefficient
-                                   39:  Temperature gradient
-                                   40:  Kinetic energy dissipation rate
-                                   41:  Strain energy error
-                                   42:  Mass flow
-                                   43:  Mass flux
-                                   44:  Heat flow
-                                   45:  View factor
-                                   46:  Heat load
-                                   47:  Stress Component
-                                   93:  Unknown
-                                   94:  Unknown scalar
-                                   95:  Unknown 3DOF vector
-                                   96:  Unknown 6DOF vector
-                                   97:  Unknown symmetric tensor
-                                   98:  Unknown global tensor
-                                   99:  Unknown shell and plate resultant
-                                  301:  Sound Pressure
-                                  302:  Sound Power
-                                  303:  Sound Intensity
-                                  304:  Sound Energy
-                                  305:  Sound Energy Density
-                                >1000:  User defined result type
+                                   2: Stress
+                                   3: Strain
+                                   4: Element force
+                                   5: Temperature
+                                   6: Heat flux
+                                   7: Strain energy
+                                   8: Displacement
+                                   9: Reaction force
+                                   10: Kinetic energy
+                                   11: Velocity
+                                   12: Acceleration
+                                   13: Strain energy density
+                                   14: Kinetic energy density
+                                   15: Hydro-static pressure
+                                   16: Heat gradient
+                                   17: Code checking value
+                                   18: Coefficient of pressure
+                                   19: Ply stress
+                                   20: Ply strain
+                                   21: Failure index for ply
+                                   22: Failure index for bonding
+                                   23: Reaction heat flow
+                                   24: Stress error density
+                                   25: Stress variation
+                                   27: Shell and plate elem stress resultant
+                                   28: Length
+                                   29: Area
+                                   30: Volume
+                                   31: Mass
+                                   32: Constraint forces
+                                   34: Plastic strain
+                                   35: Creep strain
+                                   36: Strain energy error
+                                   37: Dynamic stress at nodes
+                                   38: Heat Transfer coefficient
+                                   39: Temperature gradient
+                                   40: Kinetic energy dissipation rate
+                                   41: Strain energy error
+                                   42: Mass flow
+                                   43: Mass flux
+                                   44: Heat flow
+                                   45: View factor
+                                   46: Heat load
+                                   47: Stress Component
+                                   93: Unknown
+                                   94: Unknown scalar
+                                   95: Unknown 3DOF vector
+                                   96: Unknown 6DOF vector
+                                   97: Unknown symmetric tensor
+                                   98: Unknown global tensor
+                                   99: Unknown shell and plate resultant
+                                  301: Sound Pressure
+                                  302: Sound Power
+                                  303: Sound Intensity
+                                  304: Sound Energy
+                                  305: Sound Energy Density
+                                >1000: User defined result type
                  Field 5:      -- Data type
                                    1:   Integer
                                    2:   Single precision floating point
@@ -123,47 +122,45 @@ Record 9:        FORMAT (6I10)
                  Field 6:      -- Number of data values for the data
                                   component (NVALDC)
 
-Record 10:       FORMAT (8I10)
+    Record 10: FORMAT (8I10)
                  Field 1:      -- Integer analysis type specific data (1-8)
 
-Record 11:       FORMAT (8I10)
+    Record 11: FORMAT (8I10)
                  Field 1:      -- Integer analysis type specific data (9,10)
 
-Record 12:       FORMAT (6E13.5)
+    Record 12: FORMAT (6E13.5)
                  Field 1:      -- Real analysis type specific data (1-6)
 
-Record 13:       FORMAT (6E13.5)
+    Record 13: FORMAT (6E13.5)
                  Field 1:      -- Real analysis type specific data (7-12)
 
-Note: See chart below for specific analysis type information.
+    Note: See chart below for specific analysis type information.
 
-Dataset class: Data at nodes
+    Dataset class: Data at nodes
 
-Record 14:       FORMAT (I10)
+    Record 14: FORMAT (I10)
                  Field 1:      -- Node number
 
-Record 15:       FORMAT (6E13.5)
+    Record 15: FORMAT (6E13.5)
                  Fields 1-N:   -- Data at this node (NDVAL real or complex
-
                                                      values)
 
                  Note: Records 14 and 15 are repeated for each node.
 
-Dataset class: Data at elements
+    Dataset class: Data at elements
 
-Record 14:       FORMAT (2I10)
+    Record 14: FORMAT (2I10)
                  Field 1:      -- Element number
                  Field 2:      -- Number Of data values For this element(NDVAL)
 
-Record 15:       FORMAT (6E13.5)
+    Record 15: FORMAT (6E13.5)
                  Fields 1-N:   -- Data on element(NDVAL Real Or Complex Values)
-
 
                  Note: Records 14 and 15 are repeated for all elements.
 
-Dataset class: Data at nodes on elements
+    Dataset class: Data at nodes on elements
 
-RECORD 14:       FORMAT (4I10)
+    RECORD 14: FORMAT (4I10)
                  Field 1:      -- Element number
                  Field 2:      -- Data expansion code (IEXP)
                                   1: Data present for all nodes
@@ -172,21 +169,19 @@ RECORD 14:       FORMAT (4I10)
                  Field 3:      -- Number of nodes on elements (NLOCS)
                  Field 4:      -- Number of data values per node (NVLOC)
 
-RECORD 15:       FORMAT (6E13.5)
+    RECORD 15: FORMAT (6E13.5)
 
                  Fields 1-N:   -- Data Values At Node 1 (NVLOC Real Or
                                   Complex Values)
 
                  Note:  Records 14 And 15 Are repeated For each Element.
 
-
                         For Iexp = 1 Record 15 Is repeated NLOCS Times
-
                         For Iexp = 2 Record 15 appears once
 
-Dataset class: Data at points
+    Dataset class: Data at points
 
-RECORD 14:       FORMAT (5I10)
+    RECORD 14: FORMAT (5I10)
                  Field 1:      -- Element number
                  Field 2:      -- Data expansion code (IEXP)
                                   1: Data present for all points
@@ -196,16 +191,14 @@ RECORD 14:       FORMAT (5I10)
                  Field 4:      -- Number of data values per point (NVLOC)
                  Field 5:      -- Element order
 
-RECORD 15:       FORMAT (6E13.5)
+    RECORD 15: FORMAT (6E13.5)
 
                  Fields 1-N:   -- Data Values At point 1 (NVLOC Real Or
                                   Complex Values)
 
                  Note:  Records 14 And 15 Are repeated For each Element.
 
-
                         For Iexp = 1 Record 15 Is repeated NLOC Times
-
                         For Iexp = 2 Record 15 appears once
 
           Notes:   1.  ID lines may not be blank.  If no information
@@ -300,7 +293,7 @@ RECORD 15:       FORMAT (6E13.5)
         The following is always true:
         NDVAL =  NLOCS * NLAY * NVALDC
 
-Dataset class: Data at nodes
+                        Dataset class: Data at nodes
 
                    1.  NLOCS = 1
                        NLAY  = 1
@@ -320,7 +313,7 @@ Dataset class: Data at nodes
                              Where: VAL is real or complex data array
                                     NUM is element number
 
-Dataset class: Data at elements
+    Dataset class: Data at elements
 
                    1.  Data on 2D type elements may have multiple values
                        through the element thickness.  In these cases:
@@ -355,7 +348,7 @@ Dataset class: Data at elements
                              Where:  VAL is real or complex data array
                                      NUM is element number
 
-Dataset class: Data at nodes on elements
+    Dataset class: Data at nodes on elements
 
                    1.  Data on 2D type elements may have multiple values
                        through the element thickness.  In these cases:
@@ -415,8 +408,7 @@ Dataset class: Data at nodes on elements
                                        IEXP is the element expansion code
                                        VAL is real or complex data array.
 
-
-Dataset class: Data at points
+    Dataset class: Data at points
 
                    1.  Only Tetrahedral elements will be supported.
 
@@ -450,78 +442,76 @@ Dataset class: Data at points
                                           .
                            (See 3. for Data at Nodes on Elements)
 
-                                        Analysis Type
+                                       Analysis Type
+                                                                              S
+                                                                               t
+                                                                               a
+                                                  C                       C    t
+                                                  o           F           o    i
+                                            N     m           r           m    c
+                                            o     p           e           p
+                                            r     l           q           l    N
+                                            m     e     T                 e    o
+                                            a     x     r     R     B     x    n
+                                U           l           a     e     u
+                                n     S           E     n     s     c     E    L
+                                k     t     M     i     s     p     k     i    i
+                                n     a     o     g     i     o     l     g    n
+                                o     t     d     e     e     n     i     e    e
+                                w     i     e     n     n     s     n     n    a
+                                n     c     s     1     t     e     g     2    r
 
-                                                                           S
-                                                                           t
-                                                                           a
-                                              C                       C    t
-                                              o           F           o    i
-                                        N     m           r           m    c
-                                        o     p           e           p
-                                        r     l           q           l    N
-                                        m     e     T                 e    o
-                                        a     x     r     R     B     x    n
-                            U           l           a     e     u
-                            n     S           E     n     s     c     E    L
-                            k     t     M     i     s     p     k     i    i
-                            n     a     o     g     i     o     l     g    n
-                            o     t     d     e     e     n     i     e    e
-                            w     i     e     n     n     s     n     n    a
-                            n     c     s     1     t     e     g     2    r
+           Design set ID        X     X     X     X     X     X     X     X    X
 
-       Design set ID        X     X     X     X     X     X     X     X    X
+           Iteration number           X     X
 
-       Iteration number           X     X
+           Solution set ID      X     X     X     X     X     X     X     X    X
+    I
+    N      Boundary condition   X     X     X     X     X     X     X     X    X
+    T
+    E      Load set                   X           X     X     X     X     X
+    G
+    E      Mode number                      X     X                 X     X
+    R
+           Time step number                             X                      X
 
-       Solution set ID      X     X     X     X     X     X     X     X    X
- I
- N     Boundary condition   X     X     X     X     X     X     X     X    X
- T
- E     Load set                   X           X     X     X     X     X
- G
- E     Mode number                      X     X                 X     X
- R
-       Time step number                             X                      X
+           Frequency number                                   X
 
-       Frequency number                                   X
+           Creation option      X     X     X     X     X     X     X     X    X
 
-       Creation option      X     X     X     X     X     X     X     X    X
+           Number retained      X     X     X     X     X     X     X     X    X
 
-       Number retained      X     X     X     X     X     X     X     X    X
-
-
------------------------------------------------------------------------
-
-       Time                                         X                      X
-
-       Frequency                        X                 X
-
-       Eigenvalue                                               X
-
-       Modal Mass                       X
-
-       Viscous damping                  X
-
-       Hysteretic damping               X
-
- R     Real part eigenvalue                   X                       X
- E
- A     Imaginary part eingenvalue             X                       X
- L
-       Real part of modal A                   X
-       Real part of mass                                              X
-
-       Imaginary part of modal A              X
-       Imaginary part of mass                                         X
-
-       Real part of modal B                   X
-       Real part of stiffness                                         X
-
-       Imaginary part of modal B              X
-       Imaginary part of stiffness                                    X
 
 -----------------------------------------------------------------------
+
+           Time                                         X                      X
+
+           Frequency                        X                 X
+
+           Eigenvalue                                               X
+
+           Modal Mass                       X
+
+           Viscous damping                  X
+
+           Hysteretic damping               X
+
+     R     Real part eigenvalue                   X                       X
+     E
+     A     Imaginary part eingenvalue             X                       X
+     L
+           Real part of modal A                   X
+           Real part of mass                                              X
+
+           Imaginary part of modal A              X
+           Imaginary part of mass                                         X
+
+           Real part of modal B                   X
+           Real part of stiffness                                         X
+
+           Imaginary part of modal B              X
+           Imaginary part of stiffness                                    X
+----------------------------------------------------------------------
 """
 function parse_dataset2414(block)
     nlines = length(block)
@@ -565,7 +555,7 @@ function parse_dataset2414(block)
     i = 15
     data_exp = 1
     total_vals = ndv
-    local _values
+    _values = similar(eltype(data_value_raw), 0)
     while i < nlines
         # Record 14
         push!(data_info_raw, parse.(Int, split(strip(block[i]))))
@@ -583,7 +573,6 @@ function parse_dataset2414(block)
         end
 
         # Record 15
-        _values = similar(eltype(data_value_raw), 0)
         np = 0
         while np < total_vals
             i += 1
@@ -602,7 +591,8 @@ function parse_dataset2414(block)
             end
         end
 
-        push!(data_value_raw, _values)
+        push!(data_value_raw, copy(_values))
+        empty!(_values)
         i += 1
     end
 

@@ -1,10 +1,9 @@
 """
 Universal Dataset Number: 18
 
-Name:   Coordinate Systems
------------------------------------------------------------------------
+**Name:   Coordinate Systems**
 
-Record 1:        FORMAT(5I10)
+            Record 1: FORMAT(5I10)
                  Field 1       -- coordinate system number
                  Field 2       -- coordinate system type
                  Field 3       -- reference coordinate system number
@@ -12,10 +11,10 @@ Record 1:        FORMAT(5I10)
                  Field 5       -- method of definition
                                = 1 - origin, +x axis, +xz plane
 
-Record 2:        FORMAT(20A2)
+            Record 2: FORMAT(20A2)
                  Field 1       -- coordinate system name
 
-Record 3:        FORMAT(1P6E13.5)
+            Record 3: FORMAT(1P6E13.5)
                  Total of 9 coordinate system definition parameters.
                  Fields 1-3    -- origin of new system specified in
                                   reference system
@@ -25,8 +24,6 @@ Record 3:        FORMAT(1P6E13.5)
                                   specified in reference system
 
 Records 1 thru 3 are repeated for each coordinate system in the model.
-
------------------------------------------------------------------
 """
 function parse_dataset18(block)
     nlines = length(block)

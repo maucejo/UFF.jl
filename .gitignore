@@ -1,3 +1,6 @@
 /Manifest*.toml
-/test/datasets
+/test/datasets/face1.unv
+/test/datasets/short.unv
+/docs/_site
+/docs/_freeze
 .DS_Store

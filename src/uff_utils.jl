@@ -10,7 +10,7 @@ Extracts blocks of data from a UFF file located at `filepath`. Each block is del
 - `blocks::Vector{Vector{String}}`: A vector containing blocks of data, where each block is represented as a vector of strings.
 """
 function extract_blocks(filepath::String)
-    blocks = Vector{Vector{String}}()
+    blocks = Vector{String}[]
     current_block = String[]
     in_block = false
 
@@ -38,6 +38,7 @@ function extract_blocks(filepath::String)
             end
         end
     end
+
     return blocks
 end
 

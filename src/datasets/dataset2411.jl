@@ -1,21 +1,19 @@
 """
 Universal Dataset Number: 2411
 
-Name:   Nodes - Double Precision
-----------------------------------------------------------------------------
+**Name:   Nodes - Double Precision**
 
-Record 1:        FORMAT(4I10)
+    Record 1: FORMAT(4I10)
                  Field 1       -- node label
                  Field 2       -- export coordinate system number
                  Field 3       -- displacement coordinate system number
                  Field 4       -- color
-Record 2:        FORMAT(1P3D25.16)
+
+    Record 2: FORMAT(1P3D25.16)
                  Fields 1-3    -- node coordinates in the part coordinate
                                   system
 
-Records 1 and 2 are repeated for each node in the model.
-
-----------------------------------------------------------------------------
+    Records 1 and 2 are repeated for each node in the model.
 """
 function parse_dataset2411(block)
     # Initialize empty arrays to hold the parsed data
