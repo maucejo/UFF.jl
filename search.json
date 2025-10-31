@@ -1,34 +1,101 @@
 [
   {
-    "objectID": "helper/index.html",
-    "href": "helper/index.html",
-    "title": "Helper functions",
+    "objectID": "overview/installation.html",
+    "href": "overview/installation.html",
+    "title": "Installation",
     "section": "",
-    "text": "UFF.jl provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:\n\nconnectivity_matrix: Retrieves the connectivity matrix for a specified dataset type from the UFF data.\ndataset_types: Returns the list of all dataset types extracted from an UFF file.\nsupported_datasets: Lists all dataset types that are currently supported for reading.\n\n\n\n\nconnectivity_matrix(dataset::Dataset2412) -&gt; Matrix{Int}\nReturns the connectivity matrix for a Dataset2412 object, where each row corresponds to an element and each column corresponds to a node. Missing values are filled with -1.\nInput\n\ndataset::Dataset2412: The Dataset2412 object to extract connectivity from.\n\n\nOutput\n\nMatrix{Int}: A matrix representing the connectivity of elements to nodes.\n\n\n\n\n\n\n\n\n\n\n\ndataset_types(data::UFFDataset) -&gt; Vector{String}\nReturns the dataset types present in a UFFDataset object.\nInput\n\ndata::UFFDataset: The UFFDataset object to extract types from.\n\n\nOutput\n\nVector{Symbol}: A vector containing the dataset types.\n\n\n\n\n\n\n\n\n\n\n\nsupported_datasets() -&gt; Vector{Int}\nReturns a vector of supported UFF dataset types.",
+    "text": "Note\n\n\n\nIf you are already a Julia user, you can skip this section.\nThis section explains how to install Julia and UFF.jl.",
     "crumbs": [
-      "Helper functions"
+      "Overview",
+      "Installation"
     ]
   },
   {
-    "objectID": "overview/release_notes.html",
-    "href": "overview/release_notes.html",
-    "title": "Release Notes",
-    "section": "",
-    "text": "Initial release of the package",
+    "objectID": "overview/installation.html#install-julia",
+    "href": "overview/installation.html#install-julia",
+    "title": "Installation",
+    "section": "Install Julia ",
+    "text": "Install Julia \nThere exists several ways of installing Julia and managing versions. The recommended way consists in installing juliaup, which is a Julia version manager.\n\nWindows\nOn Windows, juliaup can be installed directly from the Windows store or from a terminal by typing the following command:\nwinget install julia -s msstore\nMacOS and Linux\nOn MacOS and Linux, juliaup can be installed from a terminal by typing:\ncurl -fsSL https://install.julialang.org | sh\nor by using software repositories:\n# MacOS\nbrew install juliaup\n\n# Arch-based distributions\nyay -S juliaup\n\nOnce juliaup is installed, the latest version of Julia can be installed from a terminal as follows:\njuliaup add release",
     "crumbs": [
       "Overview",
-      "Release Notes"
+      "Installation"
     ]
   },
   {
-    "objectID": "overview/release_notes.html#v0.1.0",
-    "href": "overview/release_notes.html#v0.1.0",
-    "title": "Release Notes",
-    "section": "",
-    "text": "Initial release of the package",
+    "objectID": "overview/installation.html#install-uff.jl",
+    "href": "overview/installation.html#install-uff.jl",
+    "title": "Installation",
+    "section": "Install UFF.jl ",
+    "text": "Install UFF.jl \nThe package is registered in the Julia General Registry. So, to install the package, you can use the following command:\n(Yourenv) pkg&gt; add UFF",
     "crumbs": [
       "Overview",
-      "Release Notes"
+      "Installation"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "UFF.jl",
+    "section": "",
+    "text": "UFF.jl is a Julia package for reading (and writing in the future) Universal File Format (UFF) files, commonly used in engineering applications.",
+    "crumbs": [
+      "Overview",
+      "UFF.jl"
+    ]
+  },
+  {
+    "objectID": "index.html#supported-formats",
+    "href": "index.html#supported-formats",
+    "title": "UFF.jl",
+    "section": "Supported formats",
+    "text": "Supported formats\nCurrently, UFF.jl supports reading UFF files with the following blocks:\n\nDataset 15\nDataset 18\nDataset 55\nDataset 58\nDataset 82\nDataset 151\nDataset 164\nDataset 2411\nDataset 2412\nDataset 2414",
+    "crumbs": [
+      "Overview",
+      "UFF.jl"
+    ]
+  },
+  {
+    "objectID": "index.html#contributing",
+    "href": "index.html#contributing",
+    "title": "UFF.jl",
+    "section": "Contributing",
+    "text": "Contributing\nContributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.\nTo make contributions easier, please provide *.unv or *.uff files that can be used as test cases for the new features or bug fixes.",
+    "crumbs": [
+      "Overview",
+      "UFF.jl"
+    ]
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "UFF.jl",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThe creation of UFF.jl was driven by the need to handle UFF files in Julia for processing the experimental data that I collect during my research activities. This package take some inspiration from two wonderful packages : pyuff written in Python and uff written in Matlab. However, UFF.jl is a completely new development, with its own design choices, which leverages of Julia’s strengths and provides a native solution for handling UFF files in the Julia ecosystem.\nFor testing and validate the package, I used several UFF files that are publicly available online, including some provided by pyuff and some coming from my own experimental campaigns. For this reason, I would like to thank all the people who made these files available. This also explains why bugs may still be present in the package, as I do not have access to all possible UFF file variations.",
+    "crumbs": [
+      "Overview",
+      "UFF.jl"
+    ]
+  },
+  {
+    "objectID": "index.html#reproducibility",
+    "href": "index.html#reproducibility",
+    "title": "UFF.jl",
+    "section": "Reproducibility",
+    "text": "Reproducibility\n\n\n\n\n\n\nProject direct dependencies\n\n\n\n\n\nUFF.jl has no direct dependencies.\n\n\n\n\n\n\n\n\n\nJulia version and machine information\n\n\n\n\n\nJulia Version 1.12.1\nCommit ba1e628ee49 (2025-10-17 13:02 UTC)\nBuild Info:\n  Official https://julialang.org release\nPlatform Info:\n  OS: macOS (arm64-apple-darwin24.0.0)\n  CPU: 16 × Apple M4 Max\n  WORD_SIZE: 64\n  LLVM: libLLVM-18.1.7 (ORCJIT, apple-m4)\n  GC: Built with stock GC\nThreads: 1 default, 1 interactive, 1 GC (on 12 virtual cores)\nEnvironment:\n  JULIA_EDITOR = code\n  JULIA_VSCODE_REPL = 1\n  JULIA_PKG_SERVER = https://juliahub.com",
+    "crumbs": [
+      "Overview",
+      "UFF.jl"
+    ]
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "UFF.jl",
+    "section": "License",
+    "text": "License\nThis package is under MIT License.",
+    "crumbs": [
+      "Overview",
+      "UFF.jl"
     ]
   },
   {
@@ -395,102 +462,58 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "UFF.jl",
+    "objectID": "usage/helper.html",
+    "href": "usage/helper.html",
+    "title": "Helper functions",
     "section": "",
-    "text": "UFF.jl is a Julia package for reading (and writing in the future) Universal File Format (UFF) files, commonly used in engineering applications.",
+    "text": "UFF.jl provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:",
     "crumbs": [
-      "Overview",
-      "UFF.jl"
+      "Usage",
+      "Helper functions"
     ]
   },
   {
-    "objectID": "index.html#supported-formats",
-    "href": "index.html#supported-formats",
-    "title": "UFF.jl",
-    "section": "Supported formats",
-    "text": "Supported formats\nCurrently, UFF.jl supports reading UFF files with the following blocks:\n\nDataset 15\nDataset 18\nDataset 55\nDataset 58\nDataset 82\nDataset 151\nDataset 164\nDataset 2411\nDataset 2412\nDataset 2414",
+    "objectID": "usage/helper.html#api",
+    "href": "usage/helper.html#api",
+    "title": "Helper functions",
+    "section": "1 API",
+    "text": "1 API\n\n\n\nconnectivity_matrix(dataset::Dataset2412) -&gt; Matrix{Int}\nReturns the connectivity matrix for a Dataset2412 object, where each row corresponds to an element and each column corresponds to a node. Missing values are filled with -1.\nInput\n\ndataset::Dataset2412: The Dataset2412 object to extract connectivity from.\n\n\nOutput\n\nMatrix{Int}: A matrix representing the connectivity of elements to nodes.\n\n\n\n\n\n\n\n\n\n\n\ndataset_types(data::UFFDataset) -&gt; Symbol\nReturns the dataset type presents in a UFFDataset object.\nInput\n\ndata::UFFDataset: The UFFDataset object to extract types from.\n\n\nOutput\n\nSymbol: A vector containing the dataset types.\n\n\n\n\n\n\n\n\n\n\n\nsupported_datasets() -&gt; Vector{Int}\nReturns a vector of supported UFF dataset types.",
     "crumbs": [
-      "Overview",
-      "UFF.jl"
+      "Usage",
+      "Helper functions"
     ]
   },
   {
-    "objectID": "index.html#contributing",
-    "href": "index.html#contributing",
-    "title": "UFF.jl",
-    "section": "Contributing",
-    "text": "Contributing\nContributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.\nTo make contributions easier, please provide *.unv or *.uff files that can be used as test cases for the new features or bug fixes.",
+    "objectID": "usage/helper.html#example-usage",
+    "href": "usage/helper.html#example-usage",
+    "title": "Helper functions",
+    "section": "2 Example usage",
+    "text": "2 Example usage\n\n2.1 Connectivity Matrix\nusing UFF\n\n# readuff returns a vector of datasets\ndata2412 = readuff(\"path/to/your/file2412.uff\")[1]\nconnectivity = connectivity_matrix(data2412)\n\n\n2.2 Dataset Types\nusing UFF\n\n# Only one dataset is read\ndata = readuff(\"path/to/your/file.uff\")[1]\ndtype = dataset_types(data)\n\n# Several datasets are read\ndata_all = readuff(\"path/to/your/file.uff\")\ndtypes = dataset_types.(data_all)\n\n\n2.3 Supported Datasets\nusing UFF\n\nvalid_datasets = supported_datasets()",
     "crumbs": [
-      "Overview",
-      "UFF.jl"
+      "Usage",
+      "Helper functions"
     ]
   },
   {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "UFF.jl",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nThe creation of UFF.jl was driven by the need to handle UFF files in Julia for processing the experimental data that I collect during my research activities. This package take some inspiration from two wonderful packages : pyuff written in Python and uff written in Matlab. However, UFF.jl is a completely new development, with its own design choices, which leverages of Julia’s strengths and provides a native solution for handling UFF files in the Julia ecosystem.\nFor testing and validate the package, I used several UFF files that are publicly available online, including some provided by pyuff and some coming from my own experimental campaigns. For this reason, I would like to thank all the people who made these files available. This also explains why bugs may still be present in the package, as I do not have access to all possible UFF file variations.",
-    "crumbs": [
-      "Overview",
-      "UFF.jl"
-    ]
-  },
-  {
-    "objectID": "index.html#reproducibility",
-    "href": "index.html#reproducibility",
-    "title": "UFF.jl",
-    "section": "Reproducibility",
-    "text": "Reproducibility\n\n\n\n\n\n\nProject direct dependencies\n\n\n\n\n\nUFF.jl has no direct dependencies.\n\n\n\n\n\n\n\n\n\nJulia version and machine information\n\n\n\n\n\nJulia Version 1.12.1\nCommit ba1e628ee49 (2025-10-17 13:02 UTC)\nBuild Info:\n  Official https://julialang.org release\nPlatform Info:\n  OS: macOS (arm64-apple-darwin24.0.0)\n  CPU: 16 × Apple M4 Max\n  WORD_SIZE: 64\n  LLVM: libLLVM-18.1.7 (ORCJIT, apple-m4)\n  GC: Built with stock GC\nThreads: 1 default, 1 interactive, 1 GC (on 12 virtual cores)\nEnvironment:\n  JULIA_EDITOR = code\n  JULIA_VSCODE_REPL = 1\n  JULIA_PKG_SERVER = https://juliahub.com",
-    "crumbs": [
-      "Overview",
-      "UFF.jl"
-    ]
-  },
-  {
-    "objectID": "index.html#license",
-    "href": "index.html#license",
-    "title": "UFF.jl",
-    "section": "License",
-    "text": "License\nThis package is under MIT License.",
-    "crumbs": [
-      "Overview",
-      "UFF.jl"
-    ]
-  },
-  {
-    "objectID": "overview/installation.html",
-    "href": "overview/installation.html",
-    "title": "Installation",
+    "objectID": "overview/release_notes.html",
+    "href": "overview/release_notes.html",
+    "title": "Release Notes",
     "section": "",
-    "text": "Note\n\n\n\nIf you are already a Julia user, you can skip this section.\nThis section explains how to install Julia and UFF.jl.",
+    "text": "Initial release of the package",
     "crumbs": [
       "Overview",
-      "Installation"
+      "Release Notes"
     ]
   },
   {
-    "objectID": "overview/installation.html#install-julia",
-    "href": "overview/installation.html#install-julia",
-    "title": "Installation",
-    "section": "Install Julia ",
-    "text": "Install Julia \nThere exists several ways of installing Julia and managing versions. The recommended way consists in installing juliaup, which is a Julia version manager.\n\nWindows\nOn Windows, juliaup can be installed directly from the Windows store or from a terminal by typing the following command:\nwinget install julia -s msstore\nMacOS and Linux\nOn MacOS and Linux, juliaup can be installed from a terminal by typing:\ncurl -fsSL https://install.julialang.org | sh\nor by using software repositories:\n# MacOS\nbrew install juliaup\n\n# Arch-based distributions\nyay -S juliaup\n\nOnce juliaup is installed, the latest version of Julia can be installed from a terminal as follows:\njuliaup add release",
+    "objectID": "overview/release_notes.html#v0.1.0",
+    "href": "overview/release_notes.html#v0.1.0",
+    "title": "Release Notes",
+    "section": "",
+    "text": "Initial release of the package",
     "crumbs": [
       "Overview",
-      "Installation"
-    ]
-  },
-  {
-    "objectID": "overview/installation.html#install-uff.jl",
-    "href": "overview/installation.html#install-uff.jl",
-    "title": "Installation",
-    "section": "Install UFF.jl ",
-    "text": "Install UFF.jl \nThe package is registered in the Julia General Registry. So, to install the package, you can use the following command:\n(Yourenv) pkg&gt; add UFF",
-    "crumbs": [
-      "Overview",
-      "Installation"
+      "Release Notes"
     ]
   }
 ]
