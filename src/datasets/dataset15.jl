@@ -1,3 +1,5 @@
+using Printf
+
 """
 Universal Dataset Number: 15
 
@@ -46,6 +48,41 @@ function parse_dataset15(block)
     )
 end
 
+"""
+    write_dataset15(dataset::Dataset15) -> Vector{String}
+
+Write a UFF Dataset 15 (Nodes) to a vector of strings.
+
+**Input**
+- `dataset::Dataset15`: The dataset structure containing node information
+
+**Output**
+- `Vector{String}`: Vector of formatted strings representing the UFF file content
+"""
 function write_dataset15(dataset::Dataset15)
-    # Function implementation goes here
+    lines = String[]
+
+    # Write header
+    push!(lines, "    -1")
+    push!(lines, "    15")
+
+    # Write node data
+    for i in eachindex(dataset.node_ID)
+        # Format: 4I10 for integers, 1P3E13.5 for coordinates
+        line = @sprintf("%10d%10d%10d%10d%13.5E%13.5E%13.5E",
+            dataset.node_ID[i],
+            dataset.def_cs_num[i],
+            dataset.disp_cs_num[i],
+            dataset.color[i],
+            dataset.coords[i][1],
+            dataset.coords[i][2],
+            dataset.coords[i][3]
+        )
+        push!(lines, line)
+    end
+
+    # Write footer
+    push!(lines, "    -1")
+
+    return lines
 end

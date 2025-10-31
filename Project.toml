@@ -3,7 +3,11 @@ uuid = "20c5726e-8372-4c34-be2c-190a5a70d483"
 version = "0.1.0"
 authors = ["Mathieu Aucejo <79322171+maucejo@users.noreply.github.com> and contributors"]
 
+[deps]
+Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+
 [compat]
+Printf = "1.11.0"
 Test = "1.11.0"
 julia = "1.10"
 

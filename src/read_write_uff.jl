@@ -28,11 +28,30 @@ function readuff(filename::String)
     return data
 end
 
+"""
+    writeuff(filename::String, data::Vector{UFFDataset})
+
+Writes a vector of UFFDataset objects to a UFF file.
+
+**Input**
+- `filename::String`: The path to the UFF file to be written.
+- `data::Vector{UFFDataset}`: A vector containing the UFF datasets to be
+written.
+"""
 function writeuff(filename::String, data)
-    # Function implementation goes here
+    open(filename, "w") do io
+        for dataset in data
+            lines = write_dataset(dataset)
+
+            # Write the formatted lines to the file
+            for line in lines
+                println(io, line)
+            end
+        end
+    end
 end
 
-## Functions for reading UFF datasets
+## Functions for reading and writing UFF datasets
 """
     parse_block(dtype::String, block::Vector{String}) -> UFFDataset
 
@@ -58,9 +77,6 @@ function parse_block(dtype, block)
     elseif dtype == "58"
         # Parse Dataset58
         return parse_dataset58(block)
-    elseif dtype == "58b"
-        # Parse Dataset58b
-        return parse_dataset58b(block)
     elseif dtype == "82"
         # Parse Dataset82
         return parse_dataset82(block)
@@ -81,5 +97,42 @@ function parse_block(dtype, block)
         return parse_dataset2414(block)
     else
         throw("Unsupported dataset type: $dtype")
+    end
+end
+
+"""
+    write_dataset(dataset::UFFDataset) -> Vector{String}
+
+Writes a UFF dataset to a vector of formatted strings based on its type.
+
+**Input**
+- `dataset::UFFDataset`: The dataset to be written.
+
+**Output**
+- `Vector{String}`: Vector of formatted strings representing the UFF file content.
+"""
+function write_dataset(dataset::UFFDataset)
+    if dataset isa Dataset15
+        return write_dataset15(dataset)
+    elseif dataset isa Dataset18
+        return write_dataset18(dataset)
+    elseif dataset isa Dataset55
+        return write_dataset55(dataset)
+    elseif dataset isa Dataset58
+        return write_dataset58(dataset)
+    elseif dataset isa Dataset82
+        return write_dataset82(dataset)
+    elseif dataset isa Dataset151
+        return write_dataset151(dataset)
+    elseif dataset isa Dataset164
+        return write_dataset164(dataset)
+    elseif dataset isa Dataset2411
+        return write_dataset2411(dataset)
+    elseif dataset isa Dataset2412
+        return write_dataset2412(dataset)
+    elseif dataset isa Dataset2414
+        return write_dataset2414(dataset)
+    else
+        throw("Unsupported dataset type: $(typeof(dataset))")
     end
 end

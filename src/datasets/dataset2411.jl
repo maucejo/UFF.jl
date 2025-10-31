@@ -42,5 +42,44 @@ function parse_dataset2411(block)
 end
 
 function write_dataset2411(dataset::Dataset2411)
-    # Function implementation goes here
+    # Follow the docstring format for UFF 2411 (Nodes - Double Precision)
+    # Record 1: 4I10 (node label, export CS, displacement CS, color)
+    # Record 2: 1P3D25.16 (x, y, z coordinates)
+    lines = String[]
+
+    # Header
+    push!(lines, "    -1")
+    push!(lines, "   2411")
+
+    # Ensure we can iterate consistently over nodes
+    nnodes = length(dataset.nodes_ID)
+
+    for i in 1:nnodes
+        # Record 1: integers in width 10
+        push!(
+            lines,
+            @sprintf("%10d%10d%10d%10d",
+                dataset.nodes_ID[i],
+                dataset.coord_system[i],
+                dataset.disp_coord_system[i],
+                dataset.color[i]
+            ),
+        )
+
+        # Record 2: three double-precision values, width 25 with 16 decimals
+        # Using E-format is acceptable; parser splits by whitespace.
+        push!(
+            lines,
+            @sprintf("%25.16E%25.16E%25.16E",
+                dataset.node_coords[i, 1],
+                dataset.node_coords[i, 2],
+                dataset.node_coords[i, 3]
+            ),
+        )
+    end
+
+    # Footer
+    push!(lines, "    -1")
+
+    return lines
 end
