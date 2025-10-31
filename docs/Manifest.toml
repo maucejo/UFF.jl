@@ -2,9 +2,9 @@
 
 julia_version = "1.12.1"
 manifest_format = "2.0"
-project_hash = "9c586a6cf4fffb58987b4ab29de90edde71d3b5c"
+project_hash = "cdc6534d15c49747ddb580f3a361a587447f9eb2"
 
-[[deps.UniversalFileFormat]]
-path = "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UniversalFileFormat"
+[[deps.UFFReader]]
+path = "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFFReader"
 uuid = "20c5726e-8372-4c34-be2c-190a5a70d483"
 version = "0.1.0"

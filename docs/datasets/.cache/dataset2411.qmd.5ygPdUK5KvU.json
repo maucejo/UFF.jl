@@ -27,7 +27,7 @@
             "source": [
                 "#| echo: false\n",
                 "#| output: false\n",
-                "using UniversalFileFormat"
+                "using UFFReader"
             ],
             "outputs": [
             ],
@@ -50,7 +50,7 @@
             },
             "source": [
                 "#| echo: false\n",
-                "@doc UniversalFileFormat.parse_dataset2411"
+                "@doc UFFReader.parse_dataset2411"
             ],
             "outputs": [
                 {
@@ -116,6 +116,6 @@
         }
     ],
     "timestamp": "2025-10-31T13:46:17.002",
-    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UniversalFileFormat/docs/datasets/dataset2411.qmd",
+    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFFReader/docs/datasets/dataset2411.qmd",
     "qnr_schema_version": "1.0.0"
 }

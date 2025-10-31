@@ -1,6 +1,6 @@
-using UniversalFileFormat
+using UFFReader
 using Test
 
-@testset "UniversalFileFormat.jl" begin
+@testset "UFFReader.jl" begin
     # Write your tests here.
 end

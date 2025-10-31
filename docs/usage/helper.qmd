@@ -13,10 +13,10 @@ execute:
 ```{julia}
 #| echo: false
 #| output: false
-using UniversalFileFormatReader
+using UFFReader
 ```
 
-`UniversalFileFormat.jl` provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:
+`UFFReader.jl` provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:
 
 - `connectivity_matrix`: Returns the connectivity matrix extracted from `Dataset2412`.
 - `dataset_types`: Returns the list of all dataset types extracted from an UFF file.
@@ -49,7 +49,7 @@ using UniversalFileFormatReader
 
 ### Connectivity Matrix
 ```julia
-using UniversalFileFormatReader
+using UFFReaderReader
 
 # readuff returns a vector of datasets
 data2412 = readuff("path/to/your/file2412.uff")[1]
@@ -58,7 +58,7 @@ connectivity = connectivity_matrix(data2412)
 
 ### Dataset Types
 ```julia
-using UniversalFileFormatReader
+using UFFReaderReader
 
 # Only one dataset is read
 data = readuff("path/to/your/file.uff")[1]
@@ -71,7 +71,7 @@ dtypes = dataset_types.(data_all)
 
 ### Supported Datasets
 ```julia
-using UniversalFileFormatReader
+using UFFReaderReader
 
 valid_datasets = supported_datasets()
 ```

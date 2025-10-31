@@ -13,15 +13,15 @@ execute:
 ```{julia}
 #| echo: false
 #| output: false
-using UniversalFileFormat
+using UFFReader
 ```
 
-At the moment, `UniversalFileFormat.jl` only implements reading functionalities through the function `readuff`. Future versions will include additional functionalities for writing UFF data in a given format.
+At the moment, `UFFReader.jl` only implements reading functionalities through the function `readuff`. Future versions will include additional functionalities for writing UFF data in a given format.
 
 ## Reading UFF Files
 
 ```julia
-using UniversalFileFormat
+using UFFReader
 
 data = readuff("path/to/your/file.uff")
 ```

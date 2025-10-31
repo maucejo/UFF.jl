@@ -1,6 +1,6 @@
-# UniversalFileFormat.jl
+# UFFReader.jl
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://maucejo.github.io/UniversalFileFormat.jl/)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://maucejo.github.io/UFFReader.jl/)
 [![Generic badge](https://img.shields.io/badge/Version-0.1.0-cornflowerblue.svg)]()
 [![MIT License](https://img.shields.io/badge/License-MIT-forestgreen)](https://github.com/maucejo/elsearticle/blob/main/LICENSE)
 [![Aqua QA](https://raw.githubusercontent.com/JuliaTesting/Aqua.jl/master/badge.svg)](https://github.com/JuliaTesting/Aqua.jl)
@@ -13,15 +13,15 @@ A Julia package for reading (and writing in the future) Universal File Format (U
 
 ## Installation
 
-Install `UniversalFileFormat.jl` via Julia's package manager:
+Install `UFFReader.jl` via Julia's package manager:
 ```julia
 import Pkg
-Pkg.add("UniversalFileFormat")
+Pkg.add("UFFReader")
 ```
 
 or
 ```julia
-(Yourenv) pkg> add UniversalFileFormat
+(Yourenv) pkg> add UFFReader
 ```
 
 ## Documentation
@@ -31,13 +31,13 @@ To be added.
 ## Basic usage
 
 ```julia
-using UniversalFileFormat
+using UFFReader
 
 data = readuff("path/to/your/file.uff")
 ```
 
 ## Supported formats
-Currently, `UniversalFileFormat.jl` supports reading UFF files with the following blocks:
+Currently, `UFFReader.jl` supports reading UFF files with the following blocks:
 - Dataset 15
 - Dataset 18
 - Dataset 55

@@ -30,11 +30,6 @@
                 "using UFFReader"
             ],
             "outputs": [
-                {
-                    "output_type": "stream",
-                    "name": "stdout",
-                    "text": "\u001b[32m\u001b[1mPrecompiling\u001b[22m\u001b[39m packages...\n    329.0 ms\u001b[32m  ✓ \u001b[39mUFF\n  1 dependency successfully precompiled in 0 seconds. 27 already precompiled.\n"
-                }
             ],
             "execution_count": 1
         },
@@ -89,10 +84,23 @@
             "metadata": {
             },
             "source": [
+                ":::\n",
+                "\n",
+                "Because `readuff` returns a vector of datasets, you can interact with a given dataset as usually done in Julia. A dataset is a Julia composite type (i.e., a struct), having its own fields, corresponding to the UFF dataset type.\n",
+                "\n",
+                "As an example, let's say that you have read a UFF file containing multiple datasets. You can access each dataset by indexing the returned vector and interacting with it through its fields.\n",
+                "```julia\n",
+                "# Access to the first dataset extracted\n",
+                "# Suppose that the first dataset is of type Dataset15\n",
+                "d15 = data[1]\n",
+                "\n",
+                "# Access to the list of node coordinates\n",
+                "node_coords = d15.coords\n",
+                "```"
             ]
         }
     ],
-    "timestamp": "2025-10-31T11:05:43.634",
-    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFF/docs/usage/index.qmd",
+    "timestamp": "2025-10-31T14:33:04.768",
+    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFFReader/docs/usage/index.qmd",
     "qnr_schema_version": "1.0.0"
 }
