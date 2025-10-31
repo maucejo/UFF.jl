@@ -24,10 +24,6 @@ or
 (Yourenv) pkg> add UFFio
 ```
 
-## Documentation
-
-To be added.
-
 ## Basic usage
 
 ```julia
