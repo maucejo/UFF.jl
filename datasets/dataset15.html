@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Dataset 15 – UFF.jl</title>
+<title>Dataset 15 - Nodes – UFF.jl</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -71,6 +71,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -129,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../datasets/dataset15.html">Dataset 15</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../datasets/dataset15.html">Dataset 15 - Nodes</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -150,61 +153,61 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset15.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Dataset 15</span></a>
+ <span class="menu-text">Dataset 15 - Nodes</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset18.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 18</span></a>
+ <span class="menu-text">Dataset 18 - Coordinate systems</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset55.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 55</span></a>
+ <span class="menu-text">Dataset 55 - Data at Nodes</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset58.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 58</span></a>
+ <span class="menu-text">Dataset 58 - Function at nodal DOF</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset82.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 82</span></a>
+ <span class="menu-text">Dataset 82 - Tracelines</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset151.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 151</span></a>
+ <span class="menu-text">Dataset 151 - Header</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset164.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 164</span></a>
+ <span class="menu-text">Dataset 164 - Units</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset2411.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 2411</span></a>
+ <span class="menu-text">Dataset 2411 - Nodes - Double Precision</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset2412.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 2412</span></a>
+ <span class="menu-text">Dataset 2412 - Elements</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../datasets/dataset2414.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dataset 2414</span></a>
+ <span class="menu-text">Dataset 2414 - Analysis data</span></a>
   </div>
 </li>
     </ul>
@@ -212,15 +215,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dataset-description" id="toc-dataset-description" class="nav-link active" data-scroll-target="#dataset-description"><span class="header-section-number">1</span> Dataset description</a></li>
+  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api"><span class="header-section-number">2</span> API</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Dataset 15</h1>
+<h1 class="title">Dataset 15 - Nodes</h1>
 </div>
 
 
@@ -237,8 +247,58 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="dataset-description" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="dataset-description"><span class="header-section-number">1</span> Dataset description</h2>
+<div id="4" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><p>Universal Dataset Number: 15</p>
+<p><strong>Name:   Nodes</strong></p>
+<pre><code class="language-julia">         Record 1: FORMAT(4I10,1P3E13.5)
+                   Field 1   -  node label
+                   Field 2   -  definition coordinate system number
+                   Field 3   -  displacement coordinate system number
+                   Field 4   -  color
+                   Field 5-7 -  3 - Dimensional coordinates of node
+                                in the definition system
+
+         NOTE:  Repeat record for each node</code></pre>
 
 
+</div>
+</div>
+</div>
+</section>
+<section id="api" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="api"><span class="header-section-number">2</span> API</h2>
+<div class="api">
+<div id="6" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><pre><code class="language-julia">Dataset15</code></pre>
+<p>A struct containing UFF Dataset 15 metadata.</p>
+<p><strong>Fields</strong></p>
+<ul>
+<li><p><code>type::Symbol</code>: Data set type</p>
+</li>
+<li><p><code>node_ID::Vector{Int}</code>: Node label</p>
+</li>
+<li><p><code>def_cs_num::Vector{Int}</code>: Definition coordinate system number</p>
+</li>
+<li><p><code>disp_cs_num::Vector{Int}</code>: Displacement coordinate system number</p>
+</li>
+<li><p><code>color::Vector{Int}</code>: Color</p>
+</li>
+<li><p><code>coords::Vector{Vector{Float64}}</code>: 3D coordinates of node in the definition system</p>
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -647,8 +707,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../datasets/dataset18.html" class="pagination-link" aria-label="Dataset 18">
-        <span class="nav-page-text">Dataset 18</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../datasets/dataset18.html" class="pagination-link" aria-label="Dataset 18 - Coordinate systems">
+        <span class="nav-page-text">Dataset 18 - Coordinate systems</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
