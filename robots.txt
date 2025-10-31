@@ -1,1 +1,1 @@
-Sitemap: https://maucejo.github.io/UFF.jl/sitemap.xml
+Sitemap: https://maucejo.github.io/UFFReader.jl/sitemap.xml
