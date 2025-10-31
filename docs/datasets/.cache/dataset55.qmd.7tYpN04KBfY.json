@@ -7,7 +7,7 @@
             },
             "source": [
                 "---\n",
-                "title: Dataset 55 - Data at Nodes\n",
+                "title: Dataset 55 - Data at nodes\n",
                 "format:\n",
                 "  html:\n",
                 "    toc: true\n",
@@ -115,7 +115,7 @@
             ]
         }
     ],
-    "timestamp": "2025-10-31T10:39:25.782",
+    "timestamp": "2025-10-31T12:03:37.467",
     "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFF/docs/datasets/dataset55.qmd",
     "qnr_schema_version": "1.0.0"
 }

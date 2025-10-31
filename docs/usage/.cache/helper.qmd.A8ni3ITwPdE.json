@@ -1,0 +1,200 @@
+{
+    "cells": [
+        {
+            "id": "1",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "---\n",
+                "title: Helper functions\n",
+                "format:\n",
+                "  html:\n",
+                "    toc: true\n",
+                "    number-sections: true\n",
+                "engine: julia\n",
+                "execute:\n",
+                "  freeze: auto\n",
+                "  cache: true\n",
+                "---"
+            ]
+        },
+        {
+            "id": "2",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "#| output: false\n",
+                "using UFF"
+            ],
+            "outputs": [
+                {
+                    "output_type": "stream",
+                    "name": "stdout",
+                    "text": "\u001b[32m\u001b[1mPrecompiling\u001b[22m\u001b[39m packages...\n    297.0 ms\u001b[32m  ✓ \u001b[39mUFF\n  1 dependency successfully precompiled in 0 seconds. 27 already precompiled.\n"
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "3",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "\n",
+                "`UFF.jl` provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:\n",
+                "\n",
+                "- `connectivity_matrix`: Retrieves the connectivity matrix for a specified dataset type from the UFF data.\n",
+                "- `dataset_types`: Returns the list of all dataset types extracted from an UFF file.\n",
+                "- `supported_datasets`: Lists all dataset types that are currently supported for reading.\n",
+                "\n",
+                "## API\n",
+                "\n",
+                "::: {.api}"
+            ]
+        },
+        {
+            "id": "4",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "@doc connectivity_matrix"
+            ],
+            "outputs": [
+                {
+                    "output_type": "execute_result",
+                    "execution_count": 1,
+                    "data": {
+                        "text/plain": "  \u001b[36mconnectivity_matrix(dataset::Dataset2412) \u001b[31m->\u001b[36m Matrix{Int}\u001b[39m\n\n  Returns the connectivity matrix for a Dataset2412 object, where each row\n  corresponds to an element and each column corresponds to a node. Missing\n  values are filled with \u001b[36m-1\u001b[39m.\n\n  \u001b[1mInput\u001b[22m\n\n    \u001b[34m• \u001b[39m \u001b[36mdataset::Dataset2412\u001b[39m: The Dataset2412 object to extract\n       connectivity from.\n\n  \u001b[1mOutput\u001b[22m\n\n    \u001b[34m• \u001b[39m \u001b[36mMatrix{Int}\u001b[39m: A matrix representing the connectivity of elements to\n       nodes.",
+                        "text/markdown": "```julia\nconnectivity_matrix(dataset::Dataset2412) -> Matrix{Int}\n```\n\nReturns the connectivity matrix for a Dataset2412 object, where each row corresponds to an element and each column corresponds to a node. Missing values are filled with `-1`.\n\n**Input**\n\n  * `dataset::Dataset2412`: The Dataset2412 object to extract connectivity from.\n\n**Output**\n\n  * `Matrix{Int}`: A matrix representing the connectivity of elements to nodes.\n",
+                        "text/html": "<div class=\"markdown\"><pre><code class=\"language-julia\">connectivity_matrix&#40;dataset::Dataset2412&#41; -&gt; Matrix&#123;Int&#125;</code></pre>\n<p>Returns the connectivity matrix for a Dataset2412 object, where each row corresponds to an element and each column corresponds to a node. Missing values are filled with <code>-1</code>.</p>\n<p><strong>Input</strong></p>\n<ul>\n<li><p><code>dataset::Dataset2412</code>: The Dataset2412 object to extract connectivity from.</p>\n</li>\n</ul>\n<p><strong>Output</strong></p>\n<ul>\n<li><p><code>Matrix&#123;Int&#125;</code>: A matrix representing the connectivity of elements to nodes.</p>\n</li>\n</ul>\n\n\n</div>",
+                        "text/latex": "\\begin{verbatim}\nconnectivity_matrix(dataset::Dataset2412) -> Matrix{Int}\n\\end{verbatim}\nReturns the connectivity matrix for a Dataset2412 object, where each row corresponds to an element and each column corresponds to a node. Missing values are filled with \\texttt{-1}.\n\n\\textbf{Input}\n\n\\begin{itemize}\n\\item \\texttt{dataset::Dataset2412}: The Dataset2412 object to extract connectivity from.\n\n\\end{itemize}\n\\textbf{Output}\n\n\\begin{itemize}\n\\item \\texttt{Matrix\\{Int\\}}: A matrix representing the connectivity of elements to nodes.\n\n\\end{itemize}\n"
+                    },
+                    "metadata": {
+                    }
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "5",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                ":::\n",
+                "\n",
+                "::: {.api}"
+            ]
+        },
+        {
+            "id": "6",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "@doc dataset_types"
+            ],
+            "outputs": [
+                {
+                    "output_type": "execute_result",
+                    "execution_count": 1,
+                    "data": {
+                        "text/plain": "  \u001b[36mdataset_types(data::UFFDataset) \u001b[31m->\u001b[36m Symbol\u001b[39m\n\n  Returns the dataset type presents in a UFFDataset object.\n\n  \u001b[1mInput\u001b[22m\n\n    \u001b[34m• \u001b[39m \u001b[36mdata::UFFDataset\u001b[39m: The UFFDataset object to extract types from.\n\n  \u001b[1mOutput\u001b[22m\n\n    \u001b[34m• \u001b[39m \u001b[36mSymbol\u001b[39m: A vector containing the dataset types.",
+                        "text/markdown": "```julia\ndataset_types(data::UFFDataset) -> Symbol\n```\n\nReturns the dataset type presents in a UFFDataset object.\n\n**Input**\n\n  * `data::UFFDataset`: The UFFDataset object to extract types from.\n\n**Output**\n\n  * `Symbol`: A vector containing the dataset types.\n",
+                        "text/html": "<div class=\"markdown\"><pre><code class=\"language-julia\">dataset_types&#40;data::UFFDataset&#41; -&gt; Symbol</code></pre>\n<p>Returns the dataset type presents in a UFFDataset object.</p>\n<p><strong>Input</strong></p>\n<ul>\n<li><p><code>data::UFFDataset</code>: The UFFDataset object to extract types from.</p>\n</li>\n</ul>\n<p><strong>Output</strong></p>\n<ul>\n<li><p><code>Symbol</code>: A vector containing the dataset types.</p>\n</li>\n</ul>\n\n\n</div>",
+                        "text/latex": "\\begin{verbatim}\ndataset_types(data::UFFDataset) -> Symbol\n\\end{verbatim}\nReturns the dataset type presents in a UFFDataset object.\n\n\\textbf{Input}\n\n\\begin{itemize}\n\\item \\texttt{data::UFFDataset}: The UFFDataset object to extract types from.\n\n\\end{itemize}\n\\textbf{Output}\n\n\\begin{itemize}\n\\item \\texttt{Symbol}: A vector containing the dataset types.\n\n\\end{itemize}\n"
+                    },
+                    "metadata": {
+                    }
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "7",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                ":::\n",
+                "\n",
+                "::: {.api}"
+            ]
+        },
+        {
+            "id": "8",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "@doc supported_datasets"
+            ],
+            "outputs": [
+                {
+                    "output_type": "execute_result",
+                    "execution_count": 1,
+                    "data": {
+                        "text/plain": "  \u001b[36msupported_datasets() \u001b[31m->\u001b[36m Vector{Int}\u001b[39m\n\n  Returns a vector of supported UFF dataset types.",
+                        "text/markdown": "```julia\nsupported_datasets() -> Vector{Int}\n```\n\nReturns a vector of supported UFF dataset types.\n",
+                        "text/html": "<div class=\"markdown\"><pre><code class=\"language-julia\">supported_datasets&#40;&#41; -&gt; Vector&#123;Int&#125;</code></pre>\n<p>Returns a vector of supported UFF dataset types.</p>\n\n\n</div>",
+                        "text/latex": "\\begin{verbatim}\nsupported_datasets() -> Vector{Int}\n\\end{verbatim}\nReturns a vector of supported UFF dataset types.\n\n"
+                    },
+                    "metadata": {
+                    }
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "9",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                ":::\n",
+                "\n",
+                "## Example usage\n",
+                "\n",
+                "### Connectivity Matrix\n",
+                "```julia\n",
+                "using UFF\n",
+                "\n",
+                "# readuff returns a vector of datasets\n",
+                "data2412 = readuff(\"path/to/your/file2412.uff\")[1]\n",
+                "conn_matrix = connectivity_matrix(data2412)\n",
+                "```\n",
+                "\n",
+                "### Dataset Types\n",
+                "```julia\n",
+                "using UFF\n",
+                "\n",
+                "# Only one dataset is read\n",
+                "data = readuff(\"path/to/your/file.uff\")[1]\n",
+                "dtype = dataset_types(data)\n",
+                "\n",
+                "# Several datasets are read\n",
+                "data_all = readuff(\"path/to/your/file.uff\")\n",
+                "dtypes = dataset_types.(data_all)\n",
+                "```\n",
+                "\n",
+                "### Supported Datasets\n",
+                "```julia\n",
+                "using UFF\n",
+                "\n",
+                "valid_datasets = supported_datasets()\n",
+                "```"
+            ]
+        }
+    ],
+    "timestamp": "2025-10-31T11:39:33.947",
+    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFF/docs/usage/helper.qmd",
+    "qnr_schema_version": "1.0.0"
+}

@@ -1,3 +1,14 @@
+"""
+    readuff(filename::String) -> Vector{UFFDataset}
+
+Reads a UFF (Universal File Format) file and parses its contents into a vector of UFFDataset objects.
+
+**Input**
+- `filename::String`: The path to the UFF file to be read.
+
+**Output**
+- `data::Vector{UFFDataset}`: A vector containing the parsed UFF datasets.
+"""
 function readuff(filename::String)
 
     # Extract blocks from the UFF file

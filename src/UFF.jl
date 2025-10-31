@@ -7,7 +7,7 @@ module UFF
     export readuff, writeuff
 
     # Helper functions
-    export get_types
+    export connectivity_matrix, dataset_types, supported_datasets
 
     # Include files
     include("uff_utils.jl")

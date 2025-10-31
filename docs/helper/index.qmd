@@ -1,7 +1,0 @@
----
-title: Helper functions
-format:
-  html:
-    toc: true
-    number-sections: false
----

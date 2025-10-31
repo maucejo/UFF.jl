@@ -4,4 +4,43 @@ format:
   html:
     toc: true
     number-sections: false
+engine: julia
+execute:
+  freeze: auto
+  cache: true
 ---
+
+```{julia}
+#| echo: false
+#| output: false
+using UFF
+```
+
+At the moment, `UFF.jl` only implements reading functionalities through the function `readuff`. Future versions will include additional functionalities for writing UFF data in a given format.
+
+## Reading UFF Files
+
+```julia
+using UFF
+
+data = readuff("path/to/your/file.uff")
+```
+
+::: {.api}
+```{julia}
+#| echo: false
+@doc readuff
+```
+:::
+
+Because `readuff` returns a vector of datasets, you can interact with a given dataset as usually done in Julia. A dataset is a Julia composite type (i.e., a struct), having its own fields, corresponding to the UFF dataset type.
+
+As an example, let's say that you have read a UFF file containing multiple datasets. You can access each dataset by indexing the returned vector and interacting with it through its fields.
+```julia
+# Access to the first dataset extracted
+# Suppose that the first dataset is of type Dataset15
+d15 = data[1]
+
+# Access to the list of node coordinates
+node_coords = d15.coords
+```

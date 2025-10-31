@@ -1,0 +1,98 @@
+{
+    "cells": [
+        {
+            "id": "1",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "---\n",
+                "title: Basic Usage\n",
+                "format:\n",
+                "  html:\n",
+                "    toc: true\n",
+                "    number-sections: false\n",
+                "engine: julia\n",
+                "execute:\n",
+                "  freeze: auto\n",
+                "  cache: true\n",
+                "---"
+            ]
+        },
+        {
+            "id": "2",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "#| output: false\n",
+                "using UFF"
+            ],
+            "outputs": [
+                {
+                    "output_type": "stream",
+                    "name": "stdout",
+                    "text": "\u001b[32m\u001b[1mPrecompiling\u001b[22m\u001b[39m packages...\n    329.0 ms\u001b[32m  ✓ \u001b[39mUFF\n  1 dependency successfully precompiled in 0 seconds. 27 already precompiled.\n"
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "3",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+                "\n",
+                "At the moment, `UFF.jl` only implements reading functionalities through the function `readuff`. Future versions will include additional functionalities for writing UFF data in a given format.\n",
+                "\n",
+                "## Reading UFF Files\n",
+                "\n",
+                "```julia\n",
+                "using UFF\n",
+                "\n",
+                "data = readuff(\"path/to/your/file.uff\")\n",
+                "```\n",
+                "\n",
+                "::: {.api}"
+            ]
+        },
+        {
+            "id": "4",
+            "cell_type": "code",
+            "metadata": {
+            },
+            "source": [
+                "#| echo: false\n",
+                "@doc readuff"
+            ],
+            "outputs": [
+                {
+                    "output_type": "execute_result",
+                    "execution_count": 1,
+                    "data": {
+                        "text/plain": "  \u001b[36mreaduff(filename::String) \u001b[31m->\u001b[36m Vector{UFFDataset}\u001b[39m\n\n  Reads a UFF (Universal File Format) file and parses its contents into a\n  vector of UFFDataset objects.\n\n  \u001b[1mInput\u001b[22m\n\n    \u001b[34m• \u001b[39m \u001b[36mfilename::String\u001b[39m: The path to the UFF file to be read.\n\n  \u001b[1mOutput\u001b[22m\n\n    \u001b[34m• \u001b[39m \u001b[36mdata::Vector{UFFDataset}\u001b[39m: A vector containing the parsed UFF\n       datasets.",
+                        "text/markdown": "```julia\nreaduff(filename::String) -> Vector{UFFDataset}\n```\n\nReads a UFF (Universal File Format) file and parses its contents into a vector of UFFDataset objects.\n\n**Input**\n\n  * `filename::String`: The path to the UFF file to be read.\n\n**Output**\n\n  * `data::Vector{UFFDataset}`: A vector containing the parsed UFF datasets.\n",
+                        "text/html": "<div class=\"markdown\"><pre><code class=\"language-julia\">readuff&#40;filename::String&#41; -&gt; Vector&#123;UFFDataset&#125;</code></pre>\n<p>Reads a UFF &#40;Universal File Format&#41; file and parses its contents into a vector of UFFDataset objects.</p>\n<p><strong>Input</strong></p>\n<ul>\n<li><p><code>filename::String</code>: The path to the UFF file to be read.</p>\n</li>\n</ul>\n<p><strong>Output</strong></p>\n<ul>\n<li><p><code>data::Vector&#123;UFFDataset&#125;</code>: A vector containing the parsed UFF datasets.</p>\n</li>\n</ul>\n\n\n</div>",
+                        "text/latex": "\\begin{verbatim}\nreaduff(filename::String) -> Vector{UFFDataset}\n\\end{verbatim}\nReads a UFF (Universal File Format) file and parses its contents into a vector of UFFDataset objects.\n\n\\textbf{Input}\n\n\\begin{itemize}\n\\item \\texttt{filename::String}: The path to the UFF file to be read.\n\n\\end{itemize}\n\\textbf{Output}\n\n\\begin{itemize}\n\\item \\texttt{data::Vector\\{UFFDataset\\}}: A vector containing the parsed UFF datasets.\n\n\\end{itemize}\n"
+                    },
+                    "metadata": {
+                    }
+                }
+            ],
+            "execution_count": 1
+        },
+        {
+            "id": "5",
+            "cell_type": "markdown",
+            "metadata": {
+            },
+            "source": [
+            ]
+        }
+    ],
+    "timestamp": "2025-10-31T11:05:43.634",
+    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFF/docs/usage/index.qmd",
+    "qnr_schema_version": "1.0.0"
+}

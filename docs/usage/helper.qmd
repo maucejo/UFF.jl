@@ -1,0 +1,77 @@
+---
+title: Helper functions
+format:
+  html:
+    toc: true
+    number-sections: true
+engine: julia
+execute:
+  freeze: auto
+  cache: true
+---
+
+```{julia}
+#| echo: false
+#| output: false
+using UFF
+```
+
+`UFF.jl` provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:
+
+- `connectivity_matrix`: Returns the connectivity matrix extracted from `Dataset2412`.
+- `dataset_types`: Returns the list of all dataset types extracted from an UFF file.
+- `supported_datasets`: Lists all dataset types that are currently supported for reading.
+
+## API
+
+::: {.api}
+```{julia}
+#| echo: false
+@doc connectivity_matrix
+```
+:::
+
+::: {.api}
+```{julia}
+#| echo: false
+@doc dataset_types
+```
+:::
+
+::: {.api}
+```{julia}
+#| echo: false
+@doc supported_datasets
+```
+:::
+
+## Example usage
+
+### Connectivity Matrix
+```julia
+using UFF
+
+# readuff returns a vector of datasets
+data2412 = readuff("path/to/your/file2412.uff")[1]
+connectivity = connectivity_matrix(data2412)
+```
+
+### Dataset Types
+```julia
+using UFF
+
+# Only one dataset is read
+data = readuff("path/to/your/file.uff")[1]
+dtype = dataset_types(data)
+
+# Several datasets are read
+data_all = readuff("path/to/your/file.uff")
+dtypes = dataset_types.(data_all)
+```
+
+### Supported Datasets
+```julia
+using UFF
+
+valid_datasets = supported_datasets()
+```
