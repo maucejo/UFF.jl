@@ -66,5 +66,32 @@ function parse_dataset151(block)
 end
 
 function write_dataset151(dataset::Dataset151)
-    # Function implementation goes here
+    lines = String[]
+    push!(lines, "-1")
+    push!(lines, "   151")
+
+    # Record 1: model file name
+    push!(lines, dataset.model_name)
+
+    # Record 2: model file description
+    push!(lines, dataset.description)
+
+    # Record 3: program which created DB
+    push!(lines, dataset.application)
+
+    # Record 4: date/time created
+    push!(lines, dataset.datetime_created)
+
+    # Record 5: date/time last saved
+    push!(lines, dataset.datetime_last_saved)
+
+    # Record 6: program which created universal file
+    push!(lines, dataset.program)
+
+    # Record 7: date/time written
+    push!(lines, dataset.datetime_written)
+
+    push!(lines, "    -1")
+
+    return lines
 end
