@@ -1,7 +1,7 @@
-module UFF
+module UniversalFileFormat
     # Exported Types
     export Dataset15, Dataset18, Dataset55, Dataset58, Dataset82,
-           Dataset151, Dataset164, Dataset2411, Dataset2414
+           Dataset151, Dataset164, Dataset2411, Dataset2412, Dataset2414
 
     # Exported functions - Main functions
     export readuff, writeuff

@@ -13,14 +13,14 @@ execute:
 ```{julia}
 #| echo: false
 #| output: false
-using UFF
+using UniversalFileFormat
 ```
 
 ## Dataset description
 
 ```{julia}
 #| echo: false
-@doc UFF.parse_dataset15
+@doc UniversalFileFormat.parse_dataset15
 ```
 
 ## API

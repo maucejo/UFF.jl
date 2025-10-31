@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "UFF.jl"
+  title: "UniversalFileFormat.jl"
   favicon: "assets/logo/doclogo.svg"
   page-navigation: true
   navbar:
@@ -18,7 +18,7 @@ website:
       #   file: helper/index.qmd
     right:
       - icon: github
-        href: https://github.com/maucejo/UFF.jl
+        href: https://github.com/maucejo/UniversalFileFormat.jl
         aria-label: GitHub
 
   sidebar:
