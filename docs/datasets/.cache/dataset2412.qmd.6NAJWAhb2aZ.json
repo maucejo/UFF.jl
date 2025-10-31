@@ -30,6 +30,11 @@
                 "using UFFio"
             ],
             "outputs": [
+                {
+                    "output_type": "stream",
+                    "name": "stdout",
+                    "text": "\u001b[32m\u001b[1mPrecompiling\u001b[22m\u001b[39m packages...\n    318.0 ms\u001b[32m  ✓ \u001b[39mUFFio\n  1 dependency successfully precompiled in 0 seconds. 2 already precompiled.\n"
+                }
             ],
             "execution_count": 1
         },
@@ -94,10 +99,10 @@
                     "output_type": "execute_result",
                     "execution_count": 1,
                     "data": {
-                        "text/plain": "  No documentation found.\n\n  Binding \u001b[36mMain.Notebook.Dataset2412\u001b[39m does not exist.",
-                        "text/markdown": "No documentation found.\n\nBinding `Main.Notebook.Dataset2412` does not exist.\n",
-                        "text/html": "<div class=\"markdown\"><p>No documentation found.</p>\n<p>Binding <code>Main.Notebook.Dataset2412</code> does not exist.</p>\n</div>",
-                        "text/latex": "No documentation found.\n\nBinding \\texttt{Main.Notebook.Dataset2412} does not exist.\n\n"
+                        "text/plain": "  \u001b[36mDataset2412\u001b[39m\n\n  A struct containing UFF Dataset 2412 metadata.\n\n  \u001b[1mFields\u001b[22m\n\n    \u001b[34m• \u001b[39m \u001b[36mtype::Symbol\u001b[39m: Data set type\n    \u001b[34m• \u001b[39m \u001b[36melements_ID::Vector{Int}\u001b[39m: Element label\n    \u001b[34m• \u001b[39m \u001b[36mfe_descriptor_id::Vector{Int}\u001b[39m: Finite element descriptor ID\n    \u001b[34m• \u001b[39m \u001b[36mphys_property::Vector{Int}\u001b[39m: Physical property table number\n    \u001b[34m• \u001b[39m \u001b[36mmat_property::Vector{Int}\u001b[39m: Material property table number\n    \u001b[34m• \u001b[39m \u001b[36mcolor::Vector{Int}\u001b[39m: Color\n    \u001b[34m• \u001b[39m \u001b[36mnodes_per_elt::Vector{Int}\u001b[39m: Number of nodes per element\n    \u001b[34m• \u001b[39m \u001b[36mconnectivity::Vector{Vector{Int}}\u001b[39m: Element connectivity (node\n       labels)\n    \u001b[34m• \u001b[39m \u001b[36mbeam_info::Vector{Vector{Int}}\u001b[39m: Beam element information",
+                        "text/markdown": "```julia\nDataset2412\n```\n\nA struct containing UFF Dataset 2412 metadata.\n\n**Fields**\n\n  * `type::Symbol`: Data set type\n  * `elements_ID::Vector{Int}`: Element label\n  * `fe_descriptor_id::Vector{Int}`: Finite element descriptor ID\n  * `phys_property::Vector{Int}`: Physical property table number\n  * `mat_property::Vector{Int}`: Material property table number\n  * `color::Vector{Int}`: Color\n  * `nodes_per_elt::Vector{Int}`: Number of nodes per element\n  * `connectivity::Vector{Vector{Int}}`: Element connectivity (node labels)\n  * `beam_info::Vector{Vector{Int}}`: Beam element information\n",
+                        "text/html": "<div class=\"markdown\"><pre><code class=\"language-julia\">Dataset2412</code></pre>\n<p>A struct containing UFF Dataset 2412 metadata.</p>\n<p><strong>Fields</strong></p>\n<ul>\n<li><p><code>type::Symbol</code>: Data set type</p>\n</li>\n<li><p><code>elements_ID::Vector&#123;Int&#125;</code>: Element label</p>\n</li>\n<li><p><code>fe_descriptor_id::Vector&#123;Int&#125;</code>: Finite element descriptor ID</p>\n</li>\n<li><p><code>phys_property::Vector&#123;Int&#125;</code>: Physical property table number</p>\n</li>\n<li><p><code>mat_property::Vector&#123;Int&#125;</code>: Material property table number</p>\n</li>\n<li><p><code>color::Vector&#123;Int&#125;</code>: Color</p>\n</li>\n<li><p><code>nodes_per_elt::Vector&#123;Int&#125;</code>: Number of nodes per element</p>\n</li>\n<li><p><code>connectivity::Vector&#123;Vector&#123;Int&#125;&#125;</code>: Element connectivity &#40;node labels&#41;</p>\n</li>\n<li><p><code>beam_info::Vector&#123;Vector&#123;Int&#125;&#125;</code>: Beam element information</p>\n</li>\n</ul>\n\n\n</div>",
+                        "text/latex": "\\begin{verbatim}\nDataset2412\n\\end{verbatim}\nA struct containing UFF Dataset 2412 metadata.\n\n\\textbf{Fields}\n\n\\begin{itemize}\n\\item \\texttt{type::Symbol}: Data set type\n\n\n\\item \\texttt{elements\\_ID::Vector\\{Int\\}}: Element label\n\n\n\\item \\texttt{fe\\_descriptor\\_id::Vector\\{Int\\}}: Finite element descriptor ID\n\n\n\\item \\texttt{phys\\_property::Vector\\{Int\\}}: Physical property table number\n\n\n\\item \\texttt{mat\\_property::Vector\\{Int\\}}: Material property table number\n\n\n\\item \\texttt{color::Vector\\{Int\\}}: Color\n\n\n\\item \\texttt{nodes\\_per\\_elt::Vector\\{Int\\}}: Number of nodes per element\n\n\n\\item \\texttt{connectivity::Vector\\{Vector\\{Int\\}\\}}: Element connectivity (node labels)\n\n\n\\item \\texttt{beam\\_info::Vector\\{Vector\\{Int\\}\\}}: Beam element information\n\n\\end{itemize}\n"
                     },
                     "metadata": {
                     }
@@ -115,7 +120,7 @@
             ]
         }
     ],
-    "timestamp": "2025-10-31T12:03:05.3",
-    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFF/docs/datasets/dataset2412.qmd",
+    "timestamp": "2025-10-31T15:55:16.182",
+    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFFio/docs/datasets/dataset2412.qmd",
     "qnr_schema_version": "1.0.0"
 }

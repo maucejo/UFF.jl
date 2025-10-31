@@ -2,9 +2,19 @@
 
 julia_version = "1.12.1"
 manifest_format = "2.0"
-project_hash = "cdc6534d15c49747ddb580f3a361a587447f9eb2"
+project_hash = "2936fa3318446ef53009265b3cdddb26e8c3e43b"
 
-[[deps.UFFReader]]
-path = "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFFReader"
+[[deps.Printf]]
+deps = ["Unicode"]
+uuid = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+version = "1.11.0"
+
+[[deps.UFFio]]
+deps = ["Printf"]
+path = "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFFio"
 uuid = "20c5726e-8372-4c34-be2c-190a5a70d483"
 version = "0.1.0"
+
+[[deps.Unicode]]
+uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
+version = "1.11.0"

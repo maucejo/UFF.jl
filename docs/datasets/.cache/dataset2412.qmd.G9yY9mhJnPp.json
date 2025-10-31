@@ -27,13 +27,13 @@
             "source": [
                 "#| echo: false\n",
                 "#| output: false\n",
-                "using UFFReader"
+                "using UFFio"
             ],
             "outputs": [
                 {
                     "output_type": "stream",
                     "name": "stdout",
-                    "text": "\u001b[32m\u001b[1mPrecompiling\u001b[22m\u001b[39m packages...\n    290.1 ms\u001b[32m  ✓ \u001b[39mUFFReader\n  1 dependency successfully precompiled in 0 seconds\n"
+                    "text": "\u001b[32m\u001b[1mPrecompiling\u001b[22m\u001b[39m packages...\n    290.1 ms\u001b[32m  ✓ \u001b[39mUFFio\n  1 dependency successfully precompiled in 0 seconds\n"
                 }
             ],
             "execution_count": 1
@@ -55,7 +55,7 @@
             },
             "source": [
                 "#| echo: false\n",
-                "@doc UFFReader.parse_dataset2412"
+                "@doc UFFio.parse_dataset2412"
             ],
             "outputs": [
                 {
@@ -121,6 +121,6 @@
         }
     ],
     "timestamp": "2025-10-31T12:44:13.048",
-    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFFReader/docs/datasets/dataset2412.qmd",
+    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFFio/docs/datasets/dataset2412.qmd",
     "qnr_schema_version": "1.0.0"
 }

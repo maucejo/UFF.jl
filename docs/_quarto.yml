@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "UFFReader.jl"
+  title: "UFFio.jl"
   favicon: "assets/logo/doclogo.svg"
   page-navigation: true
   navbar:
@@ -18,7 +18,7 @@ website:
       #   file: helper/index.qmd
     right:
       - icon: github
-        href: https://github.com/maucejo/UFFReader.jl
+        href: https://github.com/maucejo/UFFio.jl
         aria-label: GitHub
 
   sidebar:

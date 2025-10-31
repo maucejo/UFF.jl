@@ -1,4 +1,4 @@
-module UFFReader
+module UFFio
     using Printf
 
     # Exported Types

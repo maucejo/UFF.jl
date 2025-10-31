@@ -1,6 +1,6 @@
-using UFFReader
+using UFFio
 using Test
 
-@testset "UFFReader.jl" begin
+@testset "UFFio.jl" begin
     # Write your tests here.
 end
