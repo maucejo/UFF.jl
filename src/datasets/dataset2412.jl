@@ -265,5 +265,54 @@ function parse_dataset2412(block)
 end
 
 function write_dataset2412(dataset::Dataset2412)
-    # Function implementation goes here
+    lines = String[]
+
+    # Write header
+    push!(lines, "    -1")
+    push!(lines, "  2412")
+
+    # Write element data
+    for i in eachindex(dataset.elements_ID)
+        # Record 1: FORMAT(6I10) - element info
+        line = @sprintf("%10d%10d%10d%10d%10d%10d",
+            dataset.elements_ID[i],
+            dataset.fe_descriptor_id[i],
+            dataset.phys_property[i],
+            dataset.mat_property[i],
+            dataset.color[i],
+            dataset.nodes_per_elt[i]
+        )
+        push!(lines, line)
+
+        # Check if beam element
+        if dataset.fe_descriptor_id[i] in [11, 21, 22, 23, 24]
+            # Record 2: FORMAT(3I10) - beam orientation and cross sections
+            beam_line = @sprintf("%10d%10d%10d",
+                dataset.beam_info[i][1],
+                dataset.beam_info[i][2],
+                dataset.beam_info[i][3]
+            )
+            push!(lines, beam_line)
+        end
+
+        # Record 2 (non-beam) or Record 3 (beam): FORMAT(8I10) - connectivity
+        # Write nodes in groups of 8 per line
+        nodes = dataset.connectivity[i]
+        nnode = length(nodes)
+
+        for j in 1:8:nnode
+            # Determine how many nodes to write on this line (up to 8)
+            end_idx = min(j + 7, nnode)
+            nodes_line = ""
+            for k in j:end_idx
+                nodes_line *= @sprintf("%10d", nodes[k])
+            end
+            push!(lines, nodes_line)
+        end
+    end
+
+    # Write footer
+    push!(lines, "    -1")
+
+    return lines
 end
