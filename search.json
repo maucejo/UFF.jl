@@ -158,7 +158,7 @@
     "href": "datasets/index.html",
     "title": "Preamble",
     "section": "",
-    "text": "There currently exists 417 datasets in the UFF format. The complete UFF library and their descriptions can be found on the website of the University of Cincinnati. UFF.jl only implements a subset of these datasets that are commonly used in structural dynamics and modale analysis.\nAs mentioned in the Introduction, the UFF datasets implemented in UFF.jl are:\n\nDataset 15 - Nodes\nDataset 18 - Coordinate systems\nDataset 55 - Data at nodes\nDataset 58 - Function at nodal DOF\nDataset 82 - Tracelines\nDataset 151 - Header\nDataset 164 - Units\nDataset 2411 - Nodes - Double precision\nDataset 2412 - Elements\nDataset 2414 - Analysis Data\n\nEach dataset page contains a description of the dataset as well as its API documentation.",
+    "text": "There currently exists 417 datasets in the UFF format. The complete UFF library and their descriptions can be found on the website of the University of Cincinnati. UFF.jl only implements a subset of these datasets that are commonly used in structural dynamics and modale analysis.\nAs mentioned in the Home page, the UFF datasets implemented in UFF.jl are:\n\nDataset 15 - Nodes\nDataset 18 - Coordinate systems\nDataset 55 - Data at nodes\nDataset 58 - Function at nodal DOF\nDataset 82 - Tracelines\nDataset 151 - Header\nDataset 164 - Units\nDataset 2411 - Nodes - Double precision\nDataset 2412 - Elements\nDataset 2414 - Analysis Data\n\nEach dataset page contains a description of the dataset as well as its API documentation.",
     "crumbs": [
       "Datasets",
       "Preamble"
