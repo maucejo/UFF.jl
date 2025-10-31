@@ -249,7 +249,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Because <code>readuff</code> returns a vector of datasets, you can interact with a given dataset as usually done in Julia. For example:</p>
+<p>Because <code>readuff</code> returns a vector of datasets, you can interact with a given dataset as usually done in Julia. A dataset is a Julia composite type (i.e., a struct), having its own fields, corresponding to the UFF dataset type.</p>
+<p>As an example, let’s say that you have read a UFF file containing multiple datasets. You can access each dataset by indexing the returned vector and interacting with it through its fields.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Access to the first dataset extracted</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Suppose that the first dataset is of type Dataset15</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>d15 <span class="op">=</span> data[<span class="fl">1</span>]</span>
