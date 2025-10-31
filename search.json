@@ -1,5 +1,15 @@
 [
   {
+    "objectID": "helper/index.html",
+    "href": "helper/index.html",
+    "title": "Helper functions",
+    "section": "",
+    "text": "UFF.jl provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:\n\nconnectivity_matrix: Retrieves the connectivity matrix for a specified dataset type from the UFF data.\ndataset_types: Returns the list of all dataset types extracted from an UFF file.\nsupported_datasets: Lists all dataset types that are currently supported for reading.\n\n\n\n\nconnectivity_matrix(dataset::Dataset2412) -&gt; Matrix{Int}\nReturns the connectivity matrix for a Dataset2412 object, where each row corresponds to an element and each column corresponds to a node. Missing values are filled with -1.\nInput\n\ndataset::Dataset2412: The Dataset2412 object to extract connectivity from.\n\n\nOutput\n\nMatrix{Int}: A matrix representing the connectivity of elements to nodes.\n\n\n\n\n\n\n\n\n\n\ndataset_types(data::UFFDataset) -&gt; Vector{String}\nReturns the dataset types present in a UFFDataset object.\nInput\n\ndata::UFFDataset: The UFFDataset object to extract types from.\n\n\nOutput\n\nVector{Symbol}: A vector containing the dataset types.\n\n\n\n\n\n\n\n:::\n\n\nsupported_datasets() -&gt; Vector{Int}\nReturns a vector of supported UFF dataset types.\n\n\n\n\n\n:::",
+    "crumbs": [
+      "Helper functions"
+    ]
+  },
+  {
     "objectID": "overview/release_notes.html",
     "href": "overview/release_notes.html",
     "title": "Release Notes",
@@ -19,6 +29,28 @@
     "crumbs": [
       "Overview",
       "Release Notes"
+    ]
+  },
+  {
+    "objectID": "usage/index.html",
+    "href": "usage/index.html",
+    "title": "Basic Usage",
+    "section": "",
+    "text": "At the moment, UFF.jl only implements reading functionalities through the function readuff. Future versions will include additional functionalities for writing UFF data in a given format.",
+    "crumbs": [
+      "Usage",
+      "Basic Usage"
+    ]
+  },
+  {
+    "objectID": "usage/index.html#reading-uff-files",
+    "href": "usage/index.html#reading-uff-files",
+    "title": "Basic Usage",
+    "section": "Reading UFF Files",
+    "text": "Reading UFF Files\nusing UFF\n\ndata = readuff(\"path/to/your/file.uff\")\n\n\n\nreaduff(filename::String) -&gt; Vector{UFFDataset}\nReads a UFF (Universal File Format) file and parses its contents into a vector of UFFDataset objects.\nInput\n\nfilename::String: The path to the UFF file to be read.\n\n\nOutput\n\ndata::Vector{UFFDataset}: A vector containing the parsed UFF datasets.",
+    "crumbs": [
+      "Usage",
+      "Basic Usage"
     ]
   },
   {

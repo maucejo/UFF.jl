@@ -23,7 +23,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -69,6 +69,9 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -175,6 +178,63 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><code>UFF.jl</code> provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:</p>
+<ul>
+<li><code>connectivity_matrix</code>: Retrieves the connectivity matrix for a specified dataset type from the UFF data.</li>
+<li><code>dataset_types</code>: Returns the list of all dataset types extracted from an UFF file.</li>
+<li><code>supported_datasets</code>: Lists all dataset types that are currently supported for reading.</li>
+</ul>
+<div class="api">
+<div id="4" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><pre><code class="language-julia">connectivity_matrix(dataset::Dataset2412) -&gt; Matrix{Int}</code></pre>
+<p>Returns the connectivity matrix for a Dataset2412 object, where each row corresponds to an element and each column corresponds to a node. Missing values are filled with <code>-1</code>.</p>
+<p><strong>Input</strong></p>
+<ul>
+<li><p><code>dataset::Dataset2412</code>: The Dataset2412 object to extract connectivity from.</p>
+</li>
+</ul>
+<p><strong>Output</strong></p>
+<ul>
+<li><p><code>Matrix{Int}</code>: A matrix representing the connectivity of elements to nodes.</p>
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+</div>
+<div id="6" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><pre><code class="language-julia">dataset_types(data::UFFDataset) -&gt; Vector{String}</code></pre>
+<p>Returns the dataset types present in a UFFDataset object.</p>
+<p><strong>Input</strong></p>
+<ul>
+<li><p><code>data::UFFDataset</code>: The UFFDataset object to extract types from.</p>
+</li>
+</ul>
+<p><strong>Output</strong></p>
+<ul>
+<li><p><code>Vector{Symbol}</code>: A vector containing the dataset types.</p>
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+<p>:::</p>
+<div id="8" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="markdown"><pre><code class="language-julia">supported_datasets() -&gt; Vector{Int}</code></pre>
+<p>Returns a vector of supported UFF dataset types.</p>
+
+
+</div>
+</div>
+</div>
+<p>:::</p>
 
 
 
