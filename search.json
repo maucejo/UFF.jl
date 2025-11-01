@@ -4,7 +4,7 @@
     "href": "overview/installation.html",
     "title": "Installation",
     "section": "",
-    "text": "Note\n\n\n\nIf you are already a Julia user, you can skip this section.\nThis section explains how to install Julia and UFFio.jl.",
+    "text": "Note\n\n\n\nIf you are already a Julia user, you can skip this section.\nThis section explains how to install Julia and UFFFiles.jl.",
     "crumbs": [
       "Overview",
       "Installation"
@@ -22,11 +22,11 @@
     ]
   },
   {
-    "objectID": "overview/installation.html#install-uffio.jl",
-    "href": "overview/installation.html#install-uffio.jl",
+    "objectID": "overview/installation.html#install-ufffiles.jl",
+    "href": "overview/installation.html#install-ufffiles.jl",
     "title": "Installation",
-    "section": "Install UFFio.jl ",
-    "text": "Install UFFio.jl \nThe package is registered in the Julia General Registry. So, to install the package, you can use the following command:\n(Yourenv) pkg&gt; add UFFio",
+    "section": "Install UFFFiles.jl ",
+    "text": "Install UFFFiles.jl \nThe package is registered in the Julia General Registry. So, to install the package, you can use the following command:\n(Yourenv) pkg&gt; add UFFFiles",
     "crumbs": [
       "Overview",
       "Installation"
@@ -35,67 +35,67 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "UFFio.jl",
+    "title": "UFFFiles.jl",
     "section": "",
-    "text": "UFFio.jl is a Julia package for reading (and writing in the future) Universal File Format (UFF) files, commonly used in engineering applications.",
+    "text": "UFFFiles.jl is a Julia package for reading (and writing in the future) Universal File Format (UFF) files, commonly used in engineering applications.",
     "crumbs": [
       "Overview",
-      "UFFio.jl"
+      "UFFFiles.jl"
     ]
   },
   {
     "objectID": "index.html#supported-formats",
     "href": "index.html#supported-formats",
-    "title": "UFFio.jl",
+    "title": "UFFFiles.jl",
     "section": "Supported formats",
-    "text": "Supported formats\nCurrently, UFFio.jl supports reading UFF files with the following blocks:\n\nDataset 15\nDataset 18\nDataset 55\nDataset 58\nDataset 82\nDataset 151\nDataset 164\nDataset 2411\nDataset 2412\nDataset 2414",
+    "text": "Supported formats\nCurrently, UFFFiles.jl supports reading UFF files with the following blocks:\n\nDataset 15\nDataset 18\nDataset 55\nDataset 58\nDataset 82\nDataset 151\nDataset 164\nDataset 2411\nDataset 2412\nDataset 2414",
     "crumbs": [
       "Overview",
-      "UFFio.jl"
+      "UFFFiles.jl"
     ]
   },
   {
     "objectID": "index.html#contributing",
     "href": "index.html#contributing",
-    "title": "UFFio.jl",
+    "title": "UFFFiles.jl",
     "section": "Contributing",
     "text": "Contributing\nContributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.\nTo make contributions easier, please provide *.unv or *.uff files that can be used as test cases for the new features or bug fixes.",
     "crumbs": [
       "Overview",
-      "UFFio.jl"
+      "UFFFiles.jl"
     ]
   },
   {
     "objectID": "index.html#acknowledgements",
     "href": "index.html#acknowledgements",
-    "title": "UFFio.jl",
+    "title": "UFFFiles.jl",
     "section": "Acknowledgements",
-    "text": "Acknowledgements\nThe creation of UFFio.jl was driven by the need to handle UFF files in Julia for processing the experimental data that I collect during my research activities. This package take some inspiration from two wonderful packages : pyuff written in Python and uff written in Matlab. However, UFFio.jl is a completely new development, with its own design choices, which leverages of Julia’s strengths and provides a native solution for handling UFF files in the Julia ecosystem.\nFor testing and validate the package, I used several UFF files that are publicly available online, including some provided by pyuff and some coming from my own experimental campaigns. For this reason, I would like to thank all the people who made these files available. This also explains why bugs may still be present in the package, as I do not have access to all possible UFF file variations.",
+    "text": "Acknowledgements\nThe creation of UFFFiles.jl was driven by the need to handle UFF files in Julia for processing the experimental data that I collect during my research activities. This package take some inspiration from two wonderful packages : pyuff written in Python and uff written in Matlab. However, UFFFiles.jl is a completely new development, with its own design choices, which leverages of Julia’s strengths and provides a native solution for handling UFF files in the Julia ecosystem.\nFor testing and validate the package, I used several UFF files that are publicly available online, including some provided by pyuff and some coming from my own experimental campaigns. For this reason, I would like to thank all the people who made these files available. This also explains why bugs may still be present in the package, as I do not have access to all possible UFF file variations.",
     "crumbs": [
       "Overview",
-      "UFFio.jl"
+      "UFFFiles.jl"
     ]
   },
   {
     "objectID": "index.html#reproducibility",
     "href": "index.html#reproducibility",
-    "title": "UFFio.jl",
+    "title": "UFFFiles.jl",
     "section": "Reproducibility",
-    "text": "Reproducibility\n\n\n\n\n\n\nProject direct dependencies\n\n\n\n\n\nUFFio.jl has no direct dependencies.\n\n\n\n\n\n\n\n\n\nJulia version and machine information\n\n\n\n\n\nJulia Version 1.12.1\nCommit ba1e628ee49 (2025-10-17 13:02 UTC)\nBuild Info:\n  Official https://julialang.org release\nPlatform Info:\n  OS: macOS (arm64-apple-darwin24.0.0)\n  CPU: 16 × Apple M4 Max\n  WORD_SIZE: 64\n  LLVM: libLLVM-18.1.7 (ORCJIT, apple-m4)\n  GC: Built with stock GC\nThreads: 1 default, 1 interactive, 1 GC (on 12 virtual cores)\nEnvironment:\n  JULIA_EDITOR = code\n  JULIA_VSCODE_REPL = 1\n  JULIA_PKG_SERVER = https://juliahub.com",
+    "text": "Reproducibility\n\n\n\n\n\n\nProject direct dependencies\n\n\n\n\n\nUFFFiles.jl has no direct dependencies.\n\n\n\n\n\n\n\n\n\nJulia version and machine information\n\n\n\n\n\nJulia Version 1.12.1\nCommit ba1e628ee49 (2025-10-17 13:02 UTC)\nBuild Info:\n  Official https://julialang.org release\nPlatform Info:\n  OS: macOS (arm64-apple-darwin24.0.0)\n  CPU: 16 × Apple M4 Max\n  WORD_SIZE: 64\n  LLVM: libLLVM-18.1.7 (ORCJIT, apple-m4)\n  GC: Built with stock GC\nThreads: 1 default, 1 interactive, 1 GC (on 12 virtual cores)\nEnvironment:\n  JULIA_EDITOR = code\n  JULIA_VSCODE_REPL = 1\n  JULIA_PKG_SERVER = https://juliahub.com",
     "crumbs": [
       "Overview",
-      "UFFio.jl"
+      "UFFFiles.jl"
     ]
   },
   {
     "objectID": "index.html#license",
     "href": "index.html#license",
-    "title": "UFFio.jl",
+    "title": "UFFFiles.jl",
     "section": "License",
     "text": "License\nThis package is under MIT License.",
     "crumbs": [
       "Overview",
-      "UFFio.jl"
+      "UFFFiles.jl"
     ]
   },
   {
@@ -103,7 +103,7 @@
     "href": "usage/index.html",
     "title": "Basic Usage",
     "section": "",
-    "text": "At the moment, UFFio.jl only implements reading functionalities through the function readuff. Future versions will include additional functionalities for writing UFF data in a given format.",
+    "text": "At the moment, UFFFiles.jl only implements reading functionalities through the function readuff. Future versions will include additional functionalities for writing UFF data in a given format.",
     "crumbs": [
       "Usage",
       "Basic Usage"
@@ -114,7 +114,7 @@
     "href": "usage/index.html#reading-uff-files",
     "title": "Basic Usage",
     "section": "Reading UFF Files",
-    "text": "Reading UFF Files\nusing UFFio\n\ndata = readuff(\"path/to/your/file.uff\")\n\n\n\nreaduff(filename::String) -&gt; Vector{UFFDataset}\nReads a UFF (Universal File Format) file and parses its contents into a vector of UFFDataset objects.\nInput\n\nfilename::String: The path to the UFF file to be read.\n\n\nOutput\n\ndata::Vector{UFFDataset}: A vector containing the parsed UFF datasets.\n\n\n\n\n\n\n\n\nBecause readuff returns a vector of datasets, you can interact with a given dataset as usually done in Julia. A dataset is a Julia composite type (i.e., a struct), having its own fields, corresponding to the UFF dataset type.\nAs an example, let’s say that you have read a UFF file containing multiple datasets. You can access each dataset by indexing the returned vector and interacting with it through its fields.\n# Access to the first dataset extracted\n# Suppose that the first dataset is of type Dataset15\nd15 = data[1]\n\n# Access to the list of node coordinates\nnode_coords = d15.coords",
+    "text": "Reading UFF Files\nusing UFFFiles\n\ndata = readuff(\"path/to/your/file.uff\")\n\n\n\nreaduff(filename::String) -&gt; Vector{UFFDataset}\nReads a UFF (Universal File Format) file and parses its contents into a vector of UFFDataset objects.\nInput\n\nfilename::String: The path to the UFF file to be read.\n\n\nOutput\n\ndata::Vector{UFFDataset}: A vector containing the parsed UFF datasets.\n\n\n\n\n\n\n\n\nBecause readuff returns a vector of datasets, you can interact with a given dataset as usually done in Julia. A dataset is a Julia composite type (i.e., a struct), having its own fields, corresponding to the UFF dataset type.\nAs an example, let’s say that you have read a UFF file containing multiple datasets. You can access each dataset by indexing the returned vector and interacting with it through its fields.\n# Access to the first dataset extracted\n# Suppose that the first dataset is of type Dataset15\nd15 = data[1]\n\n# Access to the list of node coordinates\nnode_coords = d15.coords",
     "crumbs": [
       "Usage",
       "Basic Usage"
@@ -158,7 +158,7 @@
     "href": "datasets/index.html",
     "title": "Preamble",
     "section": "",
-    "text": "There currently exists 417 datasets in the UFF format. The complete UFF library and their descriptions can be found on the website of the University of Cincinnati. UFFio.jl only implements a subset of these datasets that are commonly used in structural dynamics and modale analysis.\nAs mentioned in the Home page, the UFF datasets implemented in UFFio.jl are:\n\nDataset 15 - Nodes\nDataset 18 - Coordinate systems\nDataset 55 - Data at nodes\nDataset 58 - Function at nodal DOF\nDataset 82 - Tracelines\nDataset 151 - Header\nDataset 164 - Units\nDataset 2411 - Nodes - Double precision\nDataset 2412 - Elements\nDataset 2414 - Analysis Data\n\nEach dataset page contains a description of the dataset as well as its API documentation.",
+    "text": "There currently exists 417 datasets in the UFF format. The complete UFF library and their descriptions can be found on the website of the University of Cincinnati. UFFFiles.jl only implements a subset of these datasets that are commonly used in structural dynamics and modale analysis.\nAs mentioned in the Home page, the UFF datasets implemented in UFFFiles.jl are:\n\nDataset 15 - Nodes\nDataset 18 - Coordinate systems\nDataset 55 - Data at nodes\nDataset 58 - Function at nodal DOF\nDataset 82 - Tracelines\nDataset 151 - Header\nDataset 164 - Units\nDataset 2411 - Nodes - Double precision\nDataset 2412 - Elements\nDataset 2414 - Analysis Data\n\nEach dataset page contains a description of the dataset as well as its API documentation.",
     "crumbs": [
       "Datasets",
       "Preamble"
@@ -466,7 +466,7 @@
     "href": "usage/helper.html",
     "title": "Helper functions",
     "section": "",
-    "text": "UFFio.jl provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:",
+    "text": "UFFFiles.jl provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:",
     "crumbs": [
       "Usage",
       "Helper functions"
@@ -488,7 +488,7 @@
     "href": "usage/helper.html#example-usage",
     "title": "Helper functions",
     "section": "2 Example usage",
-    "text": "2 Example usage\n\n2.1 Connectivity Matrix\nusing UFFioReader\n\n# readuff returns a vector of datasets\ndata2412 = readuff(\"path/to/your/file2412.uff\")[1]\nconnectivity = connectivity_matrix(data2412)\n\n\n2.2 Dataset Types\nusing UFFioReader\n\n# Only one dataset is read\ndata = readuff(\"path/to/your/file.uff\")[1]\ndtype = dataset_types(data)\n\n# Several datasets are read\ndata_all = readuff(\"path/to/your/file.uff\")\ndtypes = dataset_types.(data_all)\n\n\n2.3 Supported Datasets\nusing UFFioReader\n\nvalid_datasets = supported_datasets()",
+    "text": "2 Example usage\n\n2.1 Connectivity Matrix\nusing UFFFilesReader\n\n# readuff returns a vector of datasets\ndata2412 = readuff(\"path/to/your/file2412.uff\")[1]\nconnectivity = connectivity_matrix(data2412)\n\n\n2.2 Dataset Types\nusing UFFFilesReader\n\n# Only one dataset is read\ndata = readuff(\"path/to/your/file.uff\")[1]\ndtype = dataset_types(data)\n\n# Several datasets are read\ndata_all = readuff(\"path/to/your/file.uff\")\ndtypes = dataset_types.(data_all)\n\n\n2.3 Supported Datasets\nusing UFFFilesReader\n\nvalid_datasets = supported_datasets()",
     "crumbs": [
       "Usage",
       "Helper functions"

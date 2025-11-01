@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Helper functions – UFFio.jl</title>
+<title>Helper functions – UFFFiles.jl</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -123,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <img src="../assets/logo/doclogo.svg" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">UFFio.jl</span>
+    <span class="navbar-title">UFFFiles.jl</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -147,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/maucejo/UFFio.jl"> <i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/maucejo/UFFFiles.jl"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -228,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><code>UFFio.jl</code> provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:</p>
+<p><code>UFFFiles.jl</code> provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:</p>
 <ul>
 <li><code>connectivity_matrix</code>: Returns the connectivity matrix extracted from <code>Dataset2412</code>.</li>
 <li><code>dataset_types</code>: Returns the list of all dataset types extracted from an UFF file.</li>
@@ -294,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="2" class="anchored" data-anchor-id="example-usage"><span class="header-section-number">2</span> Example usage</h2>
 <section id="connectivity-matrix" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="connectivity-matrix"><span class="header-section-number">2.1</span> Connectivity Matrix</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">UFFioReader</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">UFFFilesReader</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># readuff returns a vector of datasets</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data2412 <span class="op">=</span> <span class="fu">readuff</span>(<span class="st">"path/to/your/file2412.uff"</span>)[<span class="fl">1</span>]</span>
@@ -302,7 +302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="dataset-types" class="level3" data-number="2.2">
 <h3 data-number="2.2" class="anchored" data-anchor-id="dataset-types"><span class="header-section-number">2.2</span> Dataset Types</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">UFFioReader</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">UFFFilesReader</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Only one dataset is read</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fu">readuff</span>(<span class="st">"path/to/your/file.uff"</span>)[<span class="fl">1</span>]</span>
@@ -314,7 +314,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="supported-datasets" class="level3" data-number="2.3">
 <h3 data-number="2.3" class="anchored" data-anchor-id="supported-datasets"><span class="header-section-number">2.3</span> Supported Datasets</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">UFFioReader</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">UFFFilesReader</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>valid_datasets <span class="op">=</span> <span class="fu">supported_datasets</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
@@ -395,7 +395,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/maucejo\.github\.io\/UFFio\.jl\/");
+        var filterRegex = new RegExp("https:\/\/maucejo\.github\.io\/UFFFiles\.jl\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
