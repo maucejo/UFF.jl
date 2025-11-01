@@ -2,7 +2,7 @@
 
 julia_version = "1.12.1"
 manifest_format = "2.0"
-project_hash = "2936fa3318446ef53009265b3cdddb26e8c3e43b"
+project_hash = "9a001dd2e2b3ceeb2b4f37abc9a2fa1b695f8c74"
 
 [[deps.Printf]]
 deps = ["Unicode"]
