@@ -27,7 +27,7 @@
             "source": [
                 "#| echo: false\n",
                 "#| output: false\n",
-                "using UFFio"
+                "using UFFFiles"
             ],
             "outputs": [
             ],
@@ -40,12 +40,12 @@
             },
             "source": [
                 "\n",
-                "At the moment, `UFFio.jl` only implements reading functionalities through the function `readuff`. Future versions will include additional functionalities for writing UFF data in a given format.\n",
+                "At the moment, `UFFFiles.jl` only implements reading functionalities through the function `readuff`. Future versions will include additional functionalities for writing UFF data in a given format.\n",
                 "\n",
                 "## Reading UFF Files\n",
                 "\n",
                 "```julia\n",
-                "using UFFio\n",
+                "using UFFFiles\n",
                 "\n",
                 "data = readuff(\"path/to/your/file.uff\")\n",
                 "```\n",
@@ -101,6 +101,6 @@
         }
     ],
     "timestamp": "2025-10-31T14:33:04.768",
-    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFFio/docs/usage/index.qmd",
+    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFFFiles/docs/usage/index.qmd",
     "qnr_schema_version": "1.0.0"
 }

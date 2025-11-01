@@ -27,7 +27,7 @@
             "source": [
                 "#| echo: false\n",
                 "#| output: false\n",
-                "using UFFio"
+                "using UFFFiles"
             ],
             "outputs": [
             ],
@@ -50,7 +50,7 @@
             },
             "source": [
                 "#| echo: false\n",
-                "@doc UFFio.parse_dataset82"
+                "@doc UFFFiles.parse_dataset82"
             ],
             "outputs": [
                 {

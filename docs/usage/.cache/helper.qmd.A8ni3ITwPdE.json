@@ -27,7 +27,7 @@
             "source": [
                 "#| echo: false\n",
                 "#| output: false\n",
-                "using UFFio"
+                "using UFFFiles"
             ],
             "outputs": [
                 {
@@ -45,7 +45,7 @@
             },
             "source": [
                 "\n",
-                "`UFFio.jl` provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:\n",
+                "`UFFFiles.jl` provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:\n",
                 "\n",
                 "- `connectivity_matrix`: Retrieves the connectivity matrix for a specified dataset type from the UFF data.\n",
                 "- `dataset_types`: Returns the list of all dataset types extracted from an UFF file.\n",
@@ -165,7 +165,7 @@
                 "\n",
                 "### Connectivity Matrix\n",
                 "```julia\n",
-                "using UFFio\n",
+                "using UFFFiles\n",
                 "\n",
                 "# readuff returns a vector of datasets\n",
                 "data2412 = readuff(\"path/to/your/file2412.uff\")[1]\n",
@@ -174,7 +174,7 @@
                 "\n",
                 "### Dataset Types\n",
                 "```julia\n",
-                "using UFFio\n",
+                "using UFFFiles\n",
                 "\n",
                 "# Only one dataset is read\n",
                 "data = readuff(\"path/to/your/file.uff\")[1]\n",
@@ -187,7 +187,7 @@
                 "\n",
                 "### Supported Datasets\n",
                 "```julia\n",
-                "using UFFio\n",
+                "using UFFFiles\n",
                 "\n",
                 "valid_datasets = supported_datasets()\n",
                 "```"

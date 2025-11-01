@@ -1,4 +1,4 @@
-module UFFio
+module UFFFiles
     using Printf
 
     # Exported Types

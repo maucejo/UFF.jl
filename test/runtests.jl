@@ -1,6 +1,6 @@
-using UFFio
+using UFFFiles
 using Test
 
-@testset "UFFio.jl" begin
+@testset "UFFFiles.jl" begin
     # Write your tests here.
 end

@@ -27,7 +27,7 @@
             "source": [
                 "#| echo: false\n",
                 "#| output: false\n",
-                "using UFFio"
+                "using UFFFiles"
             ],
             "outputs": [
                 {
@@ -45,12 +45,12 @@
             },
             "source": [
                 "\n",
-                "At the moment, `UFFio.jl` only implements reading functionalities through the function `readuff`. Future versions will include additional functionalities for writing UFF data in a given format.\n",
+                "At the moment, `UFFFiles.jl` only implements reading functionalities through the function `readuff`. Future versions will include additional functionalities for writing UFF data in a given format.\n",
                 "\n",
                 "## Reading UFF Files\n",
                 "\n",
                 "```julia\n",
-                "using UFFio\n",
+                "using UFFFiles\n",
                 "\n",
                 "data = readuff(\"path/to/your/file.uff\")\n",
                 "```\n",

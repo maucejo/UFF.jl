@@ -27,7 +27,7 @@
             "source": [
                 "#| echo: false\n",
                 "#| output: false\n",
-                "using UFFio"
+                "using UFFFiles"
             ],
             "outputs": [
             ],
@@ -40,7 +40,7 @@
             },
             "source": [
                 "\n",
-                "`UFFio.jl` provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:\n",
+                "`UFFFiles.jl` provides several helper functions to facilitate interaction with UFF datasets. At the moment, the following helper functions are available:\n",
                 "\n",
                 "- `connectivity_matrix`: Returns the connectivity matrix extracted from `Dataset2412`.\n",
                 "- `dataset_types`: Returns the list of all dataset types extracted from an UFF file.\n",
@@ -160,7 +160,7 @@
                 "\n",
                 "### Connectivity Matrix\n",
                 "```julia\n",
-                "using UFFioReader\n",
+                "using UFFFilesReader\n",
                 "\n",
                 "# readuff returns a vector of datasets\n",
                 "data2412 = readuff(\"path/to/your/file2412.uff\")[1]\n",
@@ -169,7 +169,7 @@
                 "\n",
                 "### Dataset Types\n",
                 "```julia\n",
-                "using UFFioReader\n",
+                "using UFFFilesReader\n",
                 "\n",
                 "# Only one dataset is read\n",
                 "data = readuff(\"path/to/your/file.uff\")[1]\n",
@@ -182,7 +182,7 @@
                 "\n",
                 "### Supported Datasets\n",
                 "```julia\n",
-                "using UFFioReader\n",
+                "using UFFFilesReader\n",
                 "\n",
                 "valid_datasets = supported_datasets()\n",
                 "```"
@@ -190,6 +190,6 @@
         }
     ],
     "timestamp": "2025-10-31T15:56:13.32",
-    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFFio/docs/usage/helper.qmd",
+    "file": "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFFFiles/docs/usage/helper.qmd",
     "qnr_schema_version": "1.0.0"
 }

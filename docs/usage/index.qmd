@@ -13,15 +13,15 @@ execute:
 ```{julia}
 #| echo: false
 #| output: false
-using UFFio
+using UFFFiles
 ```
 
-At the moment, `UFFio.jl` only implements reading functionalities through the function `readuff`. Future versions will include additional functionalities for writing UFF data in a given format.
+At the moment, `UFFFiles.jl` only implements reading functionalities through the function `readuff`. Future versions will include additional functionalities for writing UFF data in a given format.
 
 ## Reading UFF Files
 
 ```julia
-using UFFio
+using UFFFiles
 
 data = readuff("path/to/your/file.uff")
 ```

@@ -1,5 +1,5 @@
 ---
-title: UFFio.jl
+title: UFFFiles.jl
 format:
   html:
     toc: true
@@ -17,14 +17,14 @@ format:
 [![Aqua QA](https://raw.githubusercontent.com/JuliaTesting/Aqua.jl/master/badge.svg)](https://github.com/JuliaTesting/Aqua.jl)
 [![DispatchDoctor](https://img.shields.io/badge/%F0%9F%A9%BA_tested_with-DispatchDoctor.jl-blue?labelColor=white)](https://github.com/MilesCranmer/DispatchDoctor.jl)
 
-`UFFio.jl` is a Julia package for reading (and writing in the future) Universal File Format (UFF) files, commonly used in engineering applications.
+`UFFFiles.jl` is a Julia package for reading (and writing in the future) Universal File Format (UFF) files, commonly used in engineering applications.
 
 ::: {.callout-warning}
 The package is under active development and is developed as part of my research activities.
 :::
 
 ## Supported formats
-Currently, `UFFio.jl` supports reading UFF files with the following blocks:
+Currently, `UFFFiles.jl` supports reading UFF files with the following blocks:
 
 * Dataset 15
 * Dataset 18
@@ -39,14 +39,14 @@ Currently, `UFFio.jl` supports reading UFF files with the following blocks:
 
 ## Contributing
 
-Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/maucejo/UFFio.jl).
+Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request on the [GitHub repository](https://github.com/maucejo/UFFFiles.jl).
 
 To make contributions easier, please provide `*.unv` or `*.uff` files that can be used as test cases for the new features or bug fixes.
 
 ## Acknowledgements
 
-The creation of `UFFio.jl` was driven by the need to handle UFF files in Julia for processing the experimental data that I collect during my research activities.
-This package take some inspiration from two wonderful packages : [pyuff](https://github.com/pyNastran/puyff) written in Python and [uff](https://github.com/murmlgrmpf/uff) written in Matlab. However, UFFio.jl is a completely new development, with its own design choices, which leverages of Julia's strengths and provides a native solution for handling UFF files in the Julia ecosystem.
+The creation of `UFFFiles.jl` was driven by the need to handle UFF files in Julia for processing the experimental data that I collect during my research activities.
+This package take some inspiration from two wonderful packages : [pyuff](https://github.com/pyNastran/puyff) written in Python and [uff](https://github.com/murmlgrmpf/uff) written in Matlab. However, UFFFiles.jl is a completely new development, with its own design choices, which leverages of Julia's strengths and provides a native solution for handling UFF files in the Julia ecosystem.
 
 For testing and validate the package, I used several UFF files that are publicly available online, including some provided by [pyuff](https://github.com/pyNastran/puyff) and some coming from my own experimental campaigns. For this reason, I would like to thank all the people who made these files available. This also explains why bugs may still be present in the package, as I do not have access to all possible UFF file variations.
 
@@ -56,7 +56,7 @@ For testing and validate the package, I used several UFF files that are publicly
 
 # Project direct dependencies
 
-`UFFio.jl` has no direct dependencies.
+`UFFFiles.jl` has no direct dependencies.
 :::
 
 ::: {.callout-note collapse=true appearance="simple" icon=false}

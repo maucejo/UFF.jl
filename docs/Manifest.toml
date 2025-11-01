@@ -9,9 +9,9 @@ deps = ["Unicode"]
 uuid = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 version = "1.11.0"
 
-[[deps.UFFio]]
+[[deps.UFFFiles]]
 deps = ["Printf"]
-path = "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFFio"
+path = "/Users/maucejo/Documents/01_Recherche/04_Projets/Codes/Julia/UFFFiles"
 uuid = "20c5726e-8372-4c34-be2c-190a5a70d483"
 version = "0.1.0"
 

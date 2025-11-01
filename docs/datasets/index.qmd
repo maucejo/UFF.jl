@@ -6,9 +6,9 @@ format:
     number-sections: false
 ---
 
-There currently exists 417 datasets in the UFF format. The complete UFF library and their descriptions can be found on the website of the [University of Cincinnati](https://www.ceas3.uc.edu/sdrluff/all_files.php). `UFFio.jl` only implements a subset of these datasets that are commonly used in structural dynamics and modale analysis.
+There currently exists 417 datasets in the UFF format. The complete UFF library and their descriptions can be found on the website of the [University of Cincinnati](https://www.ceas3.uc.edu/sdrluff/all_files.php). `UFFFiles.jl` only implements a subset of these datasets that are commonly used in structural dynamics and modale analysis.
 
-As mentioned in the [Home page](../index.qmd), the UFF datasets implemented in `UFFio.jl` are:
+As mentioned in the [Home page](../index.qmd), the UFF datasets implemented in `UFFFiles.jl` are:
 
 - [Dataset 15 - Nodes](dataset15.qmd)
 - [Dataset 18 - Coordinate systems](dataset18.qmd)
