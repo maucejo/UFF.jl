@@ -617,3 +617,310 @@ function parse_dataset2414(block)
         data_value_raw
     )
 end
+
+function write_dataset2414(dataset::Dataset2414)
+    # Follow the docstring format for UFF 2414 (Analysis Data)
+    lines = String[]
+
+    # Header
+    push!(lines, "    -1")
+    push!(lines, "  2414")
+
+    # Record 1: Analysis dataset label (FORMAT 1I10)
+    push!(lines, @sprintf("%10d", dataset.analysis_dlabel))
+
+    # Record 2: Analysis dataset name (FORMAT 40A2)
+    push!(lines, dataset.analysis_dname)
+
+    # Record 3: Dataset location (FORMAT 1I10)
+    push!(lines, @sprintf("%10d", dataset.dataset_location))
+
+    # Records 4-8: ID lines (FORMAT 40A2 each)
+    push!(lines, dataset.id_line1)
+    push!(lines, dataset.id_line2)
+    push!(lines, dataset.id_line3)
+    push!(lines, dataset.id_line4)
+    push!(lines, dataset.id_line5)
+
+    # Record 9: Six integer fields (FORMAT 6I10)
+    push!(
+        lines,
+        @sprintf("%10d%10d%10d%10d%10d%10d",
+            dataset.model_type,
+            dataset.analysis_type,
+            dataset.data_characteristic,
+            dataset.result_type,
+            dataset.dtype,
+            dataset.num_data_values
+        )
+    )
+
+    # Get raw integer analysis type data (expand NamedTuple back to array)
+    int_raw = zeros(Int, 10)
+    for (key, value) in pairs(dataset.int_analysis_type)
+        if key == :design_set_ID
+            int_raw[1] = value
+        elseif key == :iteration_ID
+            int_raw[2] = value
+        elseif key == :solution_set_ID
+            int_raw[3] = value
+        elseif key == :bc
+            int_raw[4] = value
+        elseif key == :load_set
+            int_raw[5] = value
+        elseif key == :mode_ID
+            int_raw[6] = value
+        elseif key == :time_step_ID
+            int_raw[7] = value
+        elseif key == :freq_step_ID
+            int_raw[8] = value
+        elseif key == :creation_option
+            int_raw[9] = value
+        elseif key == :number_retained
+            int_raw[10] = value
+        end
+    end
+
+    # Record 10: First 8 integer analysis type specific data (FORMAT 8I10)
+    push!(
+        lines,
+        @sprintf("%10d%10d%10d%10d%10d%10d%10d%10d",
+            int_raw[1], int_raw[2], int_raw[3], int_raw[4],
+            int_raw[5], int_raw[6], int_raw[7], int_raw[8]
+        )
+    )
+
+    # Record 11: Last 2 integer analysis type specific data (FORMAT 8I10, but only 2 used)
+    push!(
+        lines,
+        @sprintf("%10d%10d",
+            int_raw[9], int_raw[10]
+        )
+    )
+
+    # Get raw real analysis type data (expand NamedTuple back to array)
+    real_raw = zeros(Float64, 12)
+    for (key, value) in pairs(dataset.real_analysis_type)
+        if key == :time
+            real_raw[1] = value
+        elseif key == :frequency
+            real_raw[2] = value
+        elseif key == :eigenvalue
+            real_raw[3] = value
+        elseif key == :modal_mass
+            real_raw[4] = value
+        elseif key == :modal_visc_dr
+            real_raw[5] = value
+        elseif key == :modal_hyst_dr
+            real_raw[6] = value
+        elseif key == :real_eigenvalue
+            real_raw[7] = value
+        elseif key == :imag_eigenvalue
+            real_raw[8] = value
+        elseif key == :real_modalA
+            real_raw[9] = value
+        elseif key == :imag_modalA
+            real_raw[10] = value
+        elseif key == :real_modalB
+            real_raw[11] = value
+        elseif key == :imag_modalB
+            real_raw[12] = value
+        end
+    end
+
+    # Record 12: First 6 real analysis type specific data (FORMAT 6E13.5)
+    push!(
+        lines,
+        @sprintf("  %.5E  %.5E  %.5E  %.5E  %.5E  %.5E",
+            real_raw[1], real_raw[2], real_raw[3],
+            real_raw[4], real_raw[5], real_raw[6]
+        )
+    )
+
+    # Record 13: Last 6 real analysis type specific data (FORMAT 6E13.5)
+    push!(
+        lines,
+        @sprintf("  %.5E  %.5E  %.5E  %.5E  %.5E  %.5E",
+            real_raw[7], real_raw[8], real_raw[9],
+            real_raw[10], real_raw[11], real_raw[12]
+        )
+    )
+
+    # Records 14-15: Data records depend on dataset_location
+    if dataset.dataset_location == 1
+        # Data at nodes
+        for i in 1:length(dataset.data_info.node_ID)
+            # Record 14: Node number (FORMAT I10)
+            push!(lines, @sprintf("%10d", dataset.data_info.node_ID[i]))
+
+            # Record 15: Data values (FORMAT 6E13.5)
+            # Get data for this node
+            data_vals = if dataset.dtype < 5
+                # Real or integer data
+                vec(dataset.data_value[i, :])
+            else
+                # Complex data: interleave real and imaginary parts
+                vals = Float64[]
+                for val in dataset.data_value[i, :]
+                    push!(vals, real(val))
+                    push!(vals, imag(val))
+                end
+                vals
+            end
+
+            # Write data values, 6 per line
+            for j in 1:6:length(data_vals)
+                end_idx = min(j + 5, length(data_vals))
+                line_vals = data_vals[j:end_idx]
+
+                # Format based on data type - FORMAT 6E13.5
+                parts = [@sprintf("%13.5E", Float64(val)) for val in line_vals]
+                push!(lines, join(parts, ""))
+            end
+        end
+
+    elseif dataset.dataset_location == 2
+        # Data on elements
+        for i in 1:length(dataset.data_info.elt_ID)
+            # Record 14: Element number, Number of data values (FORMAT 2I10)
+            ndv = length(dataset.data_value[i])
+            push!(lines, @sprintf("%10d%10d", dataset.data_info.elt_ID[i], ndv))
+
+            # Record 15: Data values (FORMAT 6E13.5)
+            data_vals = if dataset.dtype < 5
+                # Real or integer data
+                dataset.data_value[i]
+            else
+                # Complex data: interleave real and imaginary parts
+                vals = Float64[]
+                for val in dataset.data_value[i]
+                    push!(vals, real(val))
+                    push!(vals, imag(val))
+                end
+                vals
+            end
+
+            # Write data values, 6 per line
+            for j in 1:6:length(data_vals)
+                end_idx = min(j + 5, length(data_vals))
+                line_vals = data_vals[j:end_idx]
+
+                # Format based on data type - FORMAT 6E13.5
+                parts = [@sprintf("%13.5E", Float64(val)) for val in line_vals]
+                push!(lines, join(parts, ""))
+            end
+        end
+
+    elseif dataset.dataset_location == 3
+        # Data at nodes on elements
+        for i in 1:length(dataset.data_info.elt_ID)
+            # Record 14: Element number, Data expansion code, Number of nodes, Number of values per node (FORMAT 4I10)
+            push!(
+                lines,
+                @sprintf("%10d%10d%10d%10d",
+                    dataset.data_info.elt_ID[i],
+                    dataset.data_info.data_exp_code[i],
+                    dataset.data_info.nnodes_per_elt[i],
+                    dataset.data_info.ndv_per_node[i]
+                )
+            )
+
+            # Record 15: Data values (FORMAT 6E13.5)
+            # Handle expansion code: 1 = all nodes, 2 = only first node (all others same)
+            data_matrix = dataset.data_value[i]
+            exp_code = dataset.data_info.data_exp_code[i]
+
+            # Select which rows to write based on expansion code
+            rows_to_write = if exp_code == 1
+                # Write all nodes
+                1:size(data_matrix, 1)
+            else  # exp_code == 2
+                # Write only first node (all others are identical)
+                1:1
+            end
+
+            data_vals = if dataset.dtype < 5
+                # Real or integer data
+                # Flatten selected rows row by row
+                vec(transpose(data_matrix[rows_to_write, :]))
+            else
+                # Complex data: interleave real and imaginary parts
+                vals = Float64[]
+                for val in transpose(data_matrix[rows_to_write, :])
+                    push!(vals, real(val))
+                    push!(vals, imag(val))
+                end
+                vals
+            end
+
+            # Write data values, 6 per line
+            for j in 1:6:length(data_vals)
+                end_idx = min(j + 5, length(data_vals))
+                line_vals = data_vals[j:end_idx]
+
+                # Format based on data type - FORMAT 6E13.5
+                parts = [@sprintf("%13.5E", Float64(val)) for val in line_vals]
+                push!(lines, join(parts, ""))
+            end
+        end
+
+    elseif dataset.dataset_location == 5
+        # Data at points
+        for i in 1:length(dataset.data_info.elt_ID)
+            # Record 14: Element number, Data expansion code, Number of points, Number of values per point, Element order (FORMAT 5I10)
+            push!(
+                lines,
+                @sprintf("%10d%10d%10d%10d%10d",
+                    dataset.data_info.elt_ID[i],
+                    dataset.data_info.data_exp_code[i],
+                    dataset.data_info.npts_per_elt[i],
+                    dataset.data_info.ndv_per_point[i],
+                    dataset.data_info.elt_order[i]
+                )
+            )
+
+            # Record 15: Data values (FORMAT 6E13.5)
+            # Handle expansion code: 1 = all points, 2 = only first point (all others same)
+            data_matrix = dataset.data_value[i]
+            exp_code = dataset.data_info.data_exp_code[i]
+
+            # Select which rows to write based on expansion code
+            rows_to_write = if exp_code == 1
+                # Write all points
+                1:size(data_matrix, 1)
+            else  # exp_code == 2
+                # Write only first point (all others are identical)
+                1:1
+            end
+
+            data_vals = if dataset.dtype < 5
+                # Real or integer data
+                # Flatten selected rows row by row
+                vec(transpose(data_matrix[rows_to_write, :]))
+            else
+                # Complex data: interleave real and imaginary parts
+                vals = Float64[]
+                for val in transpose(data_matrix[rows_to_write, :])
+                    push!(vals, real(val))
+                    push!(vals, imag(val))
+                end
+                vals
+            end
+
+            # Write data values, 6 per line
+            for j in 1:6:length(data_vals)
+                end_idx = min(j + 5, length(data_vals))
+                line_vals = data_vals[j:end_idx]
+
+                # Format based on data type - FORMAT 6E13.5
+                parts = [@sprintf("%13.5E", Float64(val)) for val in line_vals]
+                push!(lines, join(parts, ""))
+            end
+        end
+    end
+
+    # Footer
+    push!(lines, "    -1")
+
+    return lines
+end

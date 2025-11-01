@@ -1,5 +1,3 @@
-using Printf
-
 """
 Universal Dataset Number: 15
 

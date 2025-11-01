@@ -47,6 +47,56 @@ function parse_dataset164(block)
     )
 end
 
+"""
+    write_dataset164(dataset::Dataset164) -> Vector{String}
+
+Write a UFF Dataset 164 (Units) to a vector of strings.
+
+**Input**
+- `dataset::Dataset164`: The dataset structure containing units information
+
+**Output**
+- `Vector{String}`: Vector of formatted strings representing the UFF file content
+"""
 function write_dataset164(dataset::Dataset164)
-    # Function implementation goes here
+    lines = String[]
+
+    # Write header
+    push!(lines, "    -1")
+    push!(lines, "   164")
+
+    # Write Record 1: FORMAT(I10,20A1,I10)
+    # Field 1: units code (I10)
+    # Field 2: units description (20A1)
+    # Field 3: temperature mode (I10)
+
+    # Pad or truncate description to exactly 20 characters
+    desc = rpad(dataset.description[1:min(length(dataset.description), 20)], 20)
+
+    line1 = @sprintf("%10d%20s%10d",
+        dataset.units,
+        desc,
+        dataset.temperature_mode
+    )
+    push!(lines, line1)
+
+    # Write Record 2: FORMAT(3D25.17)
+    # First line: 3 conversion factors (length, force, temperature)
+    line2 = @sprintf("%25.17E%25.17E%25.17E",
+        dataset.conversion_factor[1],
+        dataset.conversion_factor[2],
+        dataset.conversion_factor[3]
+    )
+    push!(lines, line2)
+
+    # Second line: temperature offset
+    line3 = @sprintf("%25.17E",
+        dataset.conversion_factor[4]
+    )
+    push!(lines, line3)
+
+    # Write footer
+    push!(lines, "    -1")
+
+    return lines
 end

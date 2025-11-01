@@ -387,6 +387,100 @@ function parse_dataset55(block)
      )
 end
 
+"""
+    write_dataset55(dataset::Dataset55) -> Vector{String}
+
+Write a UFF Dataset 55 (Data at Nodes) to a vector of strings.
+
+**Input**
+- `dataset::Dataset55`: The dataset structure containing node data
+
+**Output**
+- `Vector{String}`: Vector of formatted strings representing the UFF file content
+"""
 function write_dataset55(dataset::Dataset55)
-    # Function implementation goes here
+    lines = String[]
+
+    # Write header
+    push!(lines, "    -1")
+    push!(lines, "    55")
+
+    # Write Records 1-5: ID lines (format 40A2 or 80A1)
+    push!(lines, dataset.id1)
+    push!(lines, dataset.id2)
+    push!(lines, dataset.id3)
+    push!(lines, dataset.id4)
+
+    # Properly indent the line
+    push!(lines, " "^9 * dataset.id5)
+
+    # Write Record 6: format 6I10
+    line6 = @sprintf("%10d%10d%10d%10d%10d%10d",
+        dataset.model_type,
+        dataset.analysis_type,
+        dataset.data_charac,
+        dataset.spec_dtype,
+        dataset.dtype,
+        dataset.ndv_per_node
+    )
+    push!(lines, line6)
+
+    # Write Record 7: format 8I10
+    # Get r7_raw from the r7 NamedTuple
+    r7_values = collect(values(dataset.r7))
+    line7_parts = [@sprintf("%10d", val) for val in r7_values]
+    push!(lines, join(line7_parts, ""))
+
+    # Write Record 8: format 6E13.5
+    # Get r8_raw from the r8 NamedTuple
+    r8_values = collect(values(dataset.r8))
+    line8_parts = [@sprintf("%13.5e", val) for val in r8_values]
+    # Write up to 6 values per line
+    for i in 1:6:length(line8_parts)
+        end_idx = min(i + 5, length(line8_parts))
+        push!(lines, join(line8_parts[i:end_idx], ""))
+    end
+
+    # Write Records 9 and 10 for each node
+    nnodes = length(dataset.node_number)
+
+    for i in 1:nnodes
+        # Record 9: format I10 - node number
+        line9 = @sprintf("%10d", dataset.node_number[i])
+        push!(lines, line9)
+
+        # Record 10: format 6E13.5 - data values
+        # Get data for this node
+        node_data = dataset.data[i, :]
+
+        # Convert complex data to alternating real/imag if dtype is 5 (complex)
+        if dataset.dtype == 5
+            # Complex data: write real, imag, real, imag, ...
+            data_values = Float64[]
+            for val in node_data
+                if isa(val, Complex)
+                    push!(data_values, real(val))
+                    push!(data_values, imag(val))
+                else
+                    push!(data_values, Float64(val))
+                    push!(data_values, 0.0)
+                end
+            end
+        else
+            # Real data: convert to Float64 array
+            data_values = [Float64(val) for val in node_data]
+        end
+
+        # Write data values, 6 per line in format 6E13.5
+        for j in 1:6:length(data_values)
+            end_idx = min(j + 5, length(data_values))
+            line_parts = [@sprintf("%13.5e", val) for val in data_values[j:end_idx]]
+            push!(lines, join(line_parts, ""))
+        end
+    end
+
+    # Write footer
+    push!(lines, "    -1")
+
+    return lines
 end
